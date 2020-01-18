@@ -1,0 +1,10 @@
+{
+  "modid": "theChemist",
+  "name": "Chemist Mod",
+  "author_list": ["Toastdeib"],
+  "description": "A Slay the Spire class based on the Chemist job from Final Fantasy V.",
+  "version": "0.0.1",
+  "sts_version": "01-16-2020",
+  "mts_version": "3.8.0",
+  "dependencies": ["basemod"]
+}

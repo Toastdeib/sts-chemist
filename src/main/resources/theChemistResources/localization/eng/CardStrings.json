@@ -1,0 +1,60 @@
+{
+  "theChemist:AirKnife": {
+    "NAME": "Air Knife",
+    "DESCRIPTION": "Deal !D! damage twice."
+  },
+  "theChemist:ChemDefend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "theChemist:ChemStrike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theChemist:ChickenKnife": {
+    "NAME": "Chicken Knife",
+    "DESCRIPTION": "Deal !D! damage. If your HP is below 10%, flee from combat instead. Exhaust."
+  },
+  "theChemist:Dagger": {
+    "NAME": "Dagger",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theChemist:DarkMatter": {
+    "NAME": "Dark Matter",
+    "DESCRIPTION": "Apply !M! Weak and !M! Vulnerable to ALL enemies. Add 1 Dark Matter Reagent to the stockpile."
+  },
+  "theChemist:DragonFang": {
+    "NAME": "Dragon Fang",
+    "DESCRIPTION": "Deal !D! damage. Add 1 Dragon Fang Reagent to the stockpile."
+  },
+  "theChemist:ExpandedBags": {
+    "NAME": "Expanded Bags",
+    "DESCRIPTION": "Increase Reagent stockpile capacity by !M!."
+  },
+  "theChemist:Eyedrops": {
+    "NAME": "Eyedrops",
+    "DESCRIPTION": "Draw !M! card. Add 1 Eyedrops Reagent to your stockpile.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. Add 1 Eyedrops Reagent to your stockpile."
+  },
+  "theChemist:MainGauche": {
+    "NAME": "Main Gauche",
+    "DESCRIPTION": "Gain !B! Block. Deal !D! damage."
+  },
+  "theChemist:Mix": {
+    "NAME": "Mix",
+    "DESCRIPTION": "Mix active Reagents."
+  },
+  "theChemist:Pharmacology": {
+    "NAME": "Pharmacology",
+    "DESCRIPTION": "Increase the effect of your next potion by 50%. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Increase the effect of your next potion by 50%."
+  },
+  "theChemist:HiPotion": {
+    "NAME": "Hi-Potion",
+    "DESCRIPTION": "Gain 2 Block. Heal 2 HP. Add 1 Hi-Potion Reagent to the stockpile."
+  },
+  "theChemist:TurtleShell": {
+    "NAME": "Turtle Shell",
+    "DESCRIPTION": "Gain !B! Block. Add 1 Turtle Shell Reagent to the stockpile."
+  }
+}

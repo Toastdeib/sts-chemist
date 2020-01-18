@@ -1,0 +1,9 @@
+{
+  "theChemist:DragonsGift": {
+    "NAME": "Dragon's Gift",
+    "FLAVOR": "Flavor text goes here.",
+    "DESCRIPTIONS": [
+      "Start each combat with a Dragon Fang in your stockpile."
+    ]
+  }
+}

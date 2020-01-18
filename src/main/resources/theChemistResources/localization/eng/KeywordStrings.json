@@ -1,0 +1,27 @@
+[
+  {
+    "PROPER_NAME": "Reagent",
+    "NAMES": ["reagent"],
+    "DESCRIPTION": "An alchemical ingredient. Combining 2 Reagents with Mix can be used to produce a variety of effects."
+  },
+  {
+    "PROPER_NAME": "Mix",
+    "NAMES": ["mix"],
+    "DESCRIPTION": "Consume your 2 topmost stockpiled Reagents to produce an effect. Only works when at least 2 Reagents are stockpiled."
+  },
+  {
+    "PROPER_NAME": "Imbalance",
+    "NAMES": ["imbalance"],
+    "DESCRIPTION": "Imbalanced creatures take 50% more damage from Mix effects."
+  },
+  {
+    "PROPER_NAME": "Fling",
+    "NAMES": ["fling", "flung", "flinging"],
+    "DESCRIPTION": "Expend your topmost Reagent by flinging it at a random enemy, inflicting 4 damage."
+  },
+  {
+    "PROPER_NAME": "Targeted",
+    "NAMES": ["targeted"],
+    "DESCRIPTION": "Targeted creatures will always be hit by Flung Reagents. Only one enemy can be afflicted with Targeted at a time."
+  }
+]

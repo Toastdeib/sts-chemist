@@ -1,0 +1,8 @@
+# Default ignored files
+/workspace.xml
+.idea/
+target/
+*.iml
+
+# .pdn files for WIP image resources
+*.pdn
