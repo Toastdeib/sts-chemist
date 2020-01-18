@@ -2,12 +2,14 @@ package chemistmod.characters;
 
 import basemod.abstracts.CustomPlayer;
 import chemistmod.ChemistMod;
+import chemistmod.actions.FlingAction;
 import chemistmod.cards.attack.ChemStrike;
 import chemistmod.cards.attack.DragonFang;
 import chemistmod.cards.skill.ChemDefend;
 import chemistmod.cards.skill.DarkMatter;
 import chemistmod.cards.skill.Mix;
 import chemistmod.cards.skill.TurtleShell;
+import chemistmod.reagents.AbstractReagent;
 import chemistmod.relics.DragonsGift;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -19,6 +21,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -48,6 +51,10 @@ public class TheChemist extends CustomPlayer {
     public static final String CHARACTER_ID = ChemistMod.makeId("ChemistCharacter");
     private static final CharacterStrings CHARACTER_STRINGS = CardCrawlGame.languagePack.getCharacterString(CHARACTER_ID);
 
+    private ArrayList<AbstractReagent> stockpile;
+    public int baseStockpileCapacity;
+    public int stockpileCapacity;
+
     public TheChemist(String name) {
         super(name, Enums.CHEMIST, null, null, (String) null, null);
 
@@ -57,6 +64,9 @@ public class TheChemist extends CustomPlayer {
         loadAnimation(ChemistMod.CHARACTER_ATLAS_PATH, ChemistMod.CHARACTER_JSON_PATH, 1.0f);
         AnimationState.TrackEntry entry = this.state.setAnimation(0, "Idle", true);
         entry.setTime(entry.getEndTime() * MathUtils.random());
+
+        this.stockpile = new ArrayList<>();
+        this.stockpileCapacity = this.baseStockpileCapacity = 3;
     }
 
     @Override
@@ -177,5 +187,19 @@ public class TheChemist extends CustomPlayer {
     @Override
     public String getVampireText() {
         return CHARACTER_STRINGS.TEXT[2];
+    }
+
+    public void emptyStockpile() {
+        this.stockpile.clear();
+    }
+
+    public void stockpileReagent(AbstractReagent reagent) {
+        if (this.stockpile.size() == this.stockpileCapacity) {
+            // Fling
+            AbstractDungeon.actionManager.addToBottom(new FlingAction());
+            this.stockpile.remove(0);
+        }
+
+        this.stockpile.add(reagent);
     }
 }

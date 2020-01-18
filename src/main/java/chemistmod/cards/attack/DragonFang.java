@@ -1,9 +1,10 @@
 package chemistmod.cards.attack;
 
 import chemistmod.ChemistMod;
+import chemistmod.actions.StockpileAction;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
-import chemistmod.reagents.ReagentEnum;
+import chemistmod.reagents.DragonFangReagent;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -38,6 +39,6 @@ public class DragonFang extends BaseChemistCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        stockpile(ReagentEnum.DRAGON_FANG);
+        AbstractDungeon.actionManager.addToBottom(new StockpileAction(new DragonFangReagent()));
     }
 }

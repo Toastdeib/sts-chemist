@@ -14,15 +14,17 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.nio.charset.StandardCharsets;
 
 @SpireInitializer
-public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber {
+public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, OnStartBattleSubscriber {
 
     public static final Color GOLD = CardHelper.getColor(255.0f, 199.0f, 0.0f);
 
@@ -134,6 +136,15 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
             for (Keyword keyword : keywords) {
                 BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
+        }
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        if (AbstractDungeon.player instanceof TheChemist) {
+            TheChemist player = (TheChemist)AbstractDungeon.player;
+            player.emptyStockpile();
+            player.stockpileCapacity = player.baseStockpileCapacity;
         }
     }
 }

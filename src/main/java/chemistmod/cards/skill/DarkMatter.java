@@ -1,9 +1,10 @@
 package chemistmod.cards.skill;
 
 import chemistmod.ChemistMod;
+import chemistmod.actions.StockpileAction;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
-import chemistmod.reagents.ReagentEnum;
+import chemistmod.reagents.DarkMatterReagent;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -42,6 +43,6 @@ public class DarkMatter extends BaseChemistCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, player, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
         }
 
-        stockpile(ReagentEnum.DARK_MATTER);
+        AbstractDungeon.actionManager.addToBottom(new StockpileAction(new DarkMatterReagent()));
     }
 }

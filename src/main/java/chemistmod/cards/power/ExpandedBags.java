@@ -32,6 +32,9 @@ public class ExpandedBags extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // TODO - Implement the core mechanic of the class
+        // TODO - Support this outside of just the Chemist class
+        if (player instanceof TheChemist) {
+            ((TheChemist)player).stockpileCapacity++;
+        }
     }
 }

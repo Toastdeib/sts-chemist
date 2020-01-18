@@ -1,9 +1,10 @@
 package chemistmod.cards.skill;
 
 import chemistmod.ChemistMod;
+import chemistmod.actions.StockpileAction;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
-import chemistmod.reagents.ReagentEnum;
+import chemistmod.reagents.HiPotionReagent;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -40,6 +41,6 @@ public class HiPotion extends BaseChemistCard {
     public void use(AbstractPlayer player, AbstractMonster monster) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
         AbstractDungeon.actionManager.addToBottom(new HealAction(player, player, this.heal));
-        stockpile(ReagentEnum.HI_POTION);
+        AbstractDungeon.actionManager.addToBottom(new StockpileAction(new HiPotionReagent()));
     }
 }
