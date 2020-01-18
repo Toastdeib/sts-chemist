@@ -18,15 +18,11 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.nio.charset.StandardCharsets;
 
 @SpireInitializer
 public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber {
-
-    private static final Logger log = LogManager.getLogger(ChemistMod.class.getName());
 
     public static final Color GOLD = CardHelper.getColor(255.0f, 199.0f, 0.0f);
 
@@ -65,19 +61,15 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
     public static final String CHARACTER_JSON_PATH = BASE_IMAGE_PATH + "character/idle/skeleton.json";
 
     public ChemistMod() {
-        log.info("In constructor, subscribing and adding color");
         BaseMod.subscribe(this);
 
         BaseMod.addColor(TheChemist.Enums.CARD_GOLD, GOLD, ATTACK_CHEMIST_GOLD, SKILL_CHEMIST_GOLD, POWER_CHEMIST_GOLD,
                 ENERGY_ORB_CHEMIST_GOLD, ATTACK_CHEMIST_GOLD_PORTRAIT, SKILL_CHEMIST_GOLD_PORTRAIT,
                 POWER_CHEMIST_GOLD_PORTRAIT, ENERGY_ORB_CHEMIST_GOLD_PORTRAIT, CARD_ENERGY_ORB);
-        log.info("Constructor complete");
     }
 
     public static void initialize() {
-        log.info("Initializing ChemistMod");
         new ChemistMod();
-        log.info("Init complete");
     }
 
     public static String makeId(String name) {
@@ -94,17 +86,13 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
 
     @Override
     public void receivePostInitialize() {
-        log.info("In post init");
         ModPanel settings = new ModPanel();
         BaseMod.registerModBadge(new Texture(MOD_BADGE_PATH), MOD_NAME, MOD_AUTHOR, MOD_DESCRIPTION, settings);
-        log.info("Post init complete");
     }
 
     @Override
     public void receiveEditCharacters() {
-        log.info("In edit characters");
         BaseMod.addCharacter(new TheChemist(MOD_NAME), SELECT_BUTTON_PATH, PORTRAIT_PATH, TheChemist.Enums.CHEMIST);
-        log.info("Edit characters complete");
     }
 
     @Override
