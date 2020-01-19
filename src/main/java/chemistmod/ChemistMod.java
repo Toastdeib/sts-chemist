@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
@@ -54,6 +55,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
     private static final String PORTRAIT_PATH = BASE_IMAGE_PATH + "ui/charSelect/chemistPortrait.jpg";
 
     private static final String CARD_STRINGS_PATH = BASE_STRINGS_PATH + "CardStrings.json";
+    private static final String POWER_STRINGS_PATH = BASE_STRINGS_PATH + "PowerStrings.json";
     private static final String RELIC_STRINGS_PATH = BASE_STRINGS_PATH + "RelicStrings.json";
     private static final String CHARACTER_STRINGS_PATH = BASE_STRINGS_PATH + "CharacterStrings.json";
     private static final String KEYWORD_STRINGS_PATH = BASE_STRINGS_PATH + "KeywordStrings.json";
@@ -84,6 +86,10 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         return BASE_IMAGE_PATH + "cards/" + cardId.replace(MOD_ID + ":", "") + ".png";
     }
 
+    public static String getPowerImagePath(String powerId, String size) {
+        return BASE_IMAGE_PATH + "powers/" + powerId.replace(MOD_ID + ":", "") + "_" + size + ".png";
+    }
+
     public static String getRelicImagePath(String relicId) {
         return BASE_IMAGE_PATH + "relics/" + relicId.replace(MOD_ID + ":", "") + ".png";
     }
@@ -104,6 +110,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new AirKnife());
         BaseMod.addCard(new AlchemicalProwess());
         BaseMod.addCard(new BeltPouch());
+        BaseMod.addCard(new CalledShot());
         BaseMod.addCard(new ChemDefend());
         BaseMod.addCard(new ChemStrike());
         BaseMod.addCard(new ChickenKnife());
@@ -132,6 +139,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
     @Override
     public void receiveEditStrings() {
         BaseMod.loadCustomStringsFile(CardStrings.class, CARD_STRINGS_PATH);
+        BaseMod.loadCustomStringsFile(PowerStrings.class, POWER_STRINGS_PATH);
         BaseMod.loadCustomStringsFile(RelicStrings.class, RELIC_STRINGS_PATH);
         BaseMod.loadCustomStringsFile(CharacterStrings.class, CHARACTER_STRINGS_PATH);
     }

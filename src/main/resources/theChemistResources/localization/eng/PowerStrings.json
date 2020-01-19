@@ -1,0 +1,8 @@
+{
+  "theChemist:MarkedPower": {
+    "NAME": "Marked",
+    "DESCRIPTIONS": [
+      "Flung Reagents will always target this enemy. Only one enemy can be afflicted with Marked at a time."
+    ]
+  }
+}

@@ -11,6 +11,10 @@
     "NAME": "Belt Pouch",
     "DESCRIPTION": "At the end of your turn, Retain up to !M! cards."
   },
+  "theChemist:CalledShot": {
+    "NAME": "Called Shot",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! Marked."
+  },
   "theChemist:ChemDefend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
@@ -41,7 +45,7 @@
   },
   "theChemist:Elixir": {
     "NAME": "Elixir",
-    "DESCRIPTION": "Gain !B! Block. Heal !H! HP. Gain !M! energy. Exhaust."
+    "DESCRIPTION": "Gain !B! Block. Heal !D! HP. Gain !M! energy. Exhaust."
   },
   "theChemist:ExpandedBags": {
     "NAME": "Expanded Bags",
@@ -58,7 +62,7 @@
   },
   "theChemist:HiPotion": {
     "NAME": "Hi-Potion",
-    "DESCRIPTION": "Gain !B! Block. Heal !H! HP. Add 1 Hi-Potion Reagent to the stockpile."
+    "DESCRIPTION": "Gain !B! Block. Heal !M! HP. Add 1 Hi-Potion Reagent to the stockpile."
   },
   "theChemist:HolyWater": {
     "NAME": "Holy Water",

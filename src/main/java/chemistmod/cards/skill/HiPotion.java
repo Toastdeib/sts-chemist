@@ -25,7 +25,7 @@ public class HiPotion extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.UNCOMMON, CardTarget.SELF);
         this.block = this.baseBlock = BASE_BLOCK;
-        this.heal = this.baseHeal = BASE_HEAL;
+        this.magicNumber = this.baseMagicNumber = BASE_HEAL;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class HiPotion extends BaseChemistCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         addToBottom(new GainBlockAction(player, player, this.block));
-        addToBottom(new HealAction(player, player, this.heal));
+        addToBottom(new HealAction(player, player, this.magicNumber));
         addToBottom(new StockpileAction(ReagentEnum.HI_POTION));
     }
 }
