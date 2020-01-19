@@ -1,7 +1,7 @@
 package chemistmod.actions;
 
 import chemistmod.characters.TheChemist;
-import chemistmod.reagents.AbstractReagent;
+import chemistmod.reagents.ReagentEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
@@ -11,9 +11,9 @@ public class StockpileAction extends AbstractGameAction {
 
     private static final Logger log = LogManager.getLogger(FlingAction.class.getName());
 
-    private AbstractReagent reagent;
+    private ReagentEnum reagent;
 
-    public StockpileAction(AbstractReagent reagent) {
+    public StockpileAction(ReagentEnum reagent) {
         this.reagent = reagent;
     }
 

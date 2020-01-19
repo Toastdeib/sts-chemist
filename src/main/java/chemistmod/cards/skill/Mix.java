@@ -1,10 +1,12 @@
 package chemistmod.cards.skill;
 
 import chemistmod.ChemistMod;
+import chemistmod.actions.MixAction;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -30,6 +32,17 @@ public class Mix extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // TODO - Implement the core mechanic of the class
+        // TODO - Support this outside of just the Chemist class
+        if (!(player instanceof TheChemist)) {
+            return;
+        }
+
+        TheChemist chemist = (TheChemist)player;
+        if (chemist.stockpileCount() < 2) {
+            // TODO - Thought bubble
+            return;
+        }
+
+        AbstractDungeon.actionManager.addToBottom(new MixAction(chemist.popReagent(), chemist.popReagent()));
     }
 }

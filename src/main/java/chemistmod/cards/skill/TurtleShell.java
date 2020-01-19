@@ -4,7 +4,7 @@ import chemistmod.ChemistMod;
 import chemistmod.actions.StockpileAction;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
-import chemistmod.reagents.TurtleShellReagent;
+import chemistmod.reagents.ReagentEnum;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -37,6 +37,6 @@ public class TurtleShell extends BaseChemistCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
-        AbstractDungeon.actionManager.addToBottom(new StockpileAction(new TurtleShellReagent()));
+        AbstractDungeon.actionManager.addToBottom(new StockpileAction(ReagentEnum.TURTLE_SHELL));
     }
 }

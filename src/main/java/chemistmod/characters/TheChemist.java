@@ -9,7 +9,7 @@ import chemistmod.cards.skill.ChemDefend;
 import chemistmod.cards.skill.DarkMatter;
 import chemistmod.cards.skill.Mix;
 import chemistmod.cards.skill.TurtleShell;
-import chemistmod.reagents.AbstractReagent;
+import chemistmod.reagents.ReagentEnum;
 import chemistmod.relics.DragonsGift;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -51,7 +51,7 @@ public class TheChemist extends CustomPlayer {
     public static final String CHARACTER_ID = ChemistMod.makeId("ChemistCharacter");
     private static final CharacterStrings CHARACTER_STRINGS = CardCrawlGame.languagePack.getCharacterString(CHARACTER_ID);
 
-    private ArrayList<AbstractReagent> stockpile;
+    private ArrayList<ReagentEnum> stockpile;
     public int baseStockpileCapacity;
     public int stockpileCapacity;
 
@@ -189,11 +189,7 @@ public class TheChemist extends CustomPlayer {
         return CHARACTER_STRINGS.TEXT[2];
     }
 
-    public void emptyStockpile() {
-        this.stockpile.clear();
-    }
-
-    public void stockpileReagent(AbstractReagent reagent) {
+    public void stockpileReagent(ReagentEnum reagent) {
         if (this.stockpile.size() == this.stockpileCapacity) {
             // Fling
             AbstractDungeon.actionManager.addToBottom(new FlingAction());
@@ -201,5 +197,18 @@ public class TheChemist extends CustomPlayer {
         }
 
         this.stockpile.add(reagent);
+    }
+
+    public int stockpileCount() {
+        return this.stockpile.size();
+    }
+
+    public ReagentEnum popReagent() {
+        // NOTE: This expects the calling code to have verified that stockpileCount() > 0 and will crash if it isn't.
+        return this.stockpile.remove(0);
+    }
+
+    public void emptyStockpile() {
+        this.stockpile.clear();
     }
 }
