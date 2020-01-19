@@ -25,6 +25,8 @@ public class Pharmacology extends BaseChemistCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.exhaust = false;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

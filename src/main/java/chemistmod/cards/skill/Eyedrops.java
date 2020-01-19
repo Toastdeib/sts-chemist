@@ -30,6 +30,8 @@ public class Eyedrops extends BaseChemistCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADE_MAGIC);
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 
