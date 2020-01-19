@@ -1,8 +1,19 @@
 {
+  "theChemist:ImbalancePower": {
+    "NAME": "Imbalance",
+    "DESCRIPTIONS": [
+      "Receive #b",
+      "% more damage from #yMix effects for #b",
+      " turn.",
+      " turns."
+    ]
+  },
   "theChemist:MarkedPower": {
     "NAME": "Marked",
     "DESCRIPTIONS": [
-      "Flung Reagents will always target this enemy. Only one enemy can be afflicted with Marked at a time."
+      "#yFling will always target this enemy for #b",
+      " turn.",
+      " turns."
     ]
   }
 }

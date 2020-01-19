@@ -10,12 +10,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class MarkedPower extends AbstractPower {
-
-    private static final Logger log = LogManager.getLogger(MarkedPower.class.getName());
 
     public static final String POWER_ID = ChemistMod.makeId("MarkedPower");
     private static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -33,15 +29,24 @@ public class MarkedPower extends AbstractPower {
 
         this.region128 = new TextureAtlas.AtlasRegion(new Texture(ChemistMod.getPowerImagePath(POWER_ID, "84")), 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(new Texture(ChemistMod.getPowerImagePath(POWER_ID, "32")), 0, 0, 32, 32);
+
+        updateDescription();
+    }
+
+    @Override
+    public void updateDescription() {
+        if (this.amount == 1) {
+            this.description = POWER_STRINGS.DESCRIPTIONS[0] + this.amount + POWER_STRINGS.DESCRIPTIONS[1];
+        } else {
+            this.description = POWER_STRINGS.DESCRIPTIONS[0] + this.amount + POWER_STRINGS.DESCRIPTIONS[2];
+        }
     }
 
     @Override
     public void atEndOfRound() {
         if (this.amount == 0) {
-            log.info("Marked amount at 0, removing debuff");
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         } else {
-            log.info("Marked amount = " + this.amount + ", reducing debuff");
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
         }
     }

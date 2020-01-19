@@ -39,6 +39,10 @@
     "NAME": "Disposal",
     "DESCRIPTION": "Deal !D! damage. Fling your topmost Reagent."
   },
+  "theChemist:DizzyingFumes": {
+    "NAME": "Dizzying Fumes",
+    "DESCRIPTION": "Apply !M! Imbalance to ALL enemies. Add 1 Dazed to your discard pile."
+  },
   "theChemist:DragonFang": {
     "NAME": "Dragon Fang",
     "DESCRIPTION": "Deal !D! damage. Add 1 Dragon Fang Reagent to the stockpile."
@@ -68,6 +72,10 @@
     "NAME": "Holy Water",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a random card in your hand. Add 1 Holy Water Reagent to the stockpile.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a card in your hand. Add 1 Holy Water Reagent to the stockpile."
+  },
+  "theChemist:MageMasher": {
+    "NAME": "Mage Masher",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! Imbalance."
   },
   "theChemist:MainGauche": {
     "NAME": "Main Gauche",

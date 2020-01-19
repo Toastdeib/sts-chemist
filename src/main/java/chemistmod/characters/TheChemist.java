@@ -40,7 +40,7 @@ public class TheChemist extends CustomPlayer {
         public static AbstractCard.CardColor CARD_GOLD;
         @SpireEnum(name = "CHEMIST_GOLD")
         public static CardLibrary.LibraryType LIBRARY_GOLD;
-        @SpireEnum(name = "MIX")
+        @SpireEnum
         public static DamageInfo.DamageType MIX;
     }
 
