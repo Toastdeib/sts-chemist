@@ -1,6 +1,7 @@
 package chemistmod.actions;
 
 import chemistmod.characters.TheChemist;
+import chemistmod.powers.MarkedPower;
 import chemistmod.reagents.MixResultEnum;
 import chemistmod.reagents.ReagentEnum;
 import chemistmod.util.MixUtils;
@@ -123,7 +124,12 @@ public class MixAction extends AbstractGameAction {
                         AbstractGameAction.AttackEffect.FIRE));
                 break;
             case DRAGONS_CURSE:
-                // TODO
+                this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
+                        new DamageInfo(player, LIGHT_DAMAGE, DamageInfo.DamageType.NORMAL),
+                        AbstractGameAction.AttackEffect.FIRE));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, player,
+                        new MarkedPower(this.target, LIGHT_DEBUFF_STACK), LIGHT_DEBUFF_STACK));
                 break;
             case DRAGONS_RAGE:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
@@ -156,6 +162,7 @@ public class MixAction extends AbstractGameAction {
                         new DexterityPower(player, STAT_BUFF_STACK), STAT_BUFF_STACK));
                 break;
             case TBD_1:
+                // TODO
                 break;
             case HARDENING_SOLUTION:
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, HEAVY_BLOCK));
@@ -184,6 +191,7 @@ public class MixAction extends AbstractGameAction {
                         new VulnerablePower(this.target, HEAVY_DEBUFF_STACK, false), HEAVY_DEBUFF_STACK));
                 break;
             case TBD_2:
+                // TODO
                 break;
         }
 
