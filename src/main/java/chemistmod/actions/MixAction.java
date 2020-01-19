@@ -1,5 +1,6 @@
 package chemistmod.actions;
 
+import chemistmod.characters.TheChemist;
 import chemistmod.reagents.MixResultEnum;
 import chemistmod.reagents.ReagentEnum;
 import chemistmod.util.MixUtils;
@@ -53,12 +54,12 @@ public class MixAction extends AbstractGameAction {
                 // lol
                 for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(monster,
-                            new DamageInfo(player, DUD_DAMAGE, DamageInfo.DamageType.NORMAL),
+                            new DamageInfo(player, DUD_DAMAGE, TheChemist.Enums.MIX),
                             AbstractGameAction.AttackEffect.FIRE));
                 }
 
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(player,
-                        new DamageInfo(player, DUD_DAMAGE, DamageInfo.DamageType.NORMAL),
+                        new DamageInfo(player, DUD_DAMAGE, TheChemist.Enums.MIX),
                         AbstractGameAction.AttackEffect.FIRE));
                 break;
             case MEGA_POTION:
@@ -87,7 +88,7 @@ public class MixAction extends AbstractGameAction {
             case DRAGONS_BITE:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
-                        new DamageInfo(player, LIGHT_DAMAGE, DamageInfo.DamageType.NORMAL),
+                        new DamageInfo(player, LIGHT_DAMAGE, TheChemist.Enums.MIX),
                         AbstractGameAction.AttackEffect.FIRE));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, player,
                         new WeakPower(this.target, LIGHT_DEBUFF_STACK, false), LIGHT_DEBUFF_STACK));
@@ -95,14 +96,14 @@ public class MixAction extends AbstractGameAction {
             case DRAGONS_BREATH:
                 for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(monster,
-                            new DamageInfo(player, LIGHT_DAMAGE, DamageInfo.DamageType.NORMAL),
+                            new DamageInfo(player, LIGHT_DAMAGE, TheChemist.Enums.MIX),
                             AbstractGameAction.AttackEffect.FIRE));
                 }
                 break;
             case DRAGONS_CLAW:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
-                        new DamageInfo(player, LIGHT_DAMAGE, DamageInfo.DamageType.NORMAL),
+                        new DamageInfo(player, LIGHT_DAMAGE, TheChemist.Enums.MIX),
                         AbstractGameAction.AttackEffect.FIRE));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, player,
                         new VulnerablePower(this.target, LIGHT_DEBUFF_STACK, false), LIGHT_DEBUFF_STACK));
@@ -110,7 +111,7 @@ public class MixAction extends AbstractGameAction {
             case DRAGONS_GLARE:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
-                        new DamageInfo(player, LIGHT_DAMAGE, DamageInfo.DamageType.NORMAL),
+                        new DamageInfo(player, LIGHT_DAMAGE, TheChemist.Enums.MIX),
                         AbstractGameAction.AttackEffect.FIRE));
                 AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, DRAW_AMOUNT, false));
                 break;
@@ -118,7 +119,7 @@ public class MixAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, LIGHT_BLOCK));
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
-                        new DamageInfo(player, LIGHT_DAMAGE, DamageInfo.DamageType.NORMAL),
+                        new DamageInfo(player, LIGHT_DAMAGE, TheChemist.Enums.MIX),
                         AbstractGameAction.AttackEffect.FIRE));
                 break;
             case DRAGONS_CURSE:
@@ -127,7 +128,7 @@ public class MixAction extends AbstractGameAction {
             case DRAGONS_RAGE:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
-                        new DamageInfo(player, HEAVY_DAMAGE, DamageInfo.DamageType.NORMAL),
+                        new DamageInfo(player, HEAVY_DAMAGE, TheChemist.Enums.MIX),
                         AbstractGameAction.AttackEffect.FIRE));
                 break;
             case CARAPACE_COCKTAIL:

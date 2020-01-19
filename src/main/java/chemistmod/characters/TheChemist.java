@@ -18,6 +18,7 @@ import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -39,6 +40,8 @@ public class TheChemist extends CustomPlayer {
         public static AbstractCard.CardColor CARD_GOLD;
         @SpireEnum(name = "CHEMIST_GOLD")
         public static CardLibrary.LibraryType LIBRARY_GOLD;
+        @SpireEnum(name = "MIX")
+        public static DamageInfo.DamageType MIX;
     }
 
     public static final int ENERGY_PER_TURN = 3;
