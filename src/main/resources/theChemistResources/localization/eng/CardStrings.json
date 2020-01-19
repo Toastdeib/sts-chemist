@@ -3,6 +3,14 @@
     "NAME": "Air Knife",
     "DESCRIPTION": "Deal !D! damage twice."
   },
+  "theChemist:AlchemicalProwess": {
+    "NAME": "Alchemical Prowess",
+    "DESCRIPTION": "Increases the potency of Mix effects by 50%."
+  },
+  "theChemist:BeltPouch": {
+    "NAME": "Belt Pouch",
+    "DESCRIPTION": "At the end of your turn, Retain up to !M! cards."
+  },
   "theChemist:ChemDefend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
@@ -23,9 +31,17 @@
     "NAME": "Dark Matter",
     "DESCRIPTION": "Apply !M! Weak and !M! Vulnerable to ALL enemies. Add 1 Dark Matter Reagent to the stockpile."
   },
+  "theChemist:Disposal": {
+    "NAME": "Disposal",
+    "DESCRIPTION": "Deal !D! damage. Fling your topmost Reagent."
+  },
   "theChemist:DragonFang": {
     "NAME": "Dragon Fang",
     "DESCRIPTION": "Deal !D! damage. Add 1 Dragon Fang Reagent to the stockpile."
+  },
+  "theChemist:Elixir": {
+    "NAME": "Elixir",
+    "DESCRIPTION": "Gain !B! Block. Heal !H! HP. Gain !M! energy. Exhaust."
   },
   "theChemist:ExpandedBags": {
     "NAME": "Expanded Bags",
@@ -35,6 +51,19 @@
     "NAME": "Eyedrops",
     "DESCRIPTION": "Draw !M! card. Add 1 Eyedrops Reagent to your stockpile.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. Add 1 Eyedrops Reagent to your stockpile."
+  },
+  "theChemist:HiEther": {
+    "NAME": "Hi-Ether",
+    "DESCRIPTION": "Gain !M! energy. Add 1 Hi-Ether Reagent to the stockpile. Exhaust."
+  },
+  "theChemist:HiPotion": {
+    "NAME": "Hi-Potion",
+    "DESCRIPTION": "Gain !B! Block. Heal !H! HP. Add 1 Hi-Potion Reagent to the stockpile."
+  },
+  "theChemist:HolyWater": {
+    "NAME": "Holy Water",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a random card in your hand. Add 1 Holy Water Reagent to the stockpile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a card in your hand. Add 1 Holy Water Reagent to the stockpile."
   },
   "theChemist:MainGauche": {
     "NAME": "Main Gauche",
@@ -49,12 +78,12 @@
     "DESCRIPTION": "Increase the effect of your next potion by 50%. Exhaust.",
     "UPGRADE_DESCRIPTION": "Increase the effect of your next potion by 50%."
   },
-  "theChemist:HiPotion": {
-    "NAME": "Hi-Potion",
-    "DESCRIPTION": "Gain 2 Block. Heal 2 HP. Add 1 Hi-Potion Reagent to the stockpile."
-  },
   "theChemist:TurtleShell": {
     "NAME": "Turtle Shell",
     "DESCRIPTION": "Gain !B! Block. Add 1 Turtle Shell Reagent to the stockpile."
+  },
+  "theChemist:WasteNot": {
+    "NAME": "Waste Not",
+    "DESCRIPTION": "Mix active Reagents, then return both consumed Reagents to your stockpile. Exhaust."
   }
 }

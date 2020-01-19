@@ -2,23 +2,26 @@ package chemistmod.cards.skill;
 
 import chemistmod.ChemistMod;
 import chemistmod.actions.MixAction;
+import chemistmod.actions.StockpileAction;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
+import chemistmod.reagents.ReagentEnum;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Mix extends BaseChemistCard {
-    public static final String CARD_ID = ChemistMod.makeId("Mix");
+public class WasteNot extends BaseChemistCard {
+    public static final String CARD_ID = ChemistMod.makeId("WasteNot");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
-    private static final int BASE_COST = 1;
-    private static final int UPGRADE_COST = 0;
+    private static final int BASE_COST = 4;
+    private static final int UPGRADE_COST = 3;
 
-    public Mix() {
+    public WasteNot() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
-                CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.BASIC, CardTarget.SELF);
+                CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.RARE, CardTarget.SELF);
+        this.exhaust = true;
     }
 
     @Override
@@ -42,6 +45,10 @@ public class Mix extends BaseChemistCard {
             return;
         }
 
-        addToBottom(new MixAction(chemist.popReagent(), chemist.popReagent()));
+        ReagentEnum first = chemist.popReagent();
+        ReagentEnum second = chemist.popReagent();
+        addToBottom(new MixAction(first, second));
+        addToBottom(new StockpileAction(first));
+        addToBottom(new StockpileAction(second));
     }
 }

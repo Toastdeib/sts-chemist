@@ -4,6 +4,8 @@ import basemod.BaseMod;
 import basemod.ModPanel;
 import basemod.interfaces.*;
 import chemistmod.cards.attack.*;
+import chemistmod.cards.power.AlchemicalProwess;
+import chemistmod.cards.power.BeltPouch;
 import chemistmod.cards.power.ExpandedBags;
 import chemistmod.cards.skill.*;
 import chemistmod.characters.TheChemist;
@@ -100,19 +102,26 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
     @Override
     public void receiveEditCards() {
         BaseMod.addCard(new AirKnife());
+        BaseMod.addCard(new AlchemicalProwess());
+        BaseMod.addCard(new BeltPouch());
         BaseMod.addCard(new ChemDefend());
         BaseMod.addCard(new ChemStrike());
         BaseMod.addCard(new ChickenKnife());
         BaseMod.addCard(new Dagger());
         BaseMod.addCard(new DarkMatter());
+        BaseMod.addCard(new Disposal());
         BaseMod.addCard(new DragonFang());
+        BaseMod.addCard(new Elixir());
         BaseMod.addCard(new ExpandedBags());
         BaseMod.addCard(new Eyedrops());
+        BaseMod.addCard(new HiEther());
         BaseMod.addCard(new HiPotion());
+        BaseMod.addCard(new HolyWater());
         BaseMod.addCard(new MainGauche());
         BaseMod.addCard(new Mix());
         BaseMod.addCard(new Pharmacology());
         BaseMod.addCard(new TurtleShell());
+        BaseMod.addCard(new WasteNot());
     }
 
     @Override
@@ -142,7 +151,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         if (AbstractDungeon.player instanceof TheChemist) {
-            TheChemist player = (TheChemist)AbstractDungeon.player;
+            TheChemist player = (TheChemist) AbstractDungeon.player;
             player.emptyStockpile();
             player.stockpileCapacity = player.baseStockpileCapacity;
         }

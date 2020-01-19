@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -39,8 +38,8 @@ public class HiPotion extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
-        AbstractDungeon.actionManager.addToBottom(new HealAction(player, player, this.heal));
-        AbstractDungeon.actionManager.addToBottom(new StockpileAction(ReagentEnum.HI_POTION));
+        addToBottom(new GainBlockAction(player, player, this.block));
+        addToBottom(new HealAction(player, player, this.heal));
+        addToBottom(new StockpileAction(ReagentEnum.HI_POTION));
     }
 }

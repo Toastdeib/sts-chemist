@@ -44,7 +44,7 @@ public class ChickenKnife extends BaseChemistCard {
             escape(player);
         }
 
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     // The following two methods are shamelessly stolen and slightly modified from the Smoke Bomb potion code

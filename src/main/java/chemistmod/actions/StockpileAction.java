@@ -22,7 +22,7 @@ public class StockpileAction extends AbstractGameAction {
         // TODO:
         //  Extend stockpile/fling functionality outside of The Chemist
         try {
-            TheChemist player = (TheChemist) AbstractDungeon.player;
+            TheChemist player = (TheChemist)AbstractDungeon.player;
             player.stockpileReagent(this.reagent);
         } catch (ClassCastException ex) {
             log.warn("Unable to stockpile; current player isn't a Chemist");
