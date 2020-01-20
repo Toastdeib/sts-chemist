@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "Start each combat with a Dragon Fang in your stockpile."
     ]
+  },
+  "theChemist:TaintedFlask": {
+    "NAME": "Tainted Flask",
+    "FLAVOR": "Flavor text goes here.",
+    "DESCRIPTIONS": [
+      "Enemies with #yImbalance take #b75% more damage rather than #b50%."
+    ]
   }
 }

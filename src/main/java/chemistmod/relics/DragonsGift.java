@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class DragonsGift extends CustomRelic {
-
     public static final String RELIC_ID = ChemistMod.makeId("DragonsGift");
 
     public DragonsGift() {

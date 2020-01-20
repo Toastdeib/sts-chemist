@@ -1,23 +1,18 @@
 package chemistmod.powers;
 
 import chemistmod.ChemistMod;
-import chemistmod.characters.TheChemist;
+import chemistmod.relics.TaintedFlask;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class ImbalancePower extends AbstractPower {
-    private static final Logger log = LogManager.getLogger(ImbalancePower.class.getName());
-
     public static final String POWER_ID = ChemistMod.makeId("ImbalancePower");
     private static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
@@ -45,8 +40,8 @@ public class ImbalancePower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        // TODO - Check for Tainted Flask once implemented, set this to "75" if the player has it
-        String percentage = BASE_EFFECTIVENESS_STRING;
+        String percentage = AbstractDungeon.player.hasRelic(TaintedFlask.RELIC_ID) ?
+                UPGRADE_EFFECTIVENESS_STRING : BASE_EFFECTIVENESS_STRING;
         if (this.amount == 1) {
             this.description = POWER_STRINGS.DESCRIPTIONS[0] + percentage + POWER_STRINGS.DESCRIPTIONS[1] +
                     this.amount + POWER_STRINGS.DESCRIPTIONS[2];
@@ -65,16 +60,7 @@ public class ImbalancePower extends AbstractPower {
         }
     }
 
-    @Override
-    public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
-        log.info("Damage event received, value=" + damage + ", type=" + damageType);
-        if (damageType != TheChemist.Enums.MIX) {
-            log.info("Type is not MIX, ignoring damage event");
-            return damage;
-        }
-
-        // TODO - Check for Tainted Flask once implemented for the increased damage mod
-        log.info("Returning modified damage value=" + (damage * BASE_EFFECTIVENESS));
-        return damage * BASE_EFFECTIVENESS;
+    public static float getModifier() {
+        return AbstractDungeon.player.hasRelic(TaintedFlask.RELIC_ID) ? UPGRADE_EFFECTIVENESS : BASE_EFFECTIVENESS;
     }
 }

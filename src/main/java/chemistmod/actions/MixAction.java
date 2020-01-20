@@ -15,14 +15,10 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class MixAction extends AbstractGameAction {
-    private static final Logger log = LogManager.getLogger(MixAction.class.getName());
-
     private static final int DUD_DAMAGE = 3;
     private static final int LIGHT_DAMAGE = 5;
     private static final int HEAVY_DAMAGE = 10;
@@ -170,26 +166,35 @@ public class MixAction extends AbstractGameAction {
         this.isDone = true;
     }
 
+    private int modifyDamage(AbstractCreature target, int amount) {
+        if (target.hasPower(ImbalancePower.POWER_ID)) {
+            return (int)(amount * ImbalancePower.getModifier());
+        }
+
+        return amount;
+    }
+
     private void doSingleTargetDamage(AbstractPlayer source, int amount) {
         doSingleTargetDamage(source, this.target, amount);
     }
 
     private void doSingleTargetDamage(AbstractPlayer source, AbstractCreature target, int amount) {
-        log.info("Doing " + amount + " single target damage to " + target.name + " with type=" + TheChemist.Enums.MIX);
         AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
-                new DamageInfo(source, amount, TheChemist.Enums.MIX), AttackEffect.FIRE));
+                new DamageInfo(source, modifyDamage(target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
     }
 
     private void doSingleTargetVampireDamage(AbstractPlayer source, int amount) {
-        log.info("Doing " + amount + " single target damage to " + target.name + " with type=" + TheChemist.Enums.MIX);
         AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target,
-                new DamageInfo(source, amount, TheChemist.Enums.MIX), AttackEffect.FIRE));
+                new DamageInfo(source, modifyDamage(this.target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
     }
 
     private void doMultiTargetDamage(AbstractPlayer source, int amount) {
-        log.info("Doing " + amount + " multi target damage with type=" + TheChemist.Enums.MIX);
-        int[] amounts = new int[AbstractDungeon.getMonsters().monsters.size()];
-        Arrays.fill(amounts, amount);
+        ArrayList<AbstractMonster> monsters = AbstractDungeon.getMonsters().monsters;
+        int[] amounts = new int[monsters.size()];
+        for (int i = 0; i < amounts.length; i++) {
+            amounts[i] = modifyDamage(monsters.get(i), amount);
+        }
+
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(source, amounts, TheChemist.Enums.MIX,
                 AttackEffect.FIRE));
     }
