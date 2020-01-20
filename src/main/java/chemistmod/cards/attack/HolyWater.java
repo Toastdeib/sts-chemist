@@ -6,12 +6,10 @@ import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
 import chemistmod.reagents.ReagentEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -27,6 +25,7 @@ public class HolyWater extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.ATTACK, TheChemist.Enums.CARD_GOLD, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         this.damage = this.baseDamage = BASE_DAMAGE;
+        this.isMultiDamage = true;
     }
 
     @Override
@@ -41,9 +40,7 @@ public class HolyWater extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBottom(new DamageAction(m, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        }
+        addToBottom(new DamageAllEnemiesAction(player, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
         addToBottom(new ExhaustAction(player, player, 1, !this.upgraded));
         addToBottom(new StockpileAction(ReagentEnum.HOLY_WATER));
     }

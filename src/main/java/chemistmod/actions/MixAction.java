@@ -8,13 +8,20 @@ import chemistmod.util.MixUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
+import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Arrays;
 
 public class MixAction extends AbstractGameAction {
+    private static final Logger log = LogManager.getLogger(MixAction.class.getName());
 
     private static final int DUD_DAMAGE = 3;
     private static final int LIGHT_DAMAGE = 5;
@@ -53,27 +60,20 @@ public class MixAction extends AbstractGameAction {
         switch (result) {
             case DUD:
                 // lol
-                for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(monster,
-                            new DamageInfo(player, DUD_DAMAGE, TheChemist.Enums.MIX),
-                            AbstractGameAction.AttackEffect.FIRE));
-                }
-
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(player,
-                        new DamageInfo(player, DUD_DAMAGE, TheChemist.Enums.MIX),
-                        AbstractGameAction.AttackEffect.FIRE));
+                doMultiTargetDamage(player, DUD_DAMAGE);
+                doSingleTargetDamage(player, player, DUD_DAMAGE);
                 break;
             case MEGA_POTION:
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, POTION_BLOCK));
-                AbstractDungeon.actionManager.addToBottom(new HealAction(player, player, POTION_HEAL));
+                doGainBlock(player, POTION_BLOCK);
+                doHeal(player, POTION_HEAL);
                 break;
             case MEGA_ETHER:
-                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(ETHER_ENERGY));
+                doGainEnergy(ETHER_ENERGY);
                 break;
             case HALF_ELIXIR:
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, ELIXIR_BLOCK));
-                AbstractDungeon.actionManager.addToBottom(new HealAction(player, player, ELIXIR_HEAL));
-                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(ELIXIR_ENERGY));
+                doGainBlock(player, ELIXIR_BLOCK);
+                doHeal(player, ELIXIR_HEAL);
+                doGainEnergy(ELIXIR_ENERGY);
                 break;
             case RESURRECTION:
                 // TODO
@@ -82,69 +82,50 @@ public class MixAction extends AbstractGameAction {
                 // TODO
                 break;
             case PANACEA:
-                AbstractDungeon.actionManager.addToBottom(new RemoveDebuffsAction(player));
+                doClearDebuffs(player);
                 break;
             case DRAGONS_FEAST:
+                this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
+                doSingleTargetVampireDamage(player, LIGHT_DAMAGE);
                 break;
             case DRAGONS_BITE:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
-                        new DamageInfo(player, LIGHT_DAMAGE, TheChemist.Enums.MIX),
-                        AbstractGameAction.AttackEffect.FIRE));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, player,
-                        new WeakPower(this.target, LIGHT_DEBUFF_STACK, false), LIGHT_DEBUFF_STACK));
+                doSingleTargetDamage(player, LIGHT_DAMAGE);
+                doSingleTargetPower(player, new WeakPower(this.target, LIGHT_DEBUFF_STACK, false), LIGHT_DEBUFF_STACK);
                 break;
             case DRAGONS_BREATH:
-                for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(monster,
-                            new DamageInfo(player, LIGHT_DAMAGE, TheChemist.Enums.MIX),
-                            AbstractGameAction.AttackEffect.FIRE));
-                }
+                doMultiTargetDamage(player, LIGHT_DAMAGE);
                 break;
             case DRAGONS_CLAW:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
-                        new DamageInfo(player, LIGHT_DAMAGE, TheChemist.Enums.MIX),
-                        AbstractGameAction.AttackEffect.FIRE));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, player,
-                        new VulnerablePower(this.target, LIGHT_DEBUFF_STACK, false), LIGHT_DEBUFF_STACK));
+                doSingleTargetDamage(player, LIGHT_DAMAGE);
+                doSingleTargetPower(player, new VulnerablePower(this.target, LIGHT_DEBUFF_STACK, false), LIGHT_DEBUFF_STACK);
                 break;
             case DRAGONS_GLARE:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
-                        new DamageInfo(player, LIGHT_DAMAGE, TheChemist.Enums.MIX),
-                        AbstractGameAction.AttackEffect.FIRE));
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, DRAW_AMOUNT, false));
+                doSingleTargetDamage(player, LIGHT_DAMAGE);
+                doDraw(player, DRAW_AMOUNT);
                 break;
             case DRAGONS_SCALES:
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, LIGHT_BLOCK));
+                doGainBlock(player, LIGHT_BLOCK);
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
-                        new DamageInfo(player, LIGHT_DAMAGE, TheChemist.Enums.MIX),
-                        AbstractGameAction.AttackEffect.FIRE));
+                doSingleTargetDamage(player, LIGHT_DAMAGE);
                 break;
             case DRAGONS_CURSE:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
-                        new DamageInfo(player, LIGHT_DAMAGE, TheChemist.Enums.MIX),
-                        AbstractGameAction.AttackEffect.FIRE));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, player,
-                        new ImbalancePower(this.target, LIGHT_DEBUFF_STACK), LIGHT_DEBUFF_STACK));
+                doSingleTargetDamage(player, LIGHT_DAMAGE);
+                doSingleTargetPower(player, new ImbalancePower(this.target, LIGHT_DEBUFF_STACK), LIGHT_DEBUFF_STACK);
                 break;
             case DRAGONS_RAGE:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target,
-                        new DamageInfo(player, HEAVY_DAMAGE, TheChemist.Enums.MIX),
-                        AbstractGameAction.AttackEffect.FIRE));
+                doSingleTargetDamage(player, HEAVY_DAMAGE);
                 break;
             case CARAPACE_COCKTAIL:
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player,
-                        new PlatedArmorPower(player, PLATED_ARMOR_STACK), PLATED_ARMOR_STACK));
+                doSingleTargetPower(player, player, new PlatedArmorPower(this.target, PLATED_ARMOR_STACK), PLATED_ARMOR_STACK);
                 break;
             case OCEANS_FURY:
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, LIGHT_BLOCK));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player,
-                        new StrengthPower(player, STAT_BUFF_STACK), STAT_BUFF_STACK));
+                doGainBlock(player, LIGHT_BLOCK);
+                doSingleTargetPower(player, player, new StrengthPower(this.target, STAT_BUFF_STACK), STAT_BUFF_STACK);
                 break;
             case STORMS_EYE:
                 int enemies = 0;
@@ -154,41 +135,32 @@ public class MixAction extends AbstractGameAction {
                     }
                 }
 
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, LIGHT_BLOCK * enemies));
+                doGainBlock(player, LIGHT_BLOCK * enemies);
                 break;
             case CALM_OF_THE_DEPTHS:
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, LIGHT_BLOCK));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player,
-                        new DexterityPower(player, STAT_BUFF_STACK), STAT_BUFF_STACK));
+                doGainBlock(player, LIGHT_BLOCK);
+                doSingleTargetPower(player, player, new DexterityPower(this.target, STAT_BUFF_STACK), STAT_BUFF_STACK);
                 break;
             case TBD_1:
                 // TODO
                 break;
             case HARDENING_SOLUTION:
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, HEAVY_BLOCK));
+                doGainBlock(player, HEAVY_BLOCK);
                 break;
             case CETACEAN_WRATH:
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, LIGHT_BLOCK));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player,
-                        new ThornsPower(player, THORNS_STACK), THORNS_STACK));
+                doGainBlock(player, LIGHT_BLOCK);
+                doSingleTargetPower(player, player, new ThornsPower(this.target, THORNS_STACK), THORNS_STACK);
                 break;
             case DEMONS_EMBRACE:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, player,
-                        new WeakPower(this.target, HEAVY_DEBUFF_STACK, false), HEAVY_DEBUFF_STACK));
+                doSingleTargetPower(player, new WeakPower(this.target, HEAVY_DEBUFF_STACK, false), HEAVY_DEBUFF_STACK);
                 break;
             case DEVILS_TOUCH:
-                for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player,
-                            new WeakPower(this.target, LIGHT_DEBUFF_STACK, false), LIGHT_DEBUFF_STACK));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player,
-                            new VulnerablePower(this.target, LIGHT_DEBUFF_STACK, false), LIGHT_DEBUFF_STACK));
-                }
+                doMultiTargetPower(player, new ImbalancePower(player, LIGHT_DEBUFF_STACK), LIGHT_DEBUFF_STACK);
                 break;
             case FIENDS_CARESS:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, player,
-                        new VulnerablePower(this.target, HEAVY_DEBUFF_STACK, false), HEAVY_DEBUFF_STACK));
+                doSingleTargetPower(player, new VulnerablePower(this.target, HEAVY_DEBUFF_STACK, false), HEAVY_DEBUFF_STACK);
                 break;
             case TBD_2:
                 // TODO
@@ -196,5 +168,63 @@ public class MixAction extends AbstractGameAction {
         }
 
         this.isDone = true;
+    }
+
+    private void doSingleTargetDamage(AbstractPlayer source, int amount) {
+        doSingleTargetDamage(source, this.target, amount);
+    }
+
+    private void doSingleTargetDamage(AbstractPlayer source, AbstractCreature target, int amount) {
+        log.info("Doing " + amount + " single target damage to " + target.name + " with type=" + TheChemist.Enums.MIX);
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
+                new DamageInfo(source, amount, TheChemist.Enums.MIX), AttackEffect.FIRE));
+    }
+
+    private void doSingleTargetVampireDamage(AbstractPlayer source, int amount) {
+        log.info("Doing " + amount + " single target damage to " + target.name + " with type=" + TheChemist.Enums.MIX);
+        AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target,
+                new DamageInfo(source, amount, TheChemist.Enums.MIX), AttackEffect.FIRE));
+    }
+
+    private void doMultiTargetDamage(AbstractPlayer source, int amount) {
+        log.info("Doing " + amount + " multi target damage with type=" + TheChemist.Enums.MIX);
+        int[] amounts = new int[AbstractDungeon.getMonsters().monsters.size()];
+        Arrays.fill(amounts, amount);
+        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(source, amounts, TheChemist.Enums.MIX,
+                AttackEffect.FIRE));
+    }
+
+    private void doGainBlock(AbstractPlayer source, int amount) {
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(source, source, amount));
+    }
+
+    private void doSingleTargetPower(AbstractPlayer source, AbstractPower power, int stackAmount) {
+        doSingleTargetPower(source, this.target, power, stackAmount);
+    }
+
+    private void doSingleTargetPower(AbstractPlayer source, AbstractCreature target, AbstractPower power, int stackAmount) {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, power, stackAmount));
+    }
+
+    private void doMultiTargetPower(AbstractPlayer source, AbstractPower power, int stackAmount) {
+        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            doSingleTargetPower(source, monster, power, stackAmount);
+        }
+    }
+
+    private void doClearDebuffs(AbstractPlayer source) {
+        AbstractDungeon.actionManager.addToBottom(new RemoveDebuffsAction(source));
+    }
+
+    private void doHeal(AbstractPlayer source, int amount) {
+        AbstractDungeon.actionManager.addToBottom(new HealAction(source, source, amount));
+    }
+
+    private void doGainEnergy(int amount) {
+        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(amount));
+    }
+
+    private void doDraw(AbstractPlayer source, int amount) {
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(source, amount, false));
     }
 }
