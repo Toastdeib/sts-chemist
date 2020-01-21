@@ -1,4 +1,10 @@
 {
+  "theChemist:AlchemicalProwessPower": {
+    "NAME": "Alchemical Prowess",
+    "DESCRIPTIONS": [
+      "#yMix effects have #b50% increased potency."
+    ]
+  },
   "theChemist:ImbalancePower": {
     "NAME": "Imbalance",
     "DESCRIPTIONS": [

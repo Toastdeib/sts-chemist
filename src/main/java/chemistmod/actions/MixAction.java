@@ -1,6 +1,7 @@
 package chemistmod.actions;
 
 import chemistmod.characters.TheChemist;
+import chemistmod.powers.AlchemicalProwessPower;
 import chemistmod.powers.ImbalancePower;
 import chemistmod.reagents.MixResultEnum;
 import chemistmod.reagents.ReagentEnum;
@@ -64,12 +65,12 @@ public class MixAction extends AbstractGameAction {
                 doHeal(player, POTION_HEAL);
                 break;
             case MEGA_ETHER:
-                doGainEnergy(ETHER_ENERGY);
+                doGainEnergy(player, ETHER_ENERGY);
                 break;
             case HALF_ELIXIR:
                 doGainBlock(player, ELIXIR_BLOCK);
                 doHeal(player, ELIXIR_HEAL);
-                doGainEnergy(ELIXIR_ENERGY);
+                doGainEnergy(player, ELIXIR_ENERGY);
                 break;
             case RESURRECTION:
                 // TODO
@@ -117,11 +118,11 @@ public class MixAction extends AbstractGameAction {
                 doSingleTargetDamage(player, HEAVY_DAMAGE);
                 break;
             case CARAPACE_COCKTAIL:
-                doSingleTargetPower(player, player, new PlatedArmorPower(this.target, PLATED_ARMOR_STACK), PLATED_ARMOR_STACK);
+                doSingleTargetPower(player, player, new PlatedArmorPower(player, PLATED_ARMOR_STACK), PLATED_ARMOR_STACK);
                 break;
             case OCEANS_FURY:
                 doGainBlock(player, LIGHT_BLOCK);
-                doSingleTargetPower(player, player, new StrengthPower(this.target, STAT_BUFF_STACK), STAT_BUFF_STACK);
+                doSingleTargetPower(player, player, new StrengthPower(player, STAT_BUFF_STACK), STAT_BUFF_STACK);
                 break;
             case STORMS_EYE:
                 int enemies = 0;
@@ -135,7 +136,7 @@ public class MixAction extends AbstractGameAction {
                 break;
             case CALM_OF_THE_DEPTHS:
                 doGainBlock(player, LIGHT_BLOCK);
-                doSingleTargetPower(player, player, new DexterityPower(this.target, STAT_BUFF_STACK), STAT_BUFF_STACK);
+                doSingleTargetPower(player, player, new DexterityPower(player, STAT_BUFF_STACK), STAT_BUFF_STACK);
                 break;
             case TBD_1:
                 // TODO
@@ -145,7 +146,7 @@ public class MixAction extends AbstractGameAction {
                 break;
             case CETACEAN_WRATH:
                 doGainBlock(player, LIGHT_BLOCK);
-                doSingleTargetPower(player, player, new ThornsPower(this.target, THORNS_STACK), THORNS_STACK);
+                doSingleTargetPower(player, player, new ThornsPower(player, THORNS_STACK), THORNS_STACK);
                 break;
             case DEMONS_EMBRACE:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
@@ -166,12 +167,22 @@ public class MixAction extends AbstractGameAction {
         this.isDone = true;
     }
 
-    private int modifyDamage(AbstractCreature target, int amount) {
-        if (target.hasPower(ImbalancePower.POWER_ID)) {
-            return (int)(amount * ImbalancePower.getModifier());
+    private int modifyAmount(AbstractPlayer source, int amount) {
+        return modifyAmount(source, null, amount);
+    }
+
+    private int modifyAmount(AbstractPlayer source, AbstractCreature target, int amount) {
+        float finalAmount = amount;
+
+        if (source.hasPower(AlchemicalProwessPower.POWER_ID)) {
+            finalAmount *= AlchemicalProwessPower.MODIFIER;
         }
 
-        return amount;
+        if (target != null && target.hasPower(ImbalancePower.POWER_ID)) {
+            finalAmount *= ImbalancePower.getModifier();
+        }
+
+        return (int)finalAmount;
     }
 
     private void doSingleTargetDamage(AbstractPlayer source, int amount) {
@@ -180,19 +191,19 @@ public class MixAction extends AbstractGameAction {
 
     private void doSingleTargetDamage(AbstractPlayer source, AbstractCreature target, int amount) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
-                new DamageInfo(source, modifyDamage(target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
+                new DamageInfo(source, modifyAmount(source, target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
     }
 
     private void doSingleTargetVampireDamage(AbstractPlayer source, int amount) {
         AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target,
-                new DamageInfo(source, modifyDamage(this.target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
+                new DamageInfo(source, modifyAmount(source, this.target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
     }
 
     private void doMultiTargetDamage(AbstractPlayer source, int amount) {
         ArrayList<AbstractMonster> monsters = AbstractDungeon.getMonsters().monsters;
         int[] amounts = new int[monsters.size()];
         for (int i = 0; i < amounts.length; i++) {
-            amounts[i] = modifyDamage(monsters.get(i), amount);
+            amounts[i] = modifyAmount(source, monsters.get(i), amount);
         }
 
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(source, amounts, TheChemist.Enums.MIX,
@@ -200,20 +211,21 @@ public class MixAction extends AbstractGameAction {
     }
 
     private void doGainBlock(AbstractPlayer source, int amount) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(source, source, amount));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(source, source, modifyAmount(source, amount)));
     }
 
     private void doSingleTargetPower(AbstractPlayer source, AbstractPower power, int stackAmount) {
-        doSingleTargetPower(source, this.target, power, stackAmount);
+        doSingleTargetPower(source, this.target, power, modifyAmount(source, stackAmount));
     }
 
     private void doSingleTargetPower(AbstractPlayer source, AbstractCreature target, AbstractPower power, int stackAmount) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, power, stackAmount));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, power, modifyAmount(source, stackAmount)));
     }
 
     private void doMultiTargetPower(AbstractPlayer source, AbstractPower power, int stackAmount) {
+        int modifiedAmount = modifyAmount(source, stackAmount);
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            doSingleTargetPower(source, monster, power, stackAmount);
+            doSingleTargetPower(source, monster, power, modifiedAmount);
         }
     }
 
@@ -222,14 +234,14 @@ public class MixAction extends AbstractGameAction {
     }
 
     private void doHeal(AbstractPlayer source, int amount) {
-        AbstractDungeon.actionManager.addToBottom(new HealAction(source, source, amount));
+        AbstractDungeon.actionManager.addToBottom(new HealAction(source, source, modifyAmount(source, amount)));
     }
 
-    private void doGainEnergy(int amount) {
-        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(amount));
+    private void doGainEnergy(AbstractPlayer source, int amount) {
+        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(modifyAmount(source, amount)));
     }
 
     private void doDraw(AbstractPlayer source, int amount) {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(source, amount, false));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(source, modifyAmount(source, amount), false));
     }
 }

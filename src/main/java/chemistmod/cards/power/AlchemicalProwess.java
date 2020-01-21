@@ -3,6 +3,8 @@ package chemistmod.cards.power;
 import chemistmod.ChemistMod;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
+import chemistmod.powers.AlchemicalProwessPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -30,6 +32,6 @@ public class AlchemicalProwess extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // TODO - Apply the Alchemical Prowess buff
+        addToBottom(new ApplyPowerAction(player, player, new AlchemicalProwessPower(player)));
     }
 }
