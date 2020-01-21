@@ -1,0 +1,188 @@
+{
+  "theChemist:ANTIDOTE": {
+    "NAME": "Antidote"
+  },
+  "theChemist:CALM_OF_THE_DEPTHS": {
+    "NAME": "Calm of the Depths",
+    "DESCRIPTIONS": [
+      "Gain #b4 #yBlock. Gain #b1 #yDexterity."
+    ]
+  },
+  "theChemist:CARAPACE_COCKTAIL": {
+    "NAME": "Carapace Cocktail",
+    "DESCRIPTIONS": [
+      "Gain #b4 #yPlated #yArmor."
+    ]
+  },
+  "theChemist:CETACEAN_WRATH": {
+    "NAME": "Cetacean Wrath",
+    "DESCRIPTIONS": [
+      "Gain #b4 #yBlock. Gain #b2 #yThorns."
+    ]
+  },
+  "theChemist:DARK_MATTER": {
+    "NAME": "Dark Matter"
+  },
+  "theChemist:DEMONS_EMBRACE": {
+    "NAME": "Demon's Embrace",
+    "DESCRIPTIONS": [
+      "Inflict #b3 #yWeak on a random enemy."
+    ]
+  },
+  "theChemist:DEVILS_TOUCH": {
+    "NAME": "Devil's Touch",
+    "DESCRIPTIONS": [
+      "Inflict #b1 #yWeak and #b1 #yVulnerable on ALL enemies."
+    ]
+  },
+  "theChemist:DRAGONS_BITE": {
+    "NAME": "Dragon's Bite",
+    "DESCRIPTIONS": [
+      "Deal #b5 damage and inflict #b1 #yWeak on a random enemy."
+    ]
+  },
+  "theChemist:DRAGONS_BREATH": {
+    "NAME": "Dragon's Breath",
+    "DESCRIPTIONS": [
+      "Deal #b5 damage on ALL enemies."
+    ]
+  },
+  "theChemist:DRAGONS_CLAW": {
+    "NAME": "Dragon's Claw",
+    "DESCRIPTIONS": [
+      "Deal #b5 damage and inflict #b1 #yVulnerable on a random enemy."
+    ]
+  },
+  "theChemist:DRAGONS_CURSE": {
+    "NAME": "Dragon's Curse",
+    "DESCRIPTIONS": [
+      "Deal #b5 damage and inflict #b1 #yImbalance on a random enemy."
+    ]
+  },
+  "theChemist:DRAGON_FANG": {
+    "NAME": "Dragon Fang"
+  },
+  "theChemist:DRAGONS_FEAST": {
+    "NAME": "Dragon's Feast",
+    "DESCRIPTIONS": [
+      "Deal #b5 damage to a random enemy. Gain life equal to unblocked damage dealt."
+    ]
+  },
+  "theChemist:DRAGONS_GLARE": {
+    "NAME": "Dragon's Glare",
+    "DESCRIPTIONS": [
+      "Deal #b5 damage to a random enemy. Draw #b1 card."
+    ]
+  },
+  "theChemist:DRAGONS_RAGE": {
+    "NAME": "Dragon's Rage",
+    "DESCRIPTIONS": [
+      "Deal #b10 damage to a random enemy."
+    ]
+  },
+  "theChemist:DRAGONS_SCALES": {
+    "NAME": "Dragon's Scales",
+    "DESCRIPTIONS": [
+      "Gain #b4 #yBlock. Deal #b5 damage to a random enemy."
+    ]
+  },
+  "theChemist:DUD": {
+    "NAME": "Dud",
+    "DESCRIPTIONS": [
+      "Deal #b3 damage to ALL enemies. Deal #b3 damage to yourself."
+    ]
+  },
+  "theChemist:EYEDROP": {
+    "NAME": "Eyedrop"
+  },
+  "theChemist:FIENDS_CARESS": {
+    "NAME": "Fiend's Caress",
+    "DESCRIPTIONS": [
+      "Inflict #b3 #yVulnerable on a random enemy."
+    ]
+  },
+  "theChemist:HALF_ELIXIR": {
+    "NAME": "Half Elixir",
+    "DESCRIPTIONS": [
+      "Heal #b2 HP. Gain #b2 #yBlock. Gain #b1 energy."
+    ]
+  },
+  "theChemist:HARDENING_SOLUTION": {
+    "NAME": "Hardening Solution",
+    "DESCRIPTIONS": [
+      "Gain #b8 #yBlock."
+    ]
+  },
+  "theChemist:HI_ETHER": {
+    "NAME": "Hi-Ether"
+  },
+  "theChemist:HI_POTION": {
+    "NAME": "Hi-Potion"
+  },
+  "theChemist:HOLY_WATER": {
+    "NAME": "Holy Water"
+  },
+  "theChemist:MAIDENS_KISS": {
+    "NAME": "Maiden's Kiss"
+  },
+  "theChemist:MEGA_ETHER": {
+    "NAME": "Mega-Ether",
+    "DESCRIPTIONS": [
+      "Gain #b3 energy."
+    ]
+  },
+  "theChemist:MEGA_POTION": {
+    "NAME": "Mega-Potion",
+    "DESCRIPTIONS": [
+      "Heal #b3 HP. Gain #b3 #yBlock."
+    ]
+  },
+  "theChemist:OCEANS_FURY": {
+    "NAME": "Ocean's Fury",
+    "DESCRIPTIONS": [
+      "Gain #b4 #yBlock and #b1 #yStrength."
+    ]
+  },
+  "theChemist:PANACEA": {
+    "NAME": "Panacea",
+    "DESCRIPTIONS": [
+      "Remove all of your debuffs."
+    ]
+  },
+  "theChemist:PHOENIX_DOWN": {
+    "NAME": "Phoenix Down"
+  },
+  "theChemist:PHOENIX_FIRE": {
+    "NAME": "Phoenix Fire",
+    "DESCRIPTIONS": [
+      "Gain the #yPhoenix #yFire buff."
+    ]
+  },
+  "theChemist:RESURRECTION": {
+    "NAME": "Resurrection",
+    "DESCRIPTIONS": [
+      "Return all #yExhausted playable cards to the draw pile."
+    ]
+  },
+  "theChemist:STORMS_EYE": {
+    "NAME": "Storm's Eye",
+    "DESCRIPTIONS": [
+      "Gain #b4 #yBlock for each enemy in combat."
+    ]
+  },
+  "theChemist:TURTLE_SHELL": {
+    "NAME": "Turtle Shell"
+  },
+  "theChemist:TBD_1": {
+    "NAME": "TBD 1",
+    "DESCRIPTIONS": [
+      "Coming soon (TM)."
+    ]
+  },
+  "theChemist:TBD_2": {
+    "NAME": "TBD 2",
+    "DESCRIPTIONS": [
+      "Coming soon (TM)."
+    ]
+  }
+}

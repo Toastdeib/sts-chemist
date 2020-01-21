@@ -9,6 +9,7 @@ import chemistmod.cards.skill.ChemDefend;
 import chemistmod.cards.skill.DarkMatter;
 import chemistmod.cards.skill.Mix;
 import chemistmod.cards.skill.TurtleShell;
+import chemistmod.powers.StockpilePower;
 import chemistmod.reagents.ReagentEnum;
 import chemistmod.relics.DragonsGift;
 import com.badlogic.gdx.graphics.Color;
@@ -27,6 +28,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -59,7 +61,7 @@ public class TheChemist extends CustomPlayer {
     public int stockpileCapacity;
 
     public TheChemist(String name) {
-        super(name, Enums.CHEMIST, null, null, (String) null, null);
+        super(name, Enums.CHEMIST, null, null, (String)null, null);
 
         initializeClass(null, ChemistMod.CHARACTER_SHOULDER_2_PATH, ChemistMod.CHARACTER_SHOULDER_PATH,
                 ChemistMod.CHARACTER_CORPSE_PATH, getLoadout(), 20.0f, -10.0f, 220.0f, 290.0f, new EnergyManager(ENERGY_PER_TURN));
@@ -200,6 +202,7 @@ public class TheChemist extends CustomPlayer {
         }
 
         this.stockpile.add(reagent);
+        updateStockpile();
     }
 
     public int stockpileCount() {
@@ -208,11 +211,29 @@ public class TheChemist extends CustomPlayer {
 
     public ReagentEnum popReagent() {
         // NOTE: This expects the calling code to have verified that stockpileCount() > 0 and will crash if it isn't.
-        return this.stockpile.remove(0);
+        ReagentEnum reagent = this.stockpile.remove(0);
+        updateStockpile();
+        return reagent;
+    }
+
+    public ReagentEnum getReagent(int index) {
+        // NOTE: This expects the calling code to have verified that the index is valid and will crash if it isn't.
+        return this.stockpile.get(index);
     }
 
     public void emptyStockpile() {
         this.stockpile.clear();
+        updateStockpile();
+    }
+
+    private void updateStockpile() {
+        AbstractPower power = this.getPower(StockpilePower.POWER_ID);
+        if (power == null) {
+            return;
+        }
+
+        power.amount = stockpileCount();
+        power.updateDescription();
     }
 
     public String getMixThoughtText() {

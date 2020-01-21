@@ -21,5 +21,24 @@
       " turn.",
       " turns."
     ]
+  },
+  "theChemist:StockpilePower": {
+    "NAME": "Stockpile",
+    "DESCRIPTIONS": [
+      "Current #yReagents:",
+      " NL 1. ",
+      " NL 2. ",
+      " NL 3. ",
+      " NL 4. ",
+      " NL 5. ",
+      " NL 6. ",
+      " NL 7. ",
+      " NL 8. ",
+      " NL 9. ",
+      " NL 10. ",
+      " NL Mixing now will produce the ",
+      " effect.",
+      "Your stockpile is empty."
+    ]
   }
 }

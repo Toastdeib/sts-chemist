@@ -9,6 +9,7 @@ import chemistmod.cards.power.BeltPouch;
 import chemistmod.cards.power.ExpandedBags;
 import chemistmod.cards.skill.*;
 import chemistmod.characters.TheChemist;
+import chemistmod.powers.StockpilePower;
 import chemistmod.relics.DragonsGift;
 import chemistmod.relics.TaintedFlask;
 import chemistmod.util.Keyword;
@@ -17,6 +18,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -59,6 +61,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
     private static final String POWER_STRINGS_PATH = BASE_STRINGS_PATH + "PowerStrings.json";
     private static final String RELIC_STRINGS_PATH = BASE_STRINGS_PATH + "RelicStrings.json";
     private static final String CHARACTER_STRINGS_PATH = BASE_STRINGS_PATH + "CharacterStrings.json";
+    private static final String ENUM_STRINGS_PATH = BASE_STRINGS_PATH + "EnumStrings.json";
     private static final String KEYWORD_STRINGS_PATH = BASE_STRINGS_PATH + "KeywordStrings.json";
 
     public static final String CHARACTER_CORPSE_PATH = BASE_IMAGE_PATH + "character/corpse.png";
@@ -144,6 +147,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
     public void receiveEditStrings() {
         BaseMod.loadCustomStringsFile(CardStrings.class, CARD_STRINGS_PATH);
         BaseMod.loadCustomStringsFile(PowerStrings.class, POWER_STRINGS_PATH);
+        BaseMod.loadCustomStringsFile(PowerStrings.class, ENUM_STRINGS_PATH); // Not technically powers but close enough to work
         BaseMod.loadCustomStringsFile(RelicStrings.class, RELIC_STRINGS_PATH);
         BaseMod.loadCustomStringsFile(CharacterStrings.class, CHARACTER_STRINGS_PATH);
     }
@@ -163,7 +167,9 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         if (AbstractDungeon.player instanceof TheChemist) {
-            TheChemist player = (TheChemist) AbstractDungeon.player;
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                    new StockpilePower(AbstractDungeon.player)));
+            TheChemist player = (TheChemist)AbstractDungeon.player;
             player.emptyStockpile();
             player.stockpileCapacity = player.baseStockpileCapacity;
         }
