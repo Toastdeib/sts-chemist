@@ -40,8 +40,8 @@ public class ChickenKnife extends BaseChemistCard {
     public void use(AbstractPlayer player, AbstractMonster monster) {
         if (player.currentHealth < (player.maxHealth / 10) && canEscape()) {
             // Below 10% HP in an escapable battle, flee instead of attacking
-            // TODO - Verify this actually works
             escape(player);
+            return;
         }
 
         addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
