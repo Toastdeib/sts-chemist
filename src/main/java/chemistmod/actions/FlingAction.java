@@ -5,7 +5,6 @@ import chemistmod.powers.MarkedPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
@@ -26,10 +25,10 @@ public class FlingAction extends AbstractGameAction {
         //  Extend stockpile/fling functionality outside of The Chemist
         //  Account for modifiers to Fling damage (e.g. STR and the boss relic once I implement that)
         try {
-            TheChemist player = (TheChemist) AbstractDungeon.player;
+            TheChemist player = (TheChemist)AbstractDungeon.player;
             pickTarget();
             AbstractDungeon.actionManager.addToTop(new DamageAction(this.target,
-                    new DamageInfo(player, BASE_FLING_DAMAGE, DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_LIGHT));
+                    new DamageInfo(player, BASE_FLING_DAMAGE, DamageInfo.DamageType.THORNS), AttackEffect.BLUNT_LIGHT));
         } catch (ClassCastException ex) {
             log.warn("Unable to fling; current player isn't a Chemist");
         } finally {
