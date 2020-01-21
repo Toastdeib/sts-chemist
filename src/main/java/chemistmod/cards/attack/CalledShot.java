@@ -51,12 +51,12 @@ public class CalledShot extends BaseChemistCard {
             }
         }
 
-        addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
+        addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (marked != null && marked != monster) {
             // Marked applied to someone else, cleanse it
-            addToBottom(new RemoveSpecificPowerAction(marked, player, MarkedPower.POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(marked, player, MarkedPower.POWER_ID));
         }
-        addToBottom(new ApplyPowerAction(monster, player, new MarkedPower(monster, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(monster, player, new MarkedPower(monster, this.magicNumber), this.magicNumber));
     }
 }

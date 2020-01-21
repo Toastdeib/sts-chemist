@@ -35,7 +35,7 @@ public class MaidensKiss extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new GainBlockAction(player, player, this.block));
-        addToBottom(new StockpileAction(ReagentEnum.MAIDENS_KISS));
+        addToBot(new GainBlockAction(player, player, this.block));
+        addToBot(new StockpileAction(ReagentEnum.MAIDENS_KISS));
     }
 }

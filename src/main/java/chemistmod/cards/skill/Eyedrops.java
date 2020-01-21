@@ -37,7 +37,7 @@ public class Eyedrops extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new DrawCardAction(player, this.magicNumber, false));
-        addToBottom(new StockpileAction(ReagentEnum.EYEDROP));
+        addToBot(new DrawCardAction(player, this.magicNumber, false));
+        addToBot(new StockpileAction(ReagentEnum.EYEDROP));
     }
 }

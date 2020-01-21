@@ -38,9 +38,9 @@ public class DizzyingFumes extends BaseChemistCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBottom(new ApplyPowerAction(m, player, new ImbalancePower(m, this.magicNumber), this.magicNumber));
+            addToBot(new ApplyPowerAction(m, player, new ImbalancePower(m, this.magicNumber), this.magicNumber));
         }
 
-        addToBottom(new MakeTempCardInDiscardAction(new Dazed(), 1));
+        addToBot(new MakeTempCardInDiscardAction(new Dazed(), 1));
     }
 }

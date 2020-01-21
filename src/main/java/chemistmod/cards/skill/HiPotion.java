@@ -38,8 +38,8 @@ public class HiPotion extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new GainBlockAction(player, player, this.block));
-        addToBottom(new HealAction(player, player, this.magicNumber));
-        addToBottom(new StockpileAction(ReagentEnum.HI_POTION));
+        addToBot(new GainBlockAction(player, player, this.block));
+        addToBot(new HealAction(player, player, this.magicNumber));
+        addToBot(new StockpileAction(ReagentEnum.HI_POTION));
     }
 }

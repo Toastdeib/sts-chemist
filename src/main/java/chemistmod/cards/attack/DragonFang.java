@@ -37,8 +37,8 @@ public class DragonFang extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
+        addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        addToBottom(new StockpileAction(ReagentEnum.DRAGON_FANG));
+        addToBot(new StockpileAction(ReagentEnum.DRAGON_FANG));
     }
 }

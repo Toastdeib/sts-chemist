@@ -39,10 +39,10 @@ public class DarkMatter extends BaseChemistCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            addToBottom(new ApplyPowerAction(m, player, new WeakPower(m, this.magicNumber, false), this.magicNumber));
-            addToBottom(new ApplyPowerAction(m, player, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
+            addToBot(new ApplyPowerAction(m, player, new WeakPower(m, this.magicNumber, false), this.magicNumber));
+            addToBot(new ApplyPowerAction(m, player, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
         }
 
-        addToBottom(new StockpileAction(ReagentEnum.DARK_MATTER));
+        addToBot(new StockpileAction(ReagentEnum.DARK_MATTER));
     }
 }

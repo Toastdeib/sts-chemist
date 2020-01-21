@@ -41,8 +41,8 @@ public class MageMasher extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
+        addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBottom(new ApplyPowerAction(monster, player, new ImbalancePower(monster, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(monster, player, new ImbalancePower(monster, this.magicNumber), this.magicNumber));
     }
 }

@@ -32,6 +32,6 @@ public class Prowess extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new ApplyPowerAction(player, player, new ProwessPower(player)));
+        addToBot(new ApplyPowerAction(player, player, new ProwessPower(player)));
     }
 }

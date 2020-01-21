@@ -35,6 +35,6 @@ public class ChemDefend extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new GainBlockAction(player, player, this.block));
+        addToBot(new GainBlockAction(player, player, this.block));
     }
 }

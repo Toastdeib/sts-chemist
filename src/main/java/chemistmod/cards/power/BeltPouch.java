@@ -34,6 +34,6 @@ public class BeltPouch extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new ApplyPowerAction(player, player, new RetainCardPower(player, this.magicNumber)));
+        addToBot(new ApplyPowerAction(player, player, new RetainCardPower(player, this.magicNumber)));
     }
 }

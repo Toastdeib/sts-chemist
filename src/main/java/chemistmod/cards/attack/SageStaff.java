@@ -46,13 +46,13 @@ public class SageStaff extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
+        addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 
     @Override
     public void triggerOnExhaust() {
-        addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.block));
-        addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, this.magicNumber));
+        addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.block));
+        addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, this.magicNumber));
     }
 }

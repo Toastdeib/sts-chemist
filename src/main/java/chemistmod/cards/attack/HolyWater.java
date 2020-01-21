@@ -40,8 +40,8 @@ public class HolyWater extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new DamageAllEnemiesAction(player, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
-        addToBottom(new ExhaustAction(player, player, 1, !this.upgraded));
-        addToBottom(new StockpileAction(ReagentEnum.HOLY_WATER));
+        addToBot(new DamageAllEnemiesAction(player, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new ExhaustAction(player, player, 1, !this.upgraded));
+        addToBot(new StockpileAction(ReagentEnum.HOLY_WATER));
     }
 }

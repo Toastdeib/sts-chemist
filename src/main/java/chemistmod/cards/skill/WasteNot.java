@@ -50,8 +50,8 @@ public class WasteNot extends BaseChemistCard {
 
         ReagentEnum first = chemist.popReagent();
         ReagentEnum second = chemist.popReagent();
-        addToBottom(new MixAction(first, second));
-        addToBottom(new StockpileAction(first));
-        addToBottom(new StockpileAction(second));
+        addToBot(new MixAction(first, second));
+        addToBot(new StockpileAction(first));
+        addToBot(new StockpileAction(second));
     }
 }

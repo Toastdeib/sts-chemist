@@ -45,6 +45,6 @@ public class Mix extends BaseChemistCard {
             return;
         }
 
-        addToBottom(new MixAction(chemist.popReagent(), chemist.popReagent()));
+        addToBot(new MixAction(chemist.popReagent(), chemist.popReagent()));
     }
 }

@@ -44,8 +44,8 @@ public class Elixir extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new GainBlockAction(player, player, this.block));
-        addToBottom(new HealAction(player, player, this.magicNumber));
-        addToBottom(new GainEnergyAction(this.upgraded ? UPGRADE_ENERGY : BASE_ENERGY));
+        addToBot(new GainBlockAction(player, player, this.block));
+        addToBot(new HealAction(player, player, this.magicNumber));
+        addToBot(new GainEnergyAction(this.upgraded ? UPGRADE_ENERGY : BASE_ENERGY));
     }
 }

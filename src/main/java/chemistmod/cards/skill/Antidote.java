@@ -35,7 +35,7 @@ public class Antidote extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new GainBlockAction(player, player, this.block));
-        addToBottom(new StockpileAction(ReagentEnum.ANTIDOTE));
+        addToBot(new GainBlockAction(player, player, this.block));
+        addToBot(new StockpileAction(ReagentEnum.ANTIDOTE));
     }
 }

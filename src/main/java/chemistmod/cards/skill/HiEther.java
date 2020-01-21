@@ -35,7 +35,7 @@ public class HiEther extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new GainEnergyAction(BASE_ENERGY));
-        addToBottom(new StockpileAction(ReagentEnum.HI_ETHER));
+        addToBot(new GainEnergyAction(BASE_ENERGY));
+        addToBot(new StockpileAction(ReagentEnum.HI_ETHER));
     }
 }
