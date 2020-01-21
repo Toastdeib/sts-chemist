@@ -34,7 +34,6 @@ public class BeltPouch extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // TODO - Apply the Alchemical Prowess buff
         addToBottom(new ApplyPowerAction(player, player, new RetainCardPower(player, this.magicNumber)));
     }
 }

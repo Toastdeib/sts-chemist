@@ -214,4 +214,12 @@ public class TheChemist extends CustomPlayer {
     public void emptyStockpile() {
         this.stockpile.clear();
     }
+
+    public String getMixThoughtText() {
+        return CHARACTER_STRINGS.TEXT[3];
+    }
+
+    public String getFlingThoughtText() {
+        return CHARACTER_STRINGS.TEXT[4];
+    }
 }

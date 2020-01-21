@@ -8,8 +8,10 @@ import chemistmod.characters.TheChemist;
 import chemistmod.reagents.ReagentEnum;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 public class WasteNot extends BaseChemistCard {
     public static final String CARD_ID = ChemistMod.makeId("WasteNot");
@@ -41,7 +43,8 @@ public class WasteNot extends BaseChemistCard {
 
         TheChemist chemist = (TheChemist)player;
         if (chemist.stockpileCount() < 2) {
-            // TODO - Thought bubble
+            AbstractDungeon.effectList.add(new ThoughtBubble(player.dialogX, player.dialogY, 3.0f,
+                    chemist.getMixThoughtText(), true));
             return;
         }
 
