@@ -10,4 +10,9 @@ public class TaintedFlask extends CustomRelic {
     public TaintedFlask() {
         super(RELIC_ID, new Texture(ChemistMod.getRelicImagePath(RELIC_ID)), RelicTier.UNCOMMON, LandingSound.CLINK);
     }
+
+    @Override
+    public String getUpdatedDescription() {
+        return this.DESCRIPTIONS[0];
+    }
 }

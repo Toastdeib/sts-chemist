@@ -21,7 +21,7 @@ public class DragonsGift extends CustomRelic {
     }
 
     @Override
-    public void onEquip() {
-
+    public String getUpdatedDescription() {
+        return this.DESCRIPTIONS[0];
     }
 }
