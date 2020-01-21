@@ -1,4 +1,11 @@
 {
+  "theChemist:GoliathTonicPower": {
+    "NAME": "Goliath Tonic",
+    "DESCRIPTIONS": [
+      "At the end of combat, lose #b",
+      " maximum HP."
+    ]
+  },
   "theChemist:ImbalancePower": {
     "NAME": "Imbalance",
     "DESCRIPTIONS": [

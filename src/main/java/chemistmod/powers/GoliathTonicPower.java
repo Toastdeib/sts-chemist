@@ -5,21 +5,20 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class ProwessPower extends AbstractPower {
-    public static final String POWER_ID = ChemistMod.makeId("ProwessPower");
+public class GoliathTonicPower extends AbstractPower {
+    public static final String POWER_ID = ChemistMod.makeId("GoliathTonicPower");
     private static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
-    public static final float MODIFIER = 1.5f;
-
-    public ProwessPower(AbstractCreature owner) {
+    public GoliathTonicPower(AbstractCreature owner, int amount) {
         this.name = POWER_STRINGS.NAME;
         this.ID = POWER_ID;
 
         this.owner = owner;
-        this.amount = 0;
+        this.amount = amount;
 
         this.type = PowerType.BUFF;
         this.canGoNegative = false;
@@ -33,6 +32,11 @@ public class ProwessPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = POWER_STRINGS.DESCRIPTIONS[0];
+        this.description = POWER_STRINGS.DESCRIPTIONS[0] + this.amount + POWER_STRINGS.DESCRIPTIONS[1];
+    }
+
+    @Override
+    public void onVictory() {
+        AbstractDungeon.player.decreaseMaxHealth(this.amount);
     }
 }

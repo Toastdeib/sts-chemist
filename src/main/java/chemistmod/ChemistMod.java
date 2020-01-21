@@ -6,6 +6,7 @@ import basemod.interfaces.*;
 import chemistmod.cards.attack.*;
 import chemistmod.cards.power.BeltPouch;
 import chemistmod.cards.power.ExpandedBags;
+import chemistmod.cards.power.GoliathTonic;
 import chemistmod.cards.power.Prowess;
 import chemistmod.cards.skill.*;
 import chemistmod.characters.TheChemist;
@@ -126,6 +127,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new Elixir());
         BaseMod.addCard(new ExpandedBags());
         BaseMod.addCard(new Eyedrops());
+        BaseMod.addCard(new GoliathTonic());
         BaseMod.addCard(new HiEther());
         BaseMod.addCard(new HiPotion());
         BaseMod.addCard(new HolyWater());

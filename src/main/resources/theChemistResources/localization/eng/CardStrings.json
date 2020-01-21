@@ -60,6 +60,10 @@
     "DESCRIPTION": "Draw !M! card. Add 1 Eyedrops Reagent to your stockpile.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. Add 1 Eyedrops Reagent to your stockpile."
   },
+  "theChemist:GoliathTonic": {
+    "NAME": "Goliath Tonic",
+    "DESCRIPTION": "Gain !M! maximum HP this combat."
+  },
   "theChemist:HiEther": {
     "NAME": "Hi-Ether",
     "DESCRIPTION": "Gain !M! energy. Add 1 Hi-Ether Reagent to the stockpile. Exhaust."
