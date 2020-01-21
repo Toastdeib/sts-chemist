@@ -16,13 +16,12 @@ public class HiEther extends BaseChemistCard {
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
     private static final int BASE_COST = 1;
-    private static final int BASE_MAGIC = 2;
+    private static final int BASE_ENERGY = 2;
     private static final int UPGRADE_COST = 0;
 
     public HiEther() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.magicNumber = this.baseMagicNumber = BASE_MAGIC;
         this.exhaust = true;
     }
 
@@ -36,7 +35,7 @@ public class HiEther extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBottom(new GainEnergyAction(this.magicNumber));
+        addToBottom(new GainEnergyAction(BASE_ENERGY));
         addToBottom(new StockpileAction(ReagentEnum.HI_ETHER));
     }
 }

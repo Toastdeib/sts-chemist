@@ -104,7 +104,7 @@
   "theChemist:HALF_ELIXIR": {
     "NAME": "Half Elixir",
     "DESCRIPTIONS": [
-      "Heal #b2 HP. Gain #b2 #yBlock. Gain #b1 energy."
+      "Heal #b2 HP. Gain #b2 #yBlock. Gain [R] [R]."
     ]
   },
   "theChemist:HARDENING_SOLUTION": {
@@ -128,7 +128,7 @@
   "theChemist:MEGA_ETHER": {
     "NAME": "Mega-Ether",
     "DESCRIPTIONS": [
-      "Gain #b3 energy."
+      "Gain [R] [R] [R]."
     ]
   },
   "theChemist:MEGA_POTION": {

@@ -21,14 +21,13 @@ public class Elixir extends BaseChemistCard {
     private static final int BASE_ENERGY = 1;
     private static final int UPGRADE_BLOCK = 2;
     private static final int UPGRADE_HEAL = 2;
-    private static final int UPGRADE_ENERGY = 1;
+    private static final int UPGRADE_ENERGY = 2;
 
     public Elixir() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.RARE, CardTarget.SELF);
         this.block = this.baseBlock = BASE_BLOCK;
-        this.damage = this.baseDamage = BASE_HEAL; // Yes. This is weird. I know. There's no string placeholder for heal.
-        this.magicNumber = this.baseMagicNumber = BASE_ENERGY;
+        this.magicNumber = this.baseMagicNumber = BASE_HEAL;
         this.exhaust = true;
     }
 
@@ -37,15 +36,16 @@ public class Elixir extends BaseChemistCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBlock(UPGRADE_BLOCK);
-            this.upgradeDamage(UPGRADE_HEAL); // Just don't worry about it.
-            this.upgradeMagicNumber(UPGRADE_ENERGY);
+            this.upgradeMagicNumber(UPGRADE_HEAL);
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         addToBottom(new GainBlockAction(player, player, this.block));
-        addToBottom(new HealAction(player, player, this.damage)); // Shh bby is ok.
-        addToBottom(new GainEnergyAction(this.magicNumber));
+        addToBottom(new HealAction(player, player, this.magicNumber));
+        addToBottom(new GainEnergyAction(this.upgraded ? UPGRADE_ENERGY : BASE_ENERGY));
     }
 }

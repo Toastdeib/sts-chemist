@@ -49,7 +49,8 @@
   },
   "theChemist:Elixir": {
     "NAME": "Elixir",
-    "DESCRIPTION": "Gain !B! Block. Heal !D! HP. Gain !M! energy. Exhaust."
+    "DESCRIPTION": "Gain !B! Block. Heal !M! HP. Gain [R]. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Heal !M! HP. Gain [R] [R]. Exhaust."
   },
   "theChemist:ExpandedBags": {
     "NAME": "Expanded Bags",
@@ -66,7 +67,7 @@
   },
   "theChemist:HiEther": {
     "NAME": "Hi-Ether",
-    "DESCRIPTION": "Gain !M! energy. Add 1 Hi-Ether Reagent to the stockpile. Exhaust."
+    "DESCRIPTION": "Gain [R] [R]. Add 1 Hi-Ether Reagent to the stockpile. Exhaust."
   },
   "theChemist:HiPotion": {
     "NAME": "Hi-Potion",
