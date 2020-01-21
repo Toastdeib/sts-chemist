@@ -8,13 +8,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class AlchemicalProwessPower extends AbstractPower {
-    public static final String POWER_ID = ChemistMod.makeId("AlchemicalProwessPower");
+public class ProwessPower extends AbstractPower {
+    public static final String POWER_ID = ChemistMod.makeId("ProwessPower");
     private static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
     public static final float MODIFIER = 1.5f;
 
-    public AlchemicalProwessPower(AbstractCreature owner) {
+    public ProwessPower(AbstractCreature owner) {
         this.name = POWER_STRINGS.NAME;
         this.ID = POWER_ID;
 

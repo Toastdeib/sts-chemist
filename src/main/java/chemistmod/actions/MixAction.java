@@ -1,7 +1,7 @@
 package chemistmod.actions;
 
 import chemistmod.characters.TheChemist;
-import chemistmod.powers.AlchemicalProwessPower;
+import chemistmod.powers.ProwessPower;
 import chemistmod.powers.ImbalancePower;
 import chemistmod.reagents.MixResultEnum;
 import chemistmod.reagents.ReagentEnum;
@@ -174,8 +174,8 @@ public class MixAction extends AbstractGameAction {
     private int modifyAmount(AbstractPlayer source, AbstractCreature target, int amount) {
         float finalAmount = amount;
 
-        if (source.hasPower(AlchemicalProwessPower.POWER_ID)) {
-            finalAmount *= AlchemicalProwessPower.MODIFIER;
+        if (source.hasPower(ProwessPower.POWER_ID)) {
+            finalAmount *= ProwessPower.MODIFIER;
         }
 
         if (target != null && target.hasPower(ImbalancePower.POWER_ID)) {

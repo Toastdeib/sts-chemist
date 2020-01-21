@@ -4,9 +4,9 @@ import basemod.BaseMod;
 import basemod.ModPanel;
 import basemod.interfaces.*;
 import chemistmod.cards.attack.*;
-import chemistmod.cards.power.AlchemicalProwess;
 import chemistmod.cards.power.BeltPouch;
 import chemistmod.cards.power.ExpandedBags;
+import chemistmod.cards.power.Prowess;
 import chemistmod.cards.skill.*;
 import chemistmod.characters.TheChemist;
 import chemistmod.powers.StockpilePower;
@@ -112,7 +112,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
     @Override
     public void receiveEditCards() {
         BaseMod.addCard(new AirKnife());
-        BaseMod.addCard(new AlchemicalProwess());
+        BaseMod.addCard(new Antidote());
         BaseMod.addCard(new BeltPouch());
         BaseMod.addCard(new CalledShot());
         BaseMod.addCard(new ChemDefend());
@@ -130,9 +130,11 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new HiPotion());
         BaseMod.addCard(new HolyWater());
         BaseMod.addCard(new MageMasher());
+        BaseMod.addCard(new MaidensKiss());
         BaseMod.addCard(new MainGauche());
         BaseMod.addCard(new Mix());
         BaseMod.addCard(new Pharmacology());
+        BaseMod.addCard(new Prowess());
         BaseMod.addCard(new TurtleShell());
         BaseMod.addCard(new WasteNot());
     }

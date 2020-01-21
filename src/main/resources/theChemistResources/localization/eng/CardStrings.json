@@ -3,9 +3,9 @@
     "NAME": "Air Knife",
     "DESCRIPTION": "Deal !D! damage twice."
   },
-  "theChemist:AlchemicalProwess": {
-    "NAME": "Alchemical Prowess",
-    "DESCRIPTION": "Increases the potency of Mix effects by 50%."
+  "theChemist:Antidote": {
+    "NAME": "Antidote",
+    "DESCRIPTION": "Gain !B! Block. Add 1 Antidote Reagent to your stockpile."
   },
   "theChemist:BeltPouch": {
     "NAME": "Belt Pouch",
@@ -77,6 +77,10 @@
     "NAME": "Mage Masher",
     "DESCRIPTION": "Deal !D! damage. Apply !M! Imbalance."
   },
+  "theChemist:MaidensKiss": {
+    "NAME": "Maiden's Kiss",
+    "DESCRIPTION": "Gain !B! Block. Add 1 Maiden's Kiss Reagent to your stockpile."
+  },
   "theChemist:MainGauche": {
     "NAME": "Main Gauche",
     "DESCRIPTION": "Gain !B! Block. Deal !D! damage."
@@ -89,6 +93,10 @@
     "NAME": "Pharmacology",
     "DESCRIPTION": "Increase the effect of your next potion by 50%. Exhaust.",
     "UPGRADE_DESCRIPTION": "Increase the effect of your next potion by 50%."
+  },
+  "theChemist:Prowess": {
+    "NAME": "Prowess",
+    "DESCRIPTION": "Increases the potency of Mix effects by 50%."
   },
   "theChemist:TurtleShell": {
     "NAME": "Turtle Shell",
