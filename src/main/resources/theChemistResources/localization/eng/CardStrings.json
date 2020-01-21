@@ -98,6 +98,10 @@
     "NAME": "Morning Star",
     "DESCRIPTION": "Deal !D! damage."
   },
+  "theChemist:Overstock": {
+    "NAME": "Overstock",
+    "DESCRIPTION": "Deal !D! damage for each Reagent in your stockpile."
+  },
   "theChemist:Pharmacology": {
     "NAME": "Pharmacology",
     "DESCRIPTION": "Increase the effect of your next potion by 50%. Exhaust.",
@@ -110,6 +114,10 @@
   "theChemist:SageStaff": {
     "NAME": "Sage Staff",
     "DESCRIPTION": "Deal !D! damage. If this card is Exhausted, heal !M! HP and gain !B! Block."
+  },
+  "theChemist:TaintedBlade": {
+    "NAME": "Tainted Blade",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! Weak."
   },
   "theChemist:TurtleShell": {
     "NAME": "Turtle Shell",
