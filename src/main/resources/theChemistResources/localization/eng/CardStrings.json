@@ -89,6 +89,10 @@
     "NAME": "Mix",
     "DESCRIPTION": "Mix active Reagents."
   },
+  "theChemist:MorningStar": {
+    "NAME": "Morning Star",
+    "DESCRIPTION": "Deal !D! damage."
+  },
   "theChemist:Pharmacology": {
     "NAME": "Pharmacology",
     "DESCRIPTION": "Increase the effect of your next potion by 50%. Exhaust.",
@@ -97,6 +101,10 @@
   "theChemist:Prowess": {
     "NAME": "Prowess",
     "DESCRIPTION": "Increases the potency of Mix effects by 50%."
+  },
+  "theChemist:SageStaff": {
+    "NAME": "Sage Staff",
+    "DESCRIPTION": "Deal !D! damage. If this card is Exhausted, heal !M! HP and gain !B! Block."
   },
   "theChemist:TurtleShell": {
     "NAME": "Turtle Shell",
