@@ -128,6 +128,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new ExpandedBags());
         BaseMod.addCard(new Eyedrops());
         BaseMod.addCard(new GoliathTonic());
+        BaseMod.addCard(new HastenedResearch());
         BaseMod.addCard(new HiEther());
         BaseMod.addCard(new HiPotion());
         BaseMod.addCard(new HolyWater());
@@ -140,6 +141,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new Pharmacology());
         BaseMod.addCard(new Prowess());
         BaseMod.addCard(new SageStaff());
+        BaseMod.addCard(new StudiousResearch());
         BaseMod.addCard(new TaintedBlade());
         BaseMod.addCard(new TakeStock());
         BaseMod.addCard(new TurtleShell());

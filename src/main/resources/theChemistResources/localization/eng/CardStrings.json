@@ -65,6 +65,11 @@
     "NAME": "Goliath Tonic",
     "DESCRIPTION": "Gain !M! maximum HP this combat."
   },
+  "theChemist:HastenedResearch": {
+    "NAME": "Hastened Research",
+    "DESCRIPTION": "Remove all Reagents from your stockpile. Draw 1 card and gain [R] for every Reagent removed this way.",
+    "UPGRADE_DESCRIPTION": "Fling all Reagents in your stockpile. Draw 1 card and gain [R] for every Reagent flung this way."
+  },
   "theChemist:HiEther": {
     "NAME": "Hi-Ether",
     "DESCRIPTION": "Gain [R] [R]. Add 1 Hi-Ether Reagent to the stockpile. Exhaust."
@@ -114,6 +119,10 @@
   "theChemist:SageStaff": {
     "NAME": "Sage Staff",
     "DESCRIPTION": "Deal !D! damage. If this card is Exhausted, heal !M! HP and gain !B! Block."
+  },
+  "theChemist:StudiousResearch": {
+    "NAME": "Studious Research",
+    "DESCRIPTION": "Draw 1 card for each Reagent in your stockpile."
   },
   "theChemist:TaintedBlade": {
     "NAME": "Tainted Blade",
