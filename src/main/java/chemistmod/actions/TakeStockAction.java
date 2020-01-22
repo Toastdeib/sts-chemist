@@ -7,23 +7,20 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class StockpileAction extends AbstractGameAction {
+public class TakeStockAction extends AbstractGameAction {
     private static final Logger log = LogManager.getLogger(FlingAction.class.getName());
 
-    private ReagentEnum reagent;
-
-    public StockpileAction(ReagentEnum reagent) {
-        this.reagent = reagent;
+    public TakeStockAction() {
     }
 
     @Override
     public void update() {
-        // TODO: Extend stockpile/fling functionality outside of the Chemist class
+        // TODO: Extend stockpile functionality outside of the Chemist class
         try {
             TheChemist player = (TheChemist)AbstractDungeon.player;
-            player.stockpileReagent(this.reagent);
+            player.stockpileReagent(player.popReagent());
         } catch (ClassCastException ex) {
-            log.warn("Unable to stockpile; current player isn't a Chemist");
+            log.warn("Unable to restock; current player isn't a Chemist");
         } finally {
             this.isDone = true;
         }

@@ -119,9 +119,21 @@
     "NAME": "Tainted Blade",
     "DESCRIPTION": "Deal !D! damage. Apply !M! Weak."
   },
+  "theChemist:TakeStock": {
+    "NAME": "Take Stock",
+    "DESCRIPTION": "Move the topmost Reagent in your stockpile to the bottom."
+  },
   "theChemist:TurtleShell": {
     "NAME": "Turtle Shell",
     "DESCRIPTION": "Gain !B! Block. Add 1 Turtle Shell Reagent to the stockpile."
+  },
+  "theChemist:VolatileConcoction": {
+    "NAME": "Volatile Concoction",
+    "DESCRIPTION": "Can only be played if your stockpile contains at least 2 Reagents. Remove all Reagents from your stockpile. Deal !D! damage to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "I don't have enough Reagents!",
+      "I don't know how to do that!"
+    ]
   },
   "theChemist:WasteNot": {
     "NAME": "Waste Not",
