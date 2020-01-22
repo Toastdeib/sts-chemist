@@ -26,6 +26,7 @@ public class Disposal extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.ATTACK, TheChemist.Enums.CARD_GOLD, CardRarity.COMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = BASE_DAMAGE;
+        this.requiresStockpile = true;
     }
 
     @Override
@@ -40,17 +41,14 @@ public class Disposal extends BaseChemistCard {
     public void use(AbstractPlayer player, AbstractMonster monster) {
         addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        // TODO - Support this outside of just the Chemist class
-        if (!(player instanceof TheChemist)) {
-            return;
-        }
 
+        // This cast should be safe; we check in the base class
         TheChemist chemist = (TheChemist)player;
         if (chemist.stockpileCount() == 0) {
             // Nothing to fling
             // TODO - Is this thought bubble actually useful?
             AbstractDungeon.effectList.add(new ThoughtBubble(player.dialogX, player.dialogY, 3.0f,
-                    chemist.getFlingThoughtText(), true));
+                    TheChemist.getNoReagentsText(), true));
             return;
         }
 

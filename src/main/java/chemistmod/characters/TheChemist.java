@@ -236,11 +236,15 @@ public class TheChemist extends CustomPlayer {
         power.updateDescription();
     }
 
-    public String getMixThoughtText() {
+    public static String getNotEnoughReagentsText() {
         return CHARACTER_STRINGS.TEXT[3];
     }
 
-    public String getFlingThoughtText() {
+    public static String getNoReagentsText() {
         return CHARACTER_STRINGS.TEXT[4];
+    }
+
+    public static String getCantDoText() {
+        return CHARACTER_STRINGS.TEXT[5];
     }
 }

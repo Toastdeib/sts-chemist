@@ -24,6 +24,7 @@ public class WasteNot extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.RARE, CardTarget.SELF);
         this.exhaust = true;
+        this.requiresStockpile = true;
     }
 
     @Override
@@ -36,15 +37,11 @@ public class WasteNot extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // TODO - Support this outside of just the Chemist class
-        if (!(player instanceof TheChemist)) {
-            return;
-        }
-
+        // This cast should be safe; we check in the base class
         TheChemist chemist = (TheChemist)player;
         if (chemist.stockpileCount() < 2) {
             AbstractDungeon.effectList.add(new ThoughtBubble(player.dialogX, player.dialogY, 3.0f,
-                    chemist.getMixThoughtText(), true));
+                    TheChemist.getNotEnoughReagentsText(), true));
             return;
         }
 

@@ -19,6 +19,7 @@ public class TakeStock extends BaseChemistCard {
     public TakeStock() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.COMMON, CardTarget.SELF);
+        this.requiresStockpile = true;
     }
 
     @Override
@@ -31,11 +32,7 @@ public class TakeStock extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // TODO - Support this outside of just the Chemist class
-        if (!(player instanceof TheChemist)) {
-            return;
-        }
-
+        // This cast should be safe; we check in the base class
         TheChemist chemist = (TheChemist)player;
         if (chemist.stockpileCount() < 2) {
             // Nothing to move

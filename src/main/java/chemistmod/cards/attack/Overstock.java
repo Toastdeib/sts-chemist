@@ -23,6 +23,7 @@ public class Overstock extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.ATTACK, TheChemist.Enums.CARD_GOLD, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = BASE_DAMAGE;
+        this.requiresStockpile = true;
     }
 
     @Override
@@ -35,12 +36,8 @@ public class Overstock extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        int amount = 0;
-        if (player instanceof TheChemist) {
-            // TODO - Make this work outside of the Chemist class
-            amount = ((TheChemist)player).stockpileCount();
-        }
-
+        // This cast should be safe; we check in the base class
+        int amount = ((TheChemist)player).stockpileCount();
         for (int i = 0; i < amount; i++) {
             addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.BLUNT_LIGHT));

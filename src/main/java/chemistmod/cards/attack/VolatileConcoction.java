@@ -23,6 +23,7 @@ public class VolatileConcoction extends BaseChemistCard {
                 CardType.ATTACK, TheChemist.Enums.CARD_GOLD, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         this.damage = this.baseDamage = BASE_DAMAGE;
         this.isMultiDamage = true;
+        this.requiresStockpile = true;
     }
 
     @Override
@@ -48,14 +49,9 @@ public class VolatileConcoction extends BaseChemistCard {
             return false;
         }
 
-        if (!(player instanceof TheChemist)) {
-            // TODO - Make this work outside of the Chemist class
-            this.cantUseMessage = CARD_STRINGS.EXTENDED_DESCRIPTION[1];
-            return false;
-        }
-
+        // This cast should be safe; we check in the base class
         if (((TheChemist)player).stockpileCount() < 2) {
-            this.cantUseMessage = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            this.cantUseMessage = TheChemist.getNotEnoughReagentsText();
             return false;
         }
 

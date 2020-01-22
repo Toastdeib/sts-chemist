@@ -20,6 +20,7 @@ public class ExpandedBags extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.POWER, TheChemist.Enums.CARD_GOLD, CardRarity.UNCOMMON, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = BASE_MAGIC;
+        this.requiresStockpile = true;
     }
 
     @Override
@@ -32,9 +33,7 @@ public class ExpandedBags extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // TODO - Support this outside of just the Chemist class
-        if (player instanceof TheChemist) {
-            ((TheChemist)player).stockpileCapacity++;
-        }
+        // This cast should be safe; we check in the base class
+        ((TheChemist)player).stockpileCapacity += this.magicNumber;
     }
 }

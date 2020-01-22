@@ -129,11 +129,7 @@
   },
   "theChemist:VolatileConcoction": {
     "NAME": "Volatile Concoction",
-    "DESCRIPTION": "Can only be played if your stockpile contains at least 2 Reagents. Remove all Reagents from your stockpile. Deal !D! damage to ALL enemies.",
-    "EXTENDED_DESCRIPTION": [
-      "I don't have enough Reagents!",
-      "I don't know how to do that!"
-    ]
+    "DESCRIPTION": "Can only be played if your stockpile contains at least 2 Reagents. Remove all Reagents from your stockpile. Deal !D! damage to ALL enemies."
   },
   "theChemist:WasteNot": {
     "NAME": "Waste Not",
