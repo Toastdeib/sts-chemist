@@ -7,6 +7,7 @@ import chemistmod.cards.attack.*;
 import chemistmod.cards.power.*;
 import chemistmod.cards.skill.*;
 import chemistmod.characters.TheChemist;
+import chemistmod.events.PotionSellerEvent;
 import chemistmod.powers.StockpilePower;
 import chemistmod.relics.DragonsGift;
 import chemistmod.relics.TaintedFlask;
@@ -18,11 +19,9 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.nio.charset.StandardCharsets;
@@ -57,9 +56,10 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
 
     private static final String CARD_STRINGS_PATH = BASE_STRINGS_PATH + "CardStrings.json";
     private static final String POWER_STRINGS_PATH = BASE_STRINGS_PATH + "PowerStrings.json";
-    private static final String RELIC_STRINGS_PATH = BASE_STRINGS_PATH + "RelicStrings.json";
-    private static final String CHARACTER_STRINGS_PATH = BASE_STRINGS_PATH + "CharacterStrings.json";
     private static final String ENUM_STRINGS_PATH = BASE_STRINGS_PATH + "EnumStrings.json";
+    private static final String RELIC_STRINGS_PATH = BASE_STRINGS_PATH + "RelicStrings.json";
+    private static final String EVENT_STRINGS_PATH = BASE_STRINGS_PATH + "EventStrings.json";
+    private static final String CHARACTER_STRINGS_PATH = BASE_STRINGS_PATH + "CharacterStrings.json";
     private static final String KEYWORD_STRINGS_PATH = BASE_STRINGS_PATH + "KeywordStrings.json";
 
     public static final String CHARACTER_CORPSE_PATH = BASE_IMAGE_PATH + "character/corpse.png";
@@ -96,10 +96,15 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         return BASE_IMAGE_PATH + "relics/" + relicId.replace(MOD_ID + ":", "") + ".png";
     }
 
+    public static String getEventImagePath(String eventId) {
+        return BASE_IMAGE_PATH + "events/" + eventId.replace(MOD_ID + ":", "") + ".jpg";
+    }
+
     @Override
     public void receivePostInitialize() {
         ModPanel settings = new ModPanel();
         BaseMod.registerModBadge(new Texture(MOD_BADGE_PATH), MOD_NAME, MOD_AUTHOR, MOD_DESCRIPTION, settings);
+        BaseMod.addEvent(PotionSellerEvent.EVENT_ID, PotionSellerEvent.class, TheCity.ID);
     }
 
     @Override
@@ -160,6 +165,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.loadCustomStringsFile(PowerStrings.class, POWER_STRINGS_PATH);
         BaseMod.loadCustomStringsFile(PowerStrings.class, ENUM_STRINGS_PATH); // Not technically powers but close enough to work
         BaseMod.loadCustomStringsFile(RelicStrings.class, RELIC_STRINGS_PATH);
+        BaseMod.loadCustomStringsFile(EventStrings.class, EVENT_STRINGS_PATH);
         BaseMod.loadCustomStringsFile(CharacterStrings.class, CHARACTER_STRINGS_PATH);
     }
 
