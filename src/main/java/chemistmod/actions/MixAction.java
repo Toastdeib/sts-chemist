@@ -1,8 +1,10 @@
 package chemistmod.actions;
 
 import chemistmod.characters.TheChemist;
-import chemistmod.powers.ProwessPower;
+import chemistmod.powers.FluidityPower;
 import chemistmod.powers.ImbalancePower;
+import chemistmod.powers.ProwessPower;
+import chemistmod.powers.VolatilityPower;
 import chemistmod.reagents.MixResultEnum;
 import chemistmod.reagents.ReagentEnum;
 import chemistmod.util.MixUtils;
@@ -167,7 +169,25 @@ public class MixAction extends AbstractGameAction {
         this.isDone = true;
     }
 
-    private int modifyAmount(AbstractPlayer source, int amount) {
+    private int modifyDamage(AbstractPlayer source, AbstractCreature target, int amount) {
+        AbstractPower volatility = source.getPower(VolatilityPower.POWER_ID);
+        if (volatility != null) {
+            amount += volatility.amount;
+        }
+
+        return modifyAmount(source, target, amount);
+    }
+
+    private int modifyBlock(AbstractPlayer source, int amount) {
+        AbstractPower fluidity = source.getPower(FluidityPower.POWER_ID);
+        if (fluidity != null) {
+            amount += fluidity.amount;
+        }
+
+        return modifyAmount(source, null, amount);
+    }
+
+    private int modifyPower(AbstractPlayer source, int amount) {
         return modifyAmount(source, null, amount);
     }
 
@@ -191,19 +211,19 @@ public class MixAction extends AbstractGameAction {
 
     private void doSingleTargetDamage(AbstractPlayer source, AbstractCreature target, int amount) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
-                new DamageInfo(source, modifyAmount(source, target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
+                new DamageInfo(source, modifyDamage(source, target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
     }
 
     private void doSingleTargetVampireDamage(AbstractPlayer source, int amount) {
         AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target,
-                new DamageInfo(source, modifyAmount(source, this.target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
+                new DamageInfo(source, modifyDamage(source, this.target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
     }
 
     private void doMultiTargetDamage(AbstractPlayer source, int amount) {
         ArrayList<AbstractMonster> monsters = AbstractDungeon.getMonsters().monsters;
         int[] amounts = new int[monsters.size()];
         for (int i = 0; i < amounts.length; i++) {
-            amounts[i] = modifyAmount(source, monsters.get(i), amount);
+            amounts[i] = modifyDamage(source, monsters.get(i), amount);
         }
 
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(source, amounts, TheChemist.Enums.MIX,
@@ -211,19 +231,19 @@ public class MixAction extends AbstractGameAction {
     }
 
     private void doGainBlock(AbstractPlayer source, int amount) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(source, source, modifyAmount(source, amount)));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(source, source, modifyBlock(source, amount)));
     }
 
     private void doSingleTargetPower(AbstractPlayer source, AbstractPower power, int stackAmount) {
-        doSingleTargetPower(source, this.target, power, modifyAmount(source, stackAmount));
+        doSingleTargetPower(source, this.target, power, modifyPower(source, stackAmount));
     }
 
     private void doSingleTargetPower(AbstractPlayer source, AbstractCreature target, AbstractPower power, int stackAmount) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, power, modifyAmount(source, stackAmount)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, power, modifyPower(source, stackAmount)));
     }
 
     private void doMultiTargetPower(AbstractPlayer source, AbstractPower power, int stackAmount) {
-        int modifiedAmount = modifyAmount(source, stackAmount);
+        int modifiedAmount = modifyPower(source, stackAmount);
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
             doSingleTargetPower(source, monster, power, modifiedAmount);
         }
@@ -234,14 +254,14 @@ public class MixAction extends AbstractGameAction {
     }
 
     private void doHeal(AbstractPlayer source, int amount) {
-        AbstractDungeon.actionManager.addToBottom(new HealAction(source, source, modifyAmount(source, amount)));
+        AbstractDungeon.actionManager.addToBottom(new HealAction(source, source, modifyPower(source, amount)));
     }
 
     private void doGainEnergy(AbstractPlayer source, int amount) {
-        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(modifyAmount(source, amount)));
+        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(modifyPower(source, amount)));
     }
 
     private void doDraw(AbstractPlayer source, int amount) {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(source, modifyAmount(source, amount), false));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(source, modifyPower(source, amount), false));
     }
 }

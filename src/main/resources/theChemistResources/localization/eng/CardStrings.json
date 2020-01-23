@@ -116,6 +116,10 @@
     "NAME": "Prowess",
     "DESCRIPTION": "Increases the potency of Mix effects by 50%."
   },
+  "theChemist:Prudence": {
+    "NAME": "Prudence",
+    "DESCRIPTION": "Gain !M! Fluidity."
+  },
   "theChemist:SageStaff": {
     "NAME": "Sage Staff",
     "DESCRIPTION": "Deal !D! damage. If this card is Exhausted, heal !M! HP and gain !B! Block."
@@ -131,6 +135,10 @@
   "theChemist:TakeStock": {
     "NAME": "Take Stock",
     "DESCRIPTION": "Move the topmost Reagent in your stockpile to the bottom."
+  },
+  "theChemist:Temerity": {
+    "NAME": "Temerity",
+    "DESCRIPTION": "Gain !M! Volatility."
   },
   "theChemist:TurtleShell": {
     "NAME": "Turtle Shell",

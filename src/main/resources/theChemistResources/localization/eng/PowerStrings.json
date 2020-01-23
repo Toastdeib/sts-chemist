@@ -1,4 +1,12 @@
 {
+  "theChemist:FluidityPower": {
+    "NAME": "Fluidity",
+    "DESCRIPTIONS": [
+      "Increases #yBlock gained from #yMix effects by #b",
+      "Decreases #yBlock gained from #yMix effects by #b",
+      "."
+    ]
+  },
   "theChemist:GoliathTonicPower": {
     "NAME": "Goliath Tonic",
     "DESCRIPTIONS": [
@@ -46,6 +54,14 @@
       " NL Mixing now will produce the ",
       " effect.",
       "Your stockpile is empty."
+    ]
+  },
+  "theChemist:VolatilityPower": {
+    "NAME": "Volatility",
+    "DESCRIPTIONS": [
+      "Increases #yMix effect damage by #b",
+      "Decreases #yMix effect damage by #b",
+      "."
     ]
   }
 }
