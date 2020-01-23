@@ -33,8 +33,8 @@ public class MixUtils {
         resultMap.put(hash(ReagentEnum.ANTIDOTE, ReagentEnum.TURTLE_SHELL), MixResultEnum.CALM_OF_THE_DEPTHS);
         resultMap.put(hash(ReagentEnum.ANTIDOTE, ReagentEnum.DARK_MATTER), MixResultEnum.FIENDS_CARESS);
         resultMap.put(hash(ReagentEnum.ANTIDOTE, ReagentEnum.DRAGON_FANG), MixResultEnum.DRAGONS_CLAW);
-        resultMap.put(hash(ReagentEnum.EYEDROP, ReagentEnum.TURTLE_SHELL), MixResultEnum.TBD_1);
-        resultMap.put(hash(ReagentEnum.EYEDROP, ReagentEnum.DARK_MATTER), MixResultEnum.TBD_2);
+        resultMap.put(hash(ReagentEnum.EYEDROP, ReagentEnum.TURTLE_SHELL), MixResultEnum.ABYSSAL_CLARITY);
+        resultMap.put(hash(ReagentEnum.EYEDROP, ReagentEnum.DARK_MATTER), MixResultEnum.CURSED_GAZE);
         resultMap.put(hash(ReagentEnum.EYEDROP, ReagentEnum.DRAGON_FANG), MixResultEnum.DRAGONS_GLARE);
         resultMap.put(hash(ReagentEnum.TURTLE_SHELL, ReagentEnum.TURTLE_SHELL), MixResultEnum.HARDENING_SOLUTION);
         resultMap.put(hash(ReagentEnum.TURTLE_SHELL, ReagentEnum.DARK_MATTER), MixResultEnum.CETACEAN_WRATH);

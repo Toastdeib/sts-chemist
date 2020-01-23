@@ -1,4 +1,10 @@
 {
+  "theChemist:ABYSSAL_CLARITY": {
+    "NAME": "Abyssal Clarity",
+    "DESCRIPTIONS": [
+      "Gain #b4 #yBlock. Draw #b1 card."
+    ]
+  },
   "theChemist:ANTIDOTE": {
     "NAME": "Antidote"
   },
@@ -18,6 +24,12 @@
     "NAME": "Cetacean Wrath",
     "DESCRIPTIONS": [
       "Gain #b4 #yBlock. Gain #b2 #yThorns."
+    ]
+  },
+  "theChemist:CURSED_GAZE": {
+    "NAME": "Cursed Gaze",
+    "DESCRIPTIONS": [
+      "A random enemy loses #b6 #yStrength this turn."
     ]
   },
   "theChemist:DARK_MATTER": {
@@ -172,17 +184,5 @@
   },
   "theChemist:TURTLE_SHELL": {
     "NAME": "Turtle Shell"
-  },
-  "theChemist:TBD_1": {
-    "NAME": "TBD 1",
-    "DESCRIPTIONS": [
-      "Coming soon (TM)."
-    ]
-  },
-  "theChemist:TBD_2": {
-    "NAME": "TBD 2",
-    "DESCRIPTIONS": [
-      "Coming soon (TM)."
-    ]
   }
 }

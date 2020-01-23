@@ -39,6 +39,7 @@ public class MixAction extends AbstractGameAction {
 
     private static final int LIGHT_DEBUFF_STACK = 1;
     private static final int HEAVY_DEBUFF_STACK = 3;
+    private static final int STRENGTH_LOSS_STACK = 6;
     private static final int STAT_BUFF_STACK = 1;
     private static final int THORNS_STACK = 2;
     private static final int PLATED_ARMOR_STACK = 4;
@@ -140,8 +141,9 @@ public class MixAction extends AbstractGameAction {
                 doGainBlock(player, LIGHT_BLOCK);
                 doSingleTargetPower(player, player, new DexterityPower(player, STAT_BUFF_STACK), STAT_BUFF_STACK);
                 break;
-            case TBD_1:
-                // TODO
+            case ABYSSAL_CLARITY:
+                doGainBlock(player, LIGHT_BLOCK);
+                doDraw(player, DRAW_AMOUNT);
                 break;
             case HARDENING_SOLUTION:
                 doGainBlock(player, HEAVY_BLOCK);
@@ -161,8 +163,12 @@ public class MixAction extends AbstractGameAction {
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
                 doSingleTargetPower(player, new VulnerablePower(this.target, HEAVY_DEBUFF_STACK, false), HEAVY_DEBUFF_STACK);
                 break;
-            case TBD_2:
-                // TODO
+            case CURSED_GAZE:
+                this.target = AbstractDungeon.getMonsters().getRandomMonster(true);
+                doSingleTargetPower(player, new StrengthPower(this.target, -STRENGTH_LOSS_STACK), -STRENGTH_LOSS_STACK);
+                if (!this.target.hasPower(ArtifactPower.POWER_ID)) {
+                    doSingleTargetPower(player, new GainStrengthPower(this.target, STRENGTH_LOSS_STACK), STRENGTH_LOSS_STACK);
+                }
                 break;
         }
 
