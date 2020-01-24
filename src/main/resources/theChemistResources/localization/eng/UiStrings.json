@@ -1,0 +1,9 @@
+{
+  "theChemist:PhoenixDownAction": {
+    "TEXT": [
+      "Select up to ",
+      " card to return to your hand",
+      " cards to return to your hand"
+    ]
+  }
+}

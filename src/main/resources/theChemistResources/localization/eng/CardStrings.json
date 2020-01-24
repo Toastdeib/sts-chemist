@@ -112,6 +112,11 @@
     "DESCRIPTION": "Increase the effect of your next potion by 50%. Exhaust.",
     "UPGRADE_DESCRIPTION": "Increase the effect of your next potion by 50%."
   },
+  "theChemist:PhoenixDown": {
+    "NAME": "Phoenix Down",
+    "DESCRIPTION": "Return up to !M! card from your exhaust pile to your hand. Add 1 Phoenix Down Reagent to your stockpile. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Return up to !M! cards from your exhaust pile to your hand. Add 1 Phoenix Down Reagent to your stockpile. Exhaust."
+  },
   "theChemist:Prowess": {
     "NAME": "Prowess",
     "DESCRIPTION": "Increases the potency of Mix effects by 50%."

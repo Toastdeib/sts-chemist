@@ -1,5 +1,6 @@
 package chemistmod.actions;
 
+import chemistmod.cards.skill.PhoenixDown;
 import chemistmod.characters.TheChemist;
 import chemistmod.powers.FluidityPower;
 import chemistmod.powers.ImbalancePower;
@@ -12,6 +13,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -76,7 +79,33 @@ public class MixAction extends AbstractGameAction {
                 doGainEnergy(player, ELIXIR_ENERGY);
                 break;
             case RESURRECTION:
-                // TODO
+                ArrayList<AbstractCard> cardsToRes = new ArrayList<>();
+                for (AbstractCard card : player.exhaustPile.group) {
+                    card.stopGlowing();
+                    card.unhover();
+                    card.unfadeOut();
+                    if (card.type != AbstractCard.CardType.CURSE && card.type != AbstractCard.CardType.STATUS && !card.cardID.equals(PhoenixDown.CARD_ID)) {
+                        // Only resurrect playable, non-Phoenix Down cards
+                        cardsToRes.add(card);
+                    }
+                }
+
+                for (AbstractCard card : cardsToRes) {
+                    player.hand.addToHand(card);
+                    if (AbstractDungeon.player.hasPower("Corruption") && card.type == AbstractCard.CardType.SKILL) {
+                        card.setCostForTurn(-9);
+                    }
+
+                    player.exhaustPile.removeCard(card);
+                    card.unhover();
+                }
+
+                player.hand.refreshHandLayout();
+                for (AbstractCard c : player.exhaustPile.group) {
+                    c.unhover();
+                    c.target_x = CardGroup.DISCARD_PILE_X;
+                    c.target_y = 0.0F;
+                }
                 break;
             case PHOENIX_FIRE:
                 // TODO

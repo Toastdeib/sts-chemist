@@ -60,6 +60,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
     private static final String RELIC_STRINGS_PATH = BASE_STRINGS_PATH + "RelicStrings.json";
     private static final String EVENT_STRINGS_PATH = BASE_STRINGS_PATH + "EventStrings.json";
     private static final String CHARACTER_STRINGS_PATH = BASE_STRINGS_PATH + "CharacterStrings.json";
+    private static final String UI_STRINGS_PATH = BASE_STRINGS_PATH + "UiStrings.json";
     private static final String KEYWORD_STRINGS_PATH = BASE_STRINGS_PATH + "KeywordStrings.json";
 
     public static final String CHARACTER_CORPSE_PATH = BASE_IMAGE_PATH + "character/corpse.png";
@@ -141,6 +142,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new MorningStar());
         BaseMod.addCard(new Overstock());
         BaseMod.addCard(new Pharmacology());
+        BaseMod.addCard(new PhoenixDown());
         BaseMod.addCard(new Prowess());
         BaseMod.addCard(new Prudence());
         BaseMod.addCard(new SageStaff());
@@ -167,6 +169,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.loadCustomStringsFile(RelicStrings.class, RELIC_STRINGS_PATH);
         BaseMod.loadCustomStringsFile(EventStrings.class, EVENT_STRINGS_PATH);
         BaseMod.loadCustomStringsFile(CharacterStrings.class, CHARACTER_STRINGS_PATH);
+        BaseMod.loadCustomStringsFile(UIStrings.class, UI_STRINGS_PATH);
     }
 
     @Override
