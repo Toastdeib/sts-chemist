@@ -11,6 +11,10 @@
     "NAME": "Belt Pouch",
     "DESCRIPTION": "At the end of your turn, Retain up to !M! cards."
   },
+  "theChemist:BrokenFlask": {
+    "NAME": "Broken Flask",
+    "DESCRIPTION": "Deal !D! damage."
+  },
   "theChemist:CalledShot": {
     "NAME": "Called Shot",
     "DESCRIPTION": "Deal !D! damage. Apply !M! Marked."
@@ -35,6 +39,10 @@
     "NAME": "Dark Matter",
     "DESCRIPTION": "Apply !M! Weak and !M! Vulnerable to ALL enemies. Add 1 Dark Matter Reagent to the stockpile."
   },
+  "theChemist:DefensivePosture": {
+    "NAME": "Defensive Posture",
+    "DESCRIPTION": "Whenever you add a Reagent to your stockpile, gain !B! Block."
+  },
   "theChemist:Disposal": {
     "NAME": "Disposal",
     "DESCRIPTION": "Deal !D! damage. Fling your topmost Reagent."
@@ -43,9 +51,17 @@
     "NAME": "Dizzying Fumes",
     "DESCRIPTION": "Apply !M! Imbalance to ALL enemies. Add 1 Dazed to your discard pile."
   },
+  "theChemist:DoubleDose": {
+    "NAME": "Double Dose",
+    "DESCRIPTION": "Mix active Reagents and apply the effect twice."
+  },
   "theChemist:DragonFang": {
     "NAME": "Dragon Fang",
     "DESCRIPTION": "Deal !D! damage. Add 1 Dragon Fang Reagent to the stockpile."
+  },
+  "theChemist:Efficiency": {
+    "NAME": "Efficiency",
+    "DESCRIPTION": "Whenever you Mix, draw !M! card."
   },
   "theChemist:Elixir": {
     "NAME": "Elixir",
@@ -60,6 +76,10 @@
     "NAME": "Eyedrops",
     "DESCRIPTION": "Draw !M! card. Add 1 Eyedrops Reagent to your stockpile.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. Add 1 Eyedrops Reagent to your stockpile."
+  },
+  "theChemist:FlaskBash": {
+    "NAME": "Flask Bash",
+    "DESCRIPTION": "Mix active Reagents. Deal !D! damage. Add a Broken Flask to your hand. Exhaust."
   },
   "theChemist:GoliathTonic": {
     "NAME": "Goliath Tonic",
@@ -107,6 +127,10 @@
     "NAME": "Overstock",
     "DESCRIPTION": "Deal !D! damage for each Reagent in your stockpile."
   },
+  "theChemist:Parry": {
+    "NAME": "Parry",
+    "DESCRIPTION": "Gain !B! Block twice."
+  },
   "theChemist:Pharmacology": {
     "NAME": "Pharmacology",
     "DESCRIPTION": "Increase the effect of your next potion by 50%. Exhaust.",
@@ -125,9 +149,21 @@
     "NAME": "Prudence",
     "DESCRIPTION": "Gain !M! Fluidity."
   },
+  "theChemist:Recover": {
+    "NAME": "Recover",
+    "DESCRIPTION": "Reduce your turn count on any Vulnerable, Frail, and Weakness debuffs by !M!."
+  },
   "theChemist:SageStaff": {
     "NAME": "Sage Staff",
     "DESCRIPTION": "Deal !D! damage. If this card is Exhausted, heal !M! HP and gain !B! Block."
+  },
+  "theChemist:Screen": {
+    "NAME": "Screen",
+    "DESCRIPTION": "Gain !B! Block. Fling your topmost Reagent."
+  },
+  "theChemist:SleightOfHand": {
+    "NAME": "Sleight of Hand",
+    "DESCRIPTION": "Deal !D! damage. Fling your topmost Reagent, then return it to the bottom of your stockpile."
   },
   "theChemist:StudiousResearch": {
     "NAME": "Studious Research",

@@ -1,43 +1,39 @@
 package chemistmod.cards.skill;
 
 import chemistmod.ChemistMod;
-import chemistmod.actions.MixAction;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Mix extends BaseChemistCard {
-    public static final String CARD_ID = ChemistMod.makeId("Mix");
+public class Parry extends BaseChemistCard {
+    public static final String CARD_ID = ChemistMod.makeId("Parry");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
     private static final int BASE_COST = 1;
-    private static final int UPGRADE_COST = 0;
+    private static final int BASE_BLOCK = 4;
+    private static final int UPGRADE_BLOCK = 1;
 
-    public Mix() {
+    public Parry() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
-                CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.BASIC, CardTarget.SELF);
-        this.requiresStockpile = true;
+                CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.COMMON, CardTarget.SELF);
+        this.block = this.baseBlock = BASE_BLOCK;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
+            this.upgradeBlock(UPGRADE_BLOCK);
         }
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // This cast should be safe; we check in the base class
-        TheChemist chemist = (TheChemist)player;
-        if (!canMix(chemist)) {
-            return;
-        }
-
-        addToBot(new MixAction(chemist.popReagent(), chemist.popReagent()));
+        addToBot(new GainBlockAction(player, player, this.block));
+        addToBot(new GainBlockAction(player, player, this.block));
     }
 }

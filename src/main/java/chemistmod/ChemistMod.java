@@ -118,6 +118,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new AirKnife());
         BaseMod.addCard(new Antidote());
         BaseMod.addCard(new BeltPouch());
+        BaseMod.addCard(new BrokenFlask());
         BaseMod.addCard(new CalledShot());
         BaseMod.addCard(new ChemDefend());
         BaseMod.addCard(new ChemStrike());
@@ -126,10 +127,12 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new DarkMatter());
         BaseMod.addCard(new Disposal());
         BaseMod.addCard(new DizzyingFumes());
+        BaseMod.addCard(new DoubleDose());
         BaseMod.addCard(new DragonFang());
         BaseMod.addCard(new Elixir());
         BaseMod.addCard(new ExpandedBags());
         BaseMod.addCard(new Eyedrops());
+        BaseMod.addCard(new FlaskBash());
         BaseMod.addCard(new GoliathTonic());
         BaseMod.addCard(new HastenedResearch());
         BaseMod.addCard(new HiEther());
@@ -141,11 +144,15 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new Mix());
         BaseMod.addCard(new MorningStar());
         BaseMod.addCard(new Overstock());
+        BaseMod.addCard(new Parry());
         BaseMod.addCard(new Pharmacology());
         BaseMod.addCard(new PhoenixDown());
         BaseMod.addCard(new Prowess());
         BaseMod.addCard(new Prudence());
+        BaseMod.addCard(new Recover());
         BaseMod.addCard(new SageStaff());
+        BaseMod.addCard(new Screen());
+        BaseMod.addCard(new SleightOfHand());
         BaseMod.addCard(new StudiousResearch());
         BaseMod.addCard(new TaintedBlade());
         BaseMod.addCard(new TakeStock());

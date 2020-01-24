@@ -1,24 +1,31 @@
-package chemistmod.cards.skill;
+package chemistmod.cards.attack;
 
 import chemistmod.ChemistMod;
 import chemistmod.actions.MixAction;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Mix extends BaseChemistCard {
-    public static final String CARD_ID = ChemistMod.makeId("Mix");
+public class FlaskBash extends BaseChemistCard {
+    public static final String CARD_ID = ChemistMod.makeId("FlaskBash");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
     private static final int BASE_COST = 1;
-    private static final int UPGRADE_COST = 0;
+    private static final int BASE_DAMAGE = 8;
+    private static final int UPGRADE_DAMAGE = 2;
 
-    public Mix() {
+    public FlaskBash() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
-                CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.BASIC, CardTarget.SELF);
+                CardType.ATTACK, TheChemist.Enums.CARD_GOLD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        this.damage = this.baseDamage = BASE_DAMAGE;
+        this.exhaust = true;
         this.requiresStockpile = true;
     }
 
@@ -26,7 +33,7 @@ public class Mix extends BaseChemistCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
+            this.upgradeDamage(UPGRADE_DAMAGE);
         }
     }
 
@@ -39,5 +46,8 @@ public class Mix extends BaseChemistCard {
         }
 
         addToBot(new MixAction(chemist.popReagent(), chemist.popReagent()));
+        addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        addToBot(new MakeTempCardInHandAction(new BrokenFlask()));
     }
 }
