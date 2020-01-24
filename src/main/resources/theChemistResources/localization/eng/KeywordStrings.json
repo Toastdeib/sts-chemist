@@ -6,34 +6,48 @@
       "flung",
       "flinging"
     ],
-    "DESCRIPTION": "Expend your topmost Reagent by flinging it at a random enemy, inflicting 4 damage."
+    "DESCRIPTION": "Expend your topmost #yReagent by flinging it at a random enemy, inflicting #b4 damage."
+  },
+  {
+    "PROPER_NAME": "Fluidity",
+    "NAMES": [
+      "fluidity"
+    ],
+    "DESCRIPTION": "Fluidity improves #yBlock gained from #yMix effects."
   },
   {
     "PROPER_NAME": "Imbalance",
     "NAMES": [
       "imbalance"
     ],
-    "DESCRIPTION": "Imbalanced creatures take 50% more damage from Mix effects."
+    "DESCRIPTION": "Imbalanced creatures take #b50% more damage from #yMix effects."
   },
   {
     "PROPER_NAME": "Marked",
     "NAMES": [
       "marked"
     ],
-    "DESCRIPTION": "Marked creatures will always be hit by Fling. Only one enemy can be afflicted with Marked at a time."
+    "DESCRIPTION": "Marked creatures will always be hit by #yFling. Only one enemy can be afflicted with Marked at a time."
   },
   {
     "PROPER_NAME": "Mix",
     "NAMES": [
       "mix"
     ],
-    "DESCRIPTION": "Consume your 2 topmost stockpiled Reagents to produce an effect. Only works when at least 2 Reagents are stockpiled."
+    "DESCRIPTION": "Expend your #b2 topmost stockpiled #yReagents to produce an effect. Only works when at least #b2 #yReagents are stockpiled."
   },
   {
     "PROPER_NAME": "Reagent",
     "NAMES": [
       "reagent"
     ],
-    "DESCRIPTION": "An alchemical ingredient. Combining 2 Reagents with Mix can be used to produce a variety of effects."
+    "DESCRIPTION": "An alchemical ingredient. Combine #b2 Reagents with #yMix to produce a variety of effects."
+  },
+  {
+    "PROPER_NAME": "Volatility",
+    "NAMES": [
+      "volatility"
+    ],
+    "DESCRIPTION": "Volatility adds additional damage to #yMix effects."
   }
 ]

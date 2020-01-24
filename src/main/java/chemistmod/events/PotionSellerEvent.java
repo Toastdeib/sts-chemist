@@ -47,7 +47,7 @@ public class PotionSellerEvent extends AbstractImageEvent {
                         this.imageEventText.updateBodyText(EVENT_STRINGS.DESCRIPTIONS[3]);
                         AbstractDungeon.player.damage(new DamageInfo(null, this.damage, DamageInfo.DamageType.HP_LOSS));
                         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
-                        CardCrawlGame.sound.play("BLUNT_FAST"); // TODO - Find the list of keys again, I know it's somewhere
+                        CardCrawlGame.sound.play("ATTACK_FAST");
                     } else {
                         this.imageEventText.updateBodyText(EVENT_STRINGS.DESCRIPTIONS[2]);
                     }

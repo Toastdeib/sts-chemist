@@ -5,7 +5,7 @@
       "As you make your way down one of the city's winding streets, a man clad in armor walks up to you. NL NL \"Hello potion seller. I am going into battle, and I want your strongest potions.\" NL NL You silently regard the man with a mix of confusion and amusement before pulling out your stock.",
       "\"Thank you, potion seller.\" The man hands you #y50 #ygold in payment before quaffing the potion and walking away.",
       "\"Ah, now THIS is a fine brew!\" The man hands you a #yrelic in payment and quaffs the potion. \"I can feel the power welling up inside me already!\" He sprints away, sword at the ready.",
-      "\"Ah, now THIS is a fine brew!\" The man hands you a #yrelic in payment and quaffs the potion. \"I can feel the pow-@ARGH!@\" The man screams as his body mutates into a hideous form. He #rswipes at you with his large, misshapen claws before running off into the shadows. NL NL Huh. Guess he couldn't handle your strongest potions after all."
+      "\"Ah, now THIS is a fine brew!\" The man hands you a #yrelic in payment and quaffs the potion. \"I can feel the pow-ARGH!\" The man screams as his body mutates into a hideous form. He #r@swipes@ at you with his large, misshapen claws before running off into the shadows. NL NL Huh. Guess he couldn't handle your strongest potions after all."
     ],
     "OPTIONS": [
       "[Offer him a weak potion] #gGain #g",

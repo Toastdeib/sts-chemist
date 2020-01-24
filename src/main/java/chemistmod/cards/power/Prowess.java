@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class Prowess extends BaseChemistCard {
     public static final String CARD_ID = ChemistMod.makeId("Prowess");
@@ -32,6 +33,11 @@ public class Prowess extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
+        AbstractPower prowess = player.getPower(ProwessPower.POWER_ID);
+        if (prowess != null) {
+            return;
+        }
+
         addToBot(new ApplyPowerAction(player, player, new ProwessPower(player)));
     }
 }
