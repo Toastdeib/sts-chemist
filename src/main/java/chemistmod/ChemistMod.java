@@ -118,6 +118,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new AirKnife());
         BaseMod.addCard(new Antidote());
         BaseMod.addCard(new BeltPouch());
+        BaseMod.addCard(new BottomlessSack());
         BaseMod.addCard(new BrokenFlask());
         BaseMod.addCard(new CalledShot());
         BaseMod.addCard(new ChemDefend());

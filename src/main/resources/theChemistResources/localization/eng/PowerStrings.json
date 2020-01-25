@@ -1,4 +1,12 @@
 {
+  "theChemist:BottomlessSackPower": {
+    "NAME": "Bottomless Sack",
+    "DESCRIPTIONS": [
+      "At the start of your turn, add #b",
+      " random Reagent to your stockpile.",
+      " random Reagents to your stockpile."
+    ]
+  },
   "theChemist:DefensivePosturePower": {
     "NAME": "DefensivePosture",
     "DESCRIPTIONS": [

@@ -11,6 +11,10 @@
     "NAME": "Belt Pouch",
     "DESCRIPTION": "At the end of your turn, Retain up to !M! cards."
   },
+  "theChemist:BottomlessSack": {
+    "NAME": "Bottomless Sack",
+    "DESCRIPTION": "At the start of your turn, add !M! random Reagent to your stockpile."
+  },
   "theChemist:BrokenFlask": {
     "NAME": "Broken Flask",
     "DESCRIPTION": "Deal !D! damage."
@@ -37,7 +41,7 @@
   },
   "theChemist:DarkMatter": {
     "NAME": "Dark Matter",
-    "DESCRIPTION": "Apply !M! Weak and !M! Vulnerable to ALL enemies. Add 1 Dark Matter Reagent to the stockpile."
+    "DESCRIPTION": "Apply !M! Weak and !M! Vulnerable to ALL enemies. Add 1 Dark Matter Reagent to your stockpile."
   },
   "theChemist:DefensivePosture": {
     "NAME": "Defensive Posture",
@@ -57,7 +61,7 @@
   },
   "theChemist:DragonFang": {
     "NAME": "Dragon Fang",
-    "DESCRIPTION": "Deal !D! damage. Add 1 Dragon Fang Reagent to the stockpile."
+    "DESCRIPTION": "Deal !D! damage. Add 1 Dragon Fang Reagent to your stockpile."
   },
   "theChemist:Efficiency": {
     "NAME": "Efficiency",
@@ -101,16 +105,16 @@
   },
   "theChemist:HiEther": {
     "NAME": "Hi-Ether",
-    "DESCRIPTION": "Gain [R] [R]. Add 1 Hi-Ether Reagent to the stockpile. Exhaust."
+    "DESCRIPTION": "Gain [R] [R]. Add 1 Hi-Ether Reagent to your stockpile. Exhaust."
   },
   "theChemist:HiPotion": {
     "NAME": "Hi-Potion",
-    "DESCRIPTION": "Gain !B! Block. Heal !M! HP. Add 1 Hi-Potion Reagent to the stockpile."
+    "DESCRIPTION": "Gain !B! Block. Heal !M! HP. Add 1 Hi-Potion Reagent to your stockpile."
   },
   "theChemist:HolyWater": {
     "NAME": "Holy Water",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a random card in your hand. Add 1 Holy Water Reagent to the stockpile.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a card in your hand. Add 1 Holy Water Reagent to the stockpile."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a random card in your hand. Add 1 Holy Water Reagent to your stockpile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a card in your hand. Add 1 Holy Water Reagent to your stockpile."
   },
   "theChemist:IronDraught": {
     "NAME": "Iron Draught",
@@ -197,7 +201,7 @@
   },
   "theChemist:TurtleShell": {
     "NAME": "Turtle Shell",
-    "DESCRIPTION": "Gain !B! Block. Add 1 Turtle Shell Reagent to the stockpile."
+    "DESCRIPTION": "Gain !B! Block. Add 1 Turtle Shell Reagent to your stockpile."
   },
   "theChemist:VolatileConcoction": {
     "NAME": "Volatile Concoction",
