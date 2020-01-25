@@ -33,9 +33,8 @@ public class Recover extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // TODO - Verify that this actually works
-        addToBot(new ReducePowerAction(player, player, "Vulnerable", 1));
-        addToBot(new ReducePowerAction(player, player, "Frail", 1));
-        addToBot(new ReducePowerAction(player, player, "Weakness", 1));
+        addToBot(new ReducePowerAction(player, player, "Vulnerable", this.magicNumber));
+        addToBot(new ReducePowerAction(player, player, "Frail", this.magicNumber));
+        addToBot(new ReducePowerAction(player, player, "Weakened", this.magicNumber));
     }
 }

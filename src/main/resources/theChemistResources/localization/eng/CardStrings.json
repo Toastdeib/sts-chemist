@@ -151,7 +151,7 @@
   },
   "theChemist:Recover": {
     "NAME": "Recover",
-    "DESCRIPTION": "Reduce your turn count on any Vulnerable, Frail, and Weakness debuffs by !M!."
+    "DESCRIPTION": "Reduce your turn count on any Vulnerable, Frail, and Weakened debuffs by !M!."
   },
   "theChemist:SageStaff": {
     "NAME": "Sage Staff",
