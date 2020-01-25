@@ -29,6 +29,14 @@
       " maximum HP."
     ]
   },
+  "theChemist:HeroCocktailPower": {
+    "NAME": "Hero Cocktail",
+    "DESCRIPTIONS": [
+      "Your next attack deals double damage.",
+      "Your next #b",
+      " attacks deal double damage."
+    ]
+  },
   "theChemist:ImbalancePower": {
     "NAME": "Imbalance",
     "DESCRIPTIONS": [

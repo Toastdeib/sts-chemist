@@ -138,6 +138,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new FlaskBash());
         BaseMod.addCard(new GoliathTonic());
         BaseMod.addCard(new HastenedResearch());
+        BaseMod.addCard(new HeroCocktail());
         BaseMod.addCard(new HiEther());
         BaseMod.addCard(new HiPotion());
         BaseMod.addCard(new HolyWater());

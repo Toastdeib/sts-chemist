@@ -94,6 +94,11 @@
     "DESCRIPTION": "Remove all Reagents from your stockpile. Draw 1 card and gain [R] for every Reagent removed this way.",
     "UPGRADE_DESCRIPTION": "Fling all Reagents in your stockpile. Draw 1 card and gain [R] for every Reagent flung this way."
   },
+  "theChemist:HeroCocktail": {
+    "NAME": "Hero Cocktail",
+    "DESCRIPTION": "Your next attack does double damage. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Your next !M! attacks do double damage. Exhaust."
+  },
   "theChemist:HiEther": {
     "NAME": "Hi-Ether",
     "DESCRIPTION": "Gain [R] [R]. Add 1 Hi-Ether Reagent to the stockpile. Exhaust."
