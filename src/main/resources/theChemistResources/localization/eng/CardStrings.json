@@ -68,6 +68,10 @@
     "DESCRIPTION": "Gain !B! Block. Heal !M! HP. Gain [R]. Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. Heal !M! HP. Gain [R] [R]. Exhaust."
   },
+  "theChemist:EqualExchange": {
+    "NAME": "Equal Exchange",
+    "DESCRIPTION": "Turn the topmost Reagent in your stockpile into a random Reagent."
+  },
   "theChemist:ExpandedBags": {
     "NAME": "Expanded Bags",
     "DESCRIPTION": "Increase Reagent stockpile capacity by !M!."

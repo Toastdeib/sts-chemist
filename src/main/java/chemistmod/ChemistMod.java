@@ -132,6 +132,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new DragonFang());
         BaseMod.addCard(new Efficiency());
         BaseMod.addCard(new Elixir());
+        BaseMod.addCard(new EqualExchange());
         BaseMod.addCard(new ExpandedBags());
         BaseMod.addCard(new Eyedrops());
         BaseMod.addCard(new FlaskBash());

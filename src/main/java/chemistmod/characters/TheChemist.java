@@ -12,6 +12,7 @@ import chemistmod.cards.skill.TurtleShell;
 import chemistmod.powers.StockpilePower;
 import chemistmod.reagents.ReagentEnum;
 import chemistmod.relics.DragonsGift;
+import chemistmod.util.MixUtils;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -219,6 +220,12 @@ public class TheChemist extends CustomPlayer {
     public ReagentEnum getReagent(int index) {
         // NOTE: This expects the calling code to have verified that the index is valid and will crash if it isn't.
         return this.stockpile.get(index);
+    }
+
+    public void transformReagent(int index) {
+        // NOTE: This expects the calling code to have verified that the index is valid and will crash if it isn't.
+        this.stockpile.set(index, MixUtils.getRandomReagent());
+        updateStockpile();
     }
 
     public void emptyStockpile() {

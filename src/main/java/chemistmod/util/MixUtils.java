@@ -2,12 +2,25 @@ package chemistmod.util;
 
 import chemistmod.reagents.MixResultEnum;
 import chemistmod.reagents.ReagentEnum;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.HashMap;
 
 public class MixUtils {
 
     private static HashMap<Integer, MixResultEnum> resultMap = new HashMap<>();
+    private static final ReagentEnum[] REAGENTS = {
+            ReagentEnum.HI_POTION,
+            ReagentEnum.HI_ETHER,
+            ReagentEnum.PHOENIX_DOWN,
+            ReagentEnum.MAIDENS_KISS,
+            ReagentEnum.HOLY_WATER,
+            ReagentEnum.ANTIDOTE,
+            ReagentEnum.EYEDROP,
+            ReagentEnum.TURTLE_SHELL,
+            ReagentEnum.DARK_MATTER,
+            ReagentEnum.DRAGON_FANG
+    };
 
     static {
         resultMap.put(hash(ReagentEnum.HI_POTION, ReagentEnum.HI_POTION), MixResultEnum.MEGA_POTION);
@@ -54,6 +67,10 @@ public class MixUtils {
         }
 
         return MixResultEnum.DUD;
+    }
+
+    public static ReagentEnum getRandomReagent() {
+        return REAGENTS[AbstractDungeon.miscRng.random(REAGENTS.length - 1)];
     }
 
     private static int hash(ReagentEnum first, ReagentEnum second) {
