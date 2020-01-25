@@ -62,6 +62,13 @@
       " turns."
     ]
   },
+  "theChemist:PhoenixFirePower": {
+    "NAME": "Phoenix Fire",
+    "DESCRIPTIONS": [
+      "When you would die, heal to #b",
+      "% of your max HP instead and remove this buff."
+    ]
+  },
   "theChemist:ProwessPower": {
     "NAME": "Prowess",
     "DESCRIPTIONS": [

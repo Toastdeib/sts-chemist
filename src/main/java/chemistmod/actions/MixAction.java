@@ -105,7 +105,9 @@ public class MixAction extends AbstractGameAction {
                 }
                 break;
             case PHOENIX_FIRE:
-                // TODO
+                if (!player.hasPower(PhoenixFirePower.POWER_ID)) {
+                    doSingleTargetPower(player, player, new PhoenixFirePower(player), 0);
+                }
                 break;
             case PANACEA:
                 doClearDebuffs(player);
