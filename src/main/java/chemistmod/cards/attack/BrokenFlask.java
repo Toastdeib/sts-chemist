@@ -20,7 +20,7 @@ public class BrokenFlask extends BaseChemistCard {
 
     public BrokenFlask() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
-                CardType.ATTACK, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.ENEMY);
+                CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
         this.damage = this.baseDamage = BASE_DAMAGE;
     }
 
