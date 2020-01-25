@@ -1,4 +1,19 @@
 {
+  "theChemist:DefensivePosturePower": {
+    "NAME": "DefensivePosture",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " #yBlock whenever you stockpile a #yReagent."
+    ]
+  },
+  "theChemist:EfficiencyPower": {
+    "NAME": "Efficiency",
+    "DESCRIPTIONS": [
+      "Whenever you #yMix, draw #b",
+      " card.",
+      " cards."
+    ]
+  },
   "theChemist:FluidityPower": {
     "NAME": "Fluidity",
     "DESCRIPTIONS": [
@@ -21,6 +36,14 @@
       "% more damage from #yMix effects for #b",
       " turn.",
       " turns."
+    ]
+  },
+  "theChemist:IronDraughtPower": {
+    "NAME": "Iron Draught",
+    "DESCRIPTIONS": [
+      "The next time you take damage, reduce it by half.",
+      "The next #b",
+      " times you take damage, reduce it by half."
     ]
   },
   "theChemist:MarkedPower": {

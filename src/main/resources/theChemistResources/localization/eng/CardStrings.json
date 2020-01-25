@@ -41,7 +41,7 @@
   },
   "theChemist:DefensivePosture": {
     "NAME": "Defensive Posture",
-    "DESCRIPTION": "Whenever you add a Reagent to your stockpile, gain !B! Block."
+    "DESCRIPTION": "Whenever you add a Reagent to your stockpile, gain !M! Block."
   },
   "theChemist:Disposal": {
     "NAME": "Disposal",
@@ -102,6 +102,11 @@
     "NAME": "Holy Water",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a random card in your hand. Add 1 Holy Water Reagent to the stockpile.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a card in your hand. Add 1 Holy Water Reagent to the stockpile."
+  },
+  "theChemist:IronDraught": {
+    "NAME": "Iron Draught",
+    "DESCRIPTION": "The next damage you take is reduced by half. Exhaust.",
+    "UPGRADE_DESCRIPTION": "The next damage you take is reduced by half."
   },
   "theChemist:MageMasher": {
     "NAME": "Mage Masher",

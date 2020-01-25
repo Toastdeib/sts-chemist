@@ -2,10 +2,7 @@ package chemistmod.actions;
 
 import chemistmod.cards.skill.PhoenixDown;
 import chemistmod.characters.TheChemist;
-import chemistmod.powers.FluidityPower;
-import chemistmod.powers.ImbalancePower;
-import chemistmod.powers.ProwessPower;
-import chemistmod.powers.VolatilityPower;
+import chemistmod.powers.*;
 import chemistmod.reagents.MixResultEnum;
 import chemistmod.reagents.ReagentEnum;
 import chemistmod.util.MixUtils;
@@ -58,8 +55,8 @@ public class MixAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        MixResultEnum result = MixUtils.mix(this.first, this.second);
         AbstractPlayer player = AbstractDungeon.player;
+        MixResultEnum result = MixUtils.mix(this.first, this.second);
         switch (result) {
             case DUD:
                 // lol
@@ -199,6 +196,11 @@ public class MixAction extends AbstractGameAction {
                     doSingleTargetPower(player, new GainStrengthPower(this.target, STRENGTH_LOSS_STACK), STRENGTH_LOSS_STACK);
                 }
                 break;
+        }
+
+        AbstractPower efficiency = player.getPower(EfficiencyPower.POWER_ID);
+        if (efficiency != null) {
+            doDraw(player, efficiency.amount);
         }
 
         this.isDone = true;
