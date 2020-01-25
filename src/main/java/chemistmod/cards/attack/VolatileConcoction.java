@@ -31,8 +31,6 @@ public class VolatileConcoction extends BaseChemistCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(UPGRADE_DAMAGE);
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            initializeDescription();
         }
     }
 
