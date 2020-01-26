@@ -16,7 +16,7 @@ public class BeltPouch extends BaseChemistCard {
 
     private static final int BASE_COST = 1;
     private static final int UPGRADE_COST = 0;
-    private static final int BASE_MAGIC = 2;
+    private static final int BASE_MAGIC = 1;
 
     public BeltPouch() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,

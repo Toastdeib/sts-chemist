@@ -95,8 +95,8 @@
   },
   "theChemist:HastenedResearch": {
     "NAME": "Hastened Research",
-    "DESCRIPTION": "Remove all Reagents from your stockpile. Draw 1 card and gain [R] for every Reagent removed this way.",
-    "UPGRADE_DESCRIPTION": "Fling all Reagents in your stockpile. Draw 1 card and gain [R] for every Reagent flung this way."
+    "DESCRIPTION": "Remove all Reagents from your stockpile. Draw 1 card and gain [R] for every Reagent removed this way. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Fling all Reagents in your stockpile. Draw 1 card and gain [R] for every Reagent flung this way. Exhaust."
   },
   "theChemist:HeroCocktail": {
     "NAME": "Hero Cocktail",
@@ -205,10 +205,11 @@
   },
   "theChemist:VolatileConcoction": {
     "NAME": "Volatile Concoction",
-    "DESCRIPTION": "Can only be played if your stockpile contains at least 2 Reagents. Remove all Reagents from your stockpile. Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Can only be played if your stockpile contains at least 2 Reagents. Deal !D! damage to ALL enemies. Remove all Reagents from your stockpile."
   },
   "theChemist:WasteNot": {
     "NAME": "Waste Not",
-    "DESCRIPTION": "Mix active Reagents, then return both consumed Reagents to your stockpile. Exhaust."
+    "DESCRIPTION": "Mix active Reagents, then return both consumed Reagents to your stockpile. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Mix active Reagents, then return both consumed Reagents to your stockpile."
   }
 }
