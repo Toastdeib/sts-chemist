@@ -9,7 +9,7 @@
   },
   "theChemist:BeltPouch": {
     "NAME": "Belt Pouch",
-    "DESCRIPTION": "At the end of your turn, Retain up to !M! cards."
+    "DESCRIPTION": "At the end of your turn, Retain up to !M! card."
   },
   "theChemist:BottomlessSack": {
     "NAME": "Bottomless Sack",

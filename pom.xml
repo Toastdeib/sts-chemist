@@ -57,6 +57,7 @@
                         <configuration>
                             <target>
                                 <copy file="target/ChemistMod.jar" tofile="C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/mods/ChemistMod.jar"/>
+                                <copy file="target/ChemistMod.jar" tofile="C:/Users/lordx/Dropbox/StS-Chemist/ChemistMod.jar"/>
                             </target>
                         </configuration>
                         <goals>

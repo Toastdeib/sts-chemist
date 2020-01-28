@@ -15,7 +15,7 @@ public class WasteNot extends BaseChemistCard {
     public static final String CARD_ID = ChemistMod.makeId("WasteNot");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
-    private static final int BASE_COST = 2;
+    private static final int BASE_COST = 1;
 
     public WasteNot() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
