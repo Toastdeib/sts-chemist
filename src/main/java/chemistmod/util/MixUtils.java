@@ -13,10 +13,7 @@ public class MixUtils {
             ReagentEnum.HI_POTION,
             ReagentEnum.HI_ETHER,
             ReagentEnum.PHOENIX_DOWN,
-            ReagentEnum.MAIDENS_KISS,
-            ReagentEnum.HOLY_WATER,
-            ReagentEnum.ANTIDOTE,
-            ReagentEnum.EYEDROP,
+            ReagentEnum.REMEDY,
             ReagentEnum.TURTLE_SHELL,
             ReagentEnum.DARK_MATTER,
             ReagentEnum.DRAGON_FANG
@@ -31,24 +28,10 @@ public class MixUtils {
         resultMap.put(hash(ReagentEnum.HI_ETHER, ReagentEnum.HI_ETHER), MixResultEnum.MEGA_ETHER);
         resultMap.put(hash(ReagentEnum.HI_ETHER, ReagentEnum.PHOENIX_DOWN), MixResultEnum.GALVANIZING_AGENT);
         resultMap.put(hash(ReagentEnum.PHOENIX_DOWN, ReagentEnum.PHOENIX_DOWN), MixResultEnum.PHOENIX_FIRE);
-        resultMap.put(hash(ReagentEnum.MAIDENS_KISS, ReagentEnum.HOLY_WATER), MixResultEnum.PANACEA);
-        resultMap.put(hash(ReagentEnum.MAIDENS_KISS, ReagentEnum.ANTIDOTE), MixResultEnum.PANACEA);
-        resultMap.put(hash(ReagentEnum.MAIDENS_KISS, ReagentEnum.EYEDROP), MixResultEnum.PANACEA);
-        resultMap.put(hash(ReagentEnum.MAIDENS_KISS, ReagentEnum.TURTLE_SHELL), MixResultEnum.OCEANS_FURY);
-        resultMap.put(hash(ReagentEnum.MAIDENS_KISS, ReagentEnum.DARK_MATTER), MixResultEnum.DEMONS_EMBRACE);
-        resultMap.put(hash(ReagentEnum.MAIDENS_KISS, ReagentEnum.DRAGON_FANG), MixResultEnum.DRAGONS_BITE);
-        resultMap.put(hash(ReagentEnum.HOLY_WATER, ReagentEnum.ANTIDOTE), MixResultEnum.PANACEA);
-        resultMap.put(hash(ReagentEnum.HOLY_WATER, ReagentEnum.EYEDROP), MixResultEnum.PANACEA);
-        resultMap.put(hash(ReagentEnum.HOLY_WATER, ReagentEnum.TURTLE_SHELL), MixResultEnum.STORMS_EYE);
-        resultMap.put(hash(ReagentEnum.HOLY_WATER, ReagentEnum.DARK_MATTER), MixResultEnum.DEVILS_TOUCH);
-        resultMap.put(hash(ReagentEnum.HOLY_WATER, ReagentEnum.DRAGON_FANG), MixResultEnum.DRAGONS_BREATH);
-        resultMap.put(hash(ReagentEnum.ANTIDOTE, ReagentEnum.EYEDROP), MixResultEnum.PANACEA);
-        resultMap.put(hash(ReagentEnum.ANTIDOTE, ReagentEnum.TURTLE_SHELL), MixResultEnum.CALM_OF_THE_DEPTHS);
-        resultMap.put(hash(ReagentEnum.ANTIDOTE, ReagentEnum.DARK_MATTER), MixResultEnum.FIENDS_CARESS);
-        resultMap.put(hash(ReagentEnum.ANTIDOTE, ReagentEnum.DRAGON_FANG), MixResultEnum.DRAGONS_CLAW);
-        resultMap.put(hash(ReagentEnum.EYEDROP, ReagentEnum.TURTLE_SHELL), MixResultEnum.ABYSSAL_CLARITY);
-        resultMap.put(hash(ReagentEnum.EYEDROP, ReagentEnum.DARK_MATTER), MixResultEnum.CURSED_GAZE);
-        resultMap.put(hash(ReagentEnum.EYEDROP, ReagentEnum.DRAGON_FANG), MixResultEnum.DRAGONS_GLARE);
+        resultMap.put(hash(ReagentEnum.REMEDY, ReagentEnum.REMEDY), MixResultEnum.PANACEA);
+        resultMap.put(hash(ReagentEnum.REMEDY, ReagentEnum.TURTLE_SHELL), MixResultEnum.STORMS_EYE);
+        resultMap.put(hash(ReagentEnum.REMEDY, ReagentEnum.DARK_MATTER), MixResultEnum.CURSED_GAZE);
+        resultMap.put(hash(ReagentEnum.REMEDY, ReagentEnum.DRAGON_FANG), MixResultEnum.DRAGONS_BREATH);
         resultMap.put(hash(ReagentEnum.TURTLE_SHELL, ReagentEnum.TURTLE_SHELL), MixResultEnum.HARDENING_SOLUTION);
         resultMap.put(hash(ReagentEnum.TURTLE_SHELL, ReagentEnum.DARK_MATTER), MixResultEnum.CETACEAN_WRATH);
         resultMap.put(hash(ReagentEnum.TURTLE_SHELL, ReagentEnum.DRAGON_FANG), MixResultEnum.DRAGONS_SCALES);

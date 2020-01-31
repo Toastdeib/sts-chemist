@@ -23,6 +23,7 @@ public class HiEther extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.UNCOMMON, CardTarget.SELF);
         this.exhaust = true;
+        this.requiresStockpile = true;
     }
 
     @Override

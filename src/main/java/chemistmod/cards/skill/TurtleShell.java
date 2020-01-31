@@ -23,6 +23,7 @@ public class TurtleShell extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.BASIC, CardTarget.SELF);
         this.block = this.baseBlock = BASE_BLOCK;
+        this.requiresStockpile = true;
     }
 
     @Override

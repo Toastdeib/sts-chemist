@@ -5,7 +5,7 @@
   },
   "theChemist:Antidote": {
     "NAME": "Antidote",
-    "DESCRIPTION": "Gain !B! Block. Add 1 Antidote Reagent to your stockpile."
+    "DESCRIPTION": "Gain !B! Block. Add 1 Remedy Reagent to your stockpile."
   },
   "theChemist:BeltPouch": {
     "NAME": "Belt Pouch",
@@ -82,8 +82,8 @@
   },
   "theChemist:Eyedrops": {
     "NAME": "Eyedrops",
-    "DESCRIPTION": "Draw !M! card. Add 1 Eyedrops Reagent to your stockpile.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. Add 1 Eyedrops Reagent to your stockpile."
+    "DESCRIPTION": "Draw !M! card. Add 1 Remedy Reagent to your stockpile.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. Add 1 Remedy Reagent to your stockpile."
   },
   "theChemist:FlaskBash": {
     "NAME": "Flask Bash",
@@ -113,8 +113,8 @@
   },
   "theChemist:HolyWater": {
     "NAME": "Holy Water",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a random card in your hand. Add 1 Holy Water Reagent to your stockpile.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a card in your hand. Add 1 Holy Water Reagent to your stockpile."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a random card in your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a card in your hand."
   },
   "theChemist:IronDraught": {
     "NAME": "Iron Draught",
@@ -127,7 +127,7 @@
   },
   "theChemist:MaidensKiss": {
     "NAME": "Maiden's Kiss",
-    "DESCRIPTION": "Gain !B! Block. Add 1 Maiden's Kiss Reagent to your stockpile."
+    "DESCRIPTION": "Apply !M! Weak. Add 1 Remedy Reagent to your stockpile."
   },
   "theChemist:MainGauche": {
     "NAME": "Main Gauche",

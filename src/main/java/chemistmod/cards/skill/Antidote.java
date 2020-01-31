@@ -23,6 +23,7 @@ public class Antidote extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.COMMON, CardTarget.SELF);
         this.block = this.baseBlock = BASE_BLOCK;
+        this.requiresStockpile = true;
     }
 
     @Override
@@ -36,6 +37,6 @@ public class Antidote extends BaseChemistCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         addToBot(new GainBlockAction(player, player, this.block));
-        addToBot(new StockpileAction(ReagentEnum.ANTIDOTE));
+        addToBot(new StockpileAction(ReagentEnum.REMEDY));
     }
 }

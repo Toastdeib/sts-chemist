@@ -24,6 +24,7 @@ public class PhoenixDown extends BaseChemistCard {
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.RARE, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = BASE_MAGIC;
         this.exhaust = true;
+        this.requiresStockpile = true;
     }
 
     @Override

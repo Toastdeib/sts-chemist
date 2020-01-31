@@ -1,10 +1,8 @@
 package chemistmod.cards.attack;
 
 import chemistmod.ChemistMod;
-import chemistmod.actions.StockpileAction;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
-import chemistmod.reagents.ReagentEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
@@ -42,6 +40,5 @@ public class HolyWater extends BaseChemistCard {
     public void use(AbstractPlayer player, AbstractMonster monster) {
         addToBot(new DamageAllEnemiesAction(player, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
         addToBot(new ExhaustAction(player, player, 1, !this.upgraded));
-        addToBot(new StockpileAction(ReagentEnum.HOLY_WATER));
     }
 }

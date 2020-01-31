@@ -26,6 +26,7 @@ public class HiPotion extends BaseChemistCard {
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.UNCOMMON, CardTarget.SELF);
         this.block = this.baseBlock = BASE_BLOCK;
         this.magicNumber = this.baseMagicNumber = BASE_HEAL;
+        this.requiresStockpile = true;
     }
 
     @Override

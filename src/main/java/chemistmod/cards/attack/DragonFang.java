@@ -25,6 +25,7 @@ public class DragonFang extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.ATTACK, TheChemist.Enums.CARD_GOLD, CardRarity.BASIC, CardTarget.ENEMY);
         this.damage = this.baseDamage = BASE_DAMAGE;
+        this.requiresStockpile = true;
     }
 
     @Override

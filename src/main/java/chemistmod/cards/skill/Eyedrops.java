@@ -23,6 +23,7 @@ public class Eyedrops extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.COMMON, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = BASE_MAGIC;
+        this.requiresStockpile = true;
     }
 
     @Override
@@ -38,6 +39,6 @@ public class Eyedrops extends BaseChemistCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         addToBot(new DrawCardAction(player, this.magicNumber, false));
-        addToBot(new StockpileAction(ReagentEnum.EYEDROP));
+        addToBot(new StockpileAction(ReagentEnum.REMEDY));
     }
 }
