@@ -117,6 +117,10 @@
     "NAME": "Hi-Potion",
     "DESCRIPTION": "Gain !B! Block. Heal !M! HP. Add 1 Hi-Potion Reagent to your stockpile."
   },
+  "theChemist:Hoard": {
+    "NAME": "Hoard",
+    "DESCRIPTION": "Gain !B! Block. Add 2 Dragon Fang Reagents to your stockpile."
+  },
   "theChemist:HolyWater": {
     "NAME": "Holy Water",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust a random card in your hand.",
@@ -226,5 +230,9 @@
     "NAME": "Waste Not",
     "DESCRIPTION": "Mix active Reagents, then return both consumed Reagents to your stockpile.",
     "UPGRADE_DESCRIPTION": "Retain. Mix active Reagents, then return both consumed Reagents to your stockpile."
+  },
+  "theChemist:Withdraw": {
+    "NAME": "Withdraw",
+    "DESCRIPTION": "Gain !B! Block. Add 1 Turtle Shell Reagent to your stockpile."
   }
 }
