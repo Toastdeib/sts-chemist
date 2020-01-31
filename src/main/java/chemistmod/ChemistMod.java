@@ -124,6 +124,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new ChemDefend());
         BaseMod.addCard(new ChemStrike());
         BaseMod.addCard(new ChickenKnife());
+        BaseMod.addCard(new ChitinousBash());
         BaseMod.addCard(new Dagger());
         BaseMod.addCard(new DarkMatter());
         BaseMod.addCard(new DefensivePosture());
@@ -156,6 +157,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new Prowess());
         BaseMod.addCard(new Prudence());
         BaseMod.addCard(new Recover());
+        BaseMod.addCard(new Roar());
         BaseMod.addCard(new SageStaff());
         BaseMod.addCard(new Screen());
         BaseMod.addCard(new SleightOfHand());
@@ -164,6 +166,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new TakeStock());
         BaseMod.addCard(new Temerity());
         BaseMod.addCard(new TurtleShell());
+        BaseMod.addCard(new VoidStrike());
         BaseMod.addCard(new VolatileConcoction());
         BaseMod.addCard(new WasteNot());
     }
