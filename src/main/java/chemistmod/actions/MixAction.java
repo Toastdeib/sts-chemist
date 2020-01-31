@@ -23,11 +23,11 @@ import java.util.ArrayList;
 
 public class MixAction extends AbstractGameAction {
     private static final int DUD_DAMAGE = 3;
-    private static final int LIGHT_DAMAGE = 5;
-    private static final int HEAVY_DAMAGE = 10;
+    private static final int LIGHT_DAMAGE = 6;
+    private static final int HEAVY_DAMAGE = 12;
 
-    private static final int LIGHT_BLOCK = 4;
-    private static final int HEAVY_BLOCK = 8;
+    private static final int LIGHT_BLOCK = 5;
+    private static final int HEAVY_BLOCK = 10;
     private static final int POTION_BLOCK = 3;
     private static final int ELIXIR_BLOCK = 2;
 
@@ -40,9 +40,11 @@ public class MixAction extends AbstractGameAction {
     private static final int LIGHT_DEBUFF_STACK = 1;
     private static final int HEAVY_DEBUFF_STACK = 3;
     private static final int STRENGTH_LOSS_STACK = 6;
+    private static final int ENERGY_STACK = 1;
+    private static final int ARTIFACT_STACK = 1;
     private static final int STAT_BUFF_STACK = 1;
     private static final int THORNS_STACK = 2;
-    private static final int PLATED_ARMOR_STACK = 4;
+    private static final int PLATED_ARMOR_STACK = 3;
     private static final int DRAW_AMOUNT = 1;
 
     private ReagentEnum first;
@@ -104,13 +106,16 @@ public class MixAction extends AbstractGameAction {
                     c.target_y = 0.0F;
                 }
                 break;
+            case GALVANIZING_AGENT:
+                doSingleTargetPower(player, player, new GalvanizedPower(player, ENERGY_STACK), ENERGY_STACK);
+                break;
             case PHOENIX_FIRE:
                 if (!player.hasPower(PhoenixFirePower.POWER_ID)) {
                     doSingleTargetPower(player, player, new PhoenixFirePower(player), 0);
                 }
                 break;
             case PANACEA:
-                doClearDebuffs(player);
+                doSingleTargetPower(player, player, new ArtifactPower(player, ARTIFACT_STACK), ARTIFACT_STACK);
                 break;
             case DRAGONS_FEAST:
                 this.target = AbstractDungeon.getMonsters().getRandomMonster(true);

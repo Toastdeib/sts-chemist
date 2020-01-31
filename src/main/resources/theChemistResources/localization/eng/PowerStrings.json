@@ -30,6 +30,13 @@
       "."
     ]
   },
+  "theChemist:GalvanizedPower": {
+    "NAME": "Galvanized",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain ",
+      "."
+    ]
+  },
   "theChemist:GoliathTonicPower": {
     "NAME": "Goliath Tonic",
     "DESCRIPTIONS": [

@@ -7,6 +7,7 @@ public enum MixResultEnum {
     MEGA_ETHER,
     HALF_ELIXIR,
     RESURRECTION,
+    GALVANIZING_AGENT,
     PHOENIX_FIRE,
     PANACEA,
 

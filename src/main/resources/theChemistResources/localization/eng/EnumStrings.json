@@ -113,6 +113,12 @@
       "Inflict #b3 #yVulnerable on a random enemy."
     ]
   },
+  "theChemist:GALVANIZING_AGENT": {
+    "NAME": "Galvanizing Agent",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain [R]."
+    ]
+  },
   "theChemist:HALF_ELIXIR": {
     "NAME": "Half Elixir",
     "DESCRIPTIONS": [
@@ -158,7 +164,7 @@
   "theChemist:PANACEA": {
     "NAME": "Panacea",
     "DESCRIPTIONS": [
-      "Remove all of your debuffs."
+      "Gain #b1 #yArtifact."
     ]
   },
   "theChemist:PHOENIX_DOWN": {

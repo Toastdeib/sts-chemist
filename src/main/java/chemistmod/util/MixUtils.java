@@ -29,7 +29,7 @@ public class MixUtils {
         resultMap.put(hash(ReagentEnum.HI_POTION, ReagentEnum.TURTLE_SHELL), MixResultEnum.CARAPACE_COCKTAIL);
         resultMap.put(hash(ReagentEnum.HI_POTION, ReagentEnum.DRAGON_FANG), MixResultEnum.DRAGONS_FEAST);
         resultMap.put(hash(ReagentEnum.HI_ETHER, ReagentEnum.HI_ETHER), MixResultEnum.MEGA_ETHER);
-        resultMap.put(hash(ReagentEnum.HI_ETHER, ReagentEnum.PHOENIX_DOWN), MixResultEnum.RESURRECTION);
+        resultMap.put(hash(ReagentEnum.HI_ETHER, ReagentEnum.PHOENIX_DOWN), MixResultEnum.GALVANIZING_AGENT);
         resultMap.put(hash(ReagentEnum.PHOENIX_DOWN, ReagentEnum.PHOENIX_DOWN), MixResultEnum.PHOENIX_FIRE);
         resultMap.put(hash(ReagentEnum.MAIDENS_KISS, ReagentEnum.HOLY_WATER), MixResultEnum.PANACEA);
         resultMap.put(hash(ReagentEnum.MAIDENS_KISS, ReagentEnum.ANTIDOTE), MixResultEnum.PANACEA);
