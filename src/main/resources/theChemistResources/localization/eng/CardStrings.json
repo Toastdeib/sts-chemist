@@ -57,7 +57,8 @@
   },
   "theChemist:DoubleDose": {
     "NAME": "Double Dose",
-    "DESCRIPTION": "Mix active Reagents and apply the effect twice."
+    "DESCRIPTION": "Mix active Reagents and apply the effect twice.",
+    "UPGRADE_DESCRIPTION": "Retain. Mix active Reagents and apply the effect twice."
   },
   "theChemist:DragonFang": {
     "NAME": "Dragon Fang",
@@ -87,7 +88,8 @@
   },
   "theChemist:FlaskBash": {
     "NAME": "Flask Bash",
-    "DESCRIPTION": "Mix active Reagents. Deal !D! damage. Add a Broken Flask to your hand. Exhaust."
+    "DESCRIPTION": "Mix active Reagents. Deal !D! damage. Add a Broken Flask to your hand. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. Mix active Reagents. Deal !D! damage. Add a Broken Flask to your hand. Exhaust."
   },
   "theChemist:GoliathTonic": {
     "NAME": "Goliath Tonic",
@@ -135,7 +137,8 @@
   },
   "theChemist:Mix": {
     "NAME": "Mix",
-    "DESCRIPTION": "Mix active Reagents."
+    "DESCRIPTION": "Mix active Reagents.",
+    "UPGRADE_DESCRIPTION": "Retain. Mix active Reagents."
   },
   "theChemist:MorningStar": {
     "NAME": "Morning Star",
@@ -209,7 +212,7 @@
   },
   "theChemist:WasteNot": {
     "NAME": "Waste Not",
-    "DESCRIPTION": "Mix active Reagents, then return both consumed Reagents to your stockpile. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Mix active Reagents, then return both consumed Reagents to your stockpile."
+    "DESCRIPTION": "Mix active Reagents, then return both consumed Reagents to your stockpile.",
+    "UPGRADE_DESCRIPTION": "Retain. Mix active Reagents, then return both consumed Reagents to your stockpile."
   }
 }

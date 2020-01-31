@@ -17,9 +17,8 @@ public class FlaskBash extends BaseChemistCard {
     public static final String CARD_ID = ChemistMod.makeId("FlaskBash");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
-    private static final int BASE_COST = 1;
-    private static final int BASE_DAMAGE = 8;
-    private static final int UPGRADE_DAMAGE = 2;
+    private static final int BASE_COST = 0;
+    private static final int BASE_DAMAGE = 10;
 
     public FlaskBash() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
@@ -33,7 +32,9 @@ public class FlaskBash extends BaseChemistCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_DAMAGE);
+            this.selfRetain = true;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 
@@ -41,11 +42,10 @@ public class FlaskBash extends BaseChemistCard {
     public void use(AbstractPlayer player, AbstractMonster monster) {
         // This cast should be safe; we check in the base class
         TheChemist chemist = (TheChemist)player;
-        if (!canMix(chemist)) {
-            return;
+        if (canMix(chemist)) {
+            addToBot(new MixAction(chemist.popReagent(), chemist.popReagent()));
         }
 
-        addToBot(new MixAction(chemist.popReagent(), chemist.popReagent()));
         addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         addToBot(new MakeTempCardInHandAction(new BrokenFlask()));

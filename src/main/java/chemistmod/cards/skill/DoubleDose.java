@@ -14,8 +14,7 @@ public class DoubleDose extends BaseChemistCard {
     public static final String CARD_ID = ChemistMod.makeId("DoubleDose");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
-    private static final int BASE_COST = 2;
-    private static final int UPGRADE_COST = 1;
+    private static final int BASE_COST = 1;
 
     public DoubleDose() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
@@ -27,7 +26,9 @@ public class DoubleDose extends BaseChemistCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
+            this.selfRetain = true;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 
