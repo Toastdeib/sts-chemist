@@ -27,7 +27,7 @@
     "NAMES": [
       "marked"
     ],
-    "DESCRIPTION": "Marked creatures will always be hit by #yFling. Only one enemy can be afflicted with Marked at a time."
+    "DESCRIPTION": "Marked creatures will always be hit by and take #b2 additional damage from #yFling. Only one enemy can be afflicted with Marked at a time."
   },
   {
     "PROPER_NAME": "Mix",

@@ -1,6 +1,7 @@
 package chemistmod.powers;
 
 import chemistmod.ChemistMod;
+import chemistmod.actions.FlingAction;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -35,9 +36,11 @@ public class MarkedPower extends AbstractPower {
     @Override
     public void updateDescription() {
         if (this.amount == 1) {
-            this.description = POWER_STRINGS.DESCRIPTIONS[0] + this.amount + POWER_STRINGS.DESCRIPTIONS[1];
+            this.description = POWER_STRINGS.DESCRIPTIONS[0] + this.amount + POWER_STRINGS.DESCRIPTIONS[1] +
+                    FlingAction.BASE_BONUS_DAMAGE + POWER_STRINGS.DESCRIPTIONS[3];
         } else {
-            this.description = POWER_STRINGS.DESCRIPTIONS[0] + this.amount + POWER_STRINGS.DESCRIPTIONS[2];
+            this.description = POWER_STRINGS.DESCRIPTIONS[0] + this.amount + POWER_STRINGS.DESCRIPTIONS[2] +
+                    FlingAction.BASE_BONUS_DAMAGE + POWER_STRINGS.DESCRIPTIONS[3];
         }
     }
 

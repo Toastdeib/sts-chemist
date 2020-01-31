@@ -176,7 +176,7 @@
   },
   "theChemist:Recover": {
     "NAME": "Recover",
-    "DESCRIPTION": "Reduce your turn count on any Vulnerable, Frail, and Weakened debuffs by !M!."
+    "DESCRIPTION": "Reduce your turn count on any Vulnerable, Frail, and Weakened debuffs by !M!. Gain !B! Block for each debuff this reduces."
   },
   "theChemist:Roar": {
     "NAME": "Roar",

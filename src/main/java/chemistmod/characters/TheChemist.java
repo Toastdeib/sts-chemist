@@ -241,6 +241,7 @@ public class TheChemist extends CustomPlayer {
 
         power.amount = stockpileCount();
         power.updateDescription();
+        power.flashWithoutSound();
     }
 
     public static String getNotEnoughReagentsText() {

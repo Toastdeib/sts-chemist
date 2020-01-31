@@ -73,8 +73,9 @@
     "NAME": "Marked",
     "DESCRIPTIONS": [
       "#yFling will always target this enemy for #b",
-      " turn.",
-      " turns."
+      " turn and do #b",
+      " turns and do #b",
+      " additional damage."
     ]
   },
   "theChemist:PhoenixFirePower": {
