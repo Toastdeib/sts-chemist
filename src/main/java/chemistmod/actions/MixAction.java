@@ -212,11 +212,19 @@ public class MixAction extends AbstractGameAction {
     }
 
     private void doSingleTargetDamage(AbstractPlayer source, AbstractCreature target, int amount) {
+        if (target == null) {
+            return;
+        }
+
         AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
                 new DamageInfo(source, modifyDamage(source, target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
     }
 
     private void doSingleTargetVampireDamage(AbstractPlayer source, int amount) {
+        if (this.target == null) {
+            return;
+        }
+
         AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target,
                 new DamageInfo(source, modifyDamage(source, this.target, amount), TheChemist.Enums.MIX), AttackEffect.FIRE));
     }
@@ -241,6 +249,10 @@ public class MixAction extends AbstractGameAction {
     }
 
     private void doSingleTargetPower(AbstractPlayer source, AbstractCreature target, AbstractPower power, int stackAmount) {
+        if (target == null) {
+            return;
+        }
+
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, power, modifyPower(source, stackAmount)));
     }
 

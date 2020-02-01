@@ -6,6 +6,7 @@ import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -40,5 +41,14 @@ public class Mix extends BaseChemistCard {
         }
 
         addToBot(new MixAction(chemist.popReagent(), chemist.popReagent()));
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (AbstractDungeon.player instanceof TheChemist && ((TheChemist)AbstractDungeon.player).stockpileCount() > 1) {
+            this.glowColor = GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 }

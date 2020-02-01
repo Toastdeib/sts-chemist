@@ -7,6 +7,7 @@ import chemistmod.characters.TheChemist;
 import chemistmod.reagents.ReagentEnum;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -44,5 +45,14 @@ public class DoubleDose extends BaseChemistCard {
         ReagentEnum second = chemist.popReagent();
         addToBot(new MixAction(first, second));
         addToBot(new MixAction(first, second));
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (AbstractDungeon.player instanceof TheChemist && ((TheChemist)AbstractDungeon.player).stockpileCount() > 1) {
+            this.glowColor = GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 }

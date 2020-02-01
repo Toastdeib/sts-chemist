@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -17,7 +18,7 @@ public class FlaskBash extends BaseChemistCard {
     public static final String CARD_ID = ChemistMod.makeId("FlaskBash");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
-    private static final int BASE_COST = 0;
+    private static final int BASE_COST = 1;
     private static final int BASE_DAMAGE = 10;
 
     public FlaskBash() {
@@ -49,5 +50,14 @@ public class FlaskBash extends BaseChemistCard {
         addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         addToBot(new MakeTempCardInHandAction(new BrokenFlask()));
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (AbstractDungeon.player instanceof TheChemist && ((TheChemist)AbstractDungeon.player).stockpileCount() > 1) {
+            this.glowColor = GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 }

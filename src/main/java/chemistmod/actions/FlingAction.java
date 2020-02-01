@@ -21,6 +21,12 @@ public class FlingAction extends AbstractGameAction {
     public void update() {
         // TODO - Account for modifiers to Fling damage (e.g. STR and the boss relic once I implement that)
         pickTarget();
+        if (this.target == null) {
+            // This can happen in certain fights (e.g. Gremlin Leader, if minions are fleeing). If it does, we don't
+            // want to fling because there's nothing to actually hit.
+            return;
+        }
+
         int damage = BASE_FLING_DAMAGE + (this.hasMarkedTarget ? BASE_BONUS_DAMAGE : 0);
         AbstractDungeon.actionManager.addToTop(new DamageAction(this.target,
                 new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.THORNS), AttackEffect.BLUNT_LIGHT));
