@@ -2,7 +2,7 @@ package chemistmod.cards.attack;
 
 import chemistmod.ChemistMod;
 import chemistmod.actions.MixAction;
-import chemistmod.cards.BaseChemistCard;
+import chemistmod.cards.BaseMixCard;
 import chemistmod.characters.TheChemist;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -10,11 +10,10 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class FlaskBash extends BaseChemistCard {
+public class FlaskBash extends BaseMixCard {
     public static final String CARD_ID = ChemistMod.makeId("FlaskBash");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
@@ -26,7 +25,6 @@ public class FlaskBash extends BaseChemistCard {
                 CardType.ATTACK, TheChemist.Enums.CARD_GOLD, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = BASE_DAMAGE;
         this.exhaust = true;
-        this.requiresStockpile = true;
     }
 
     @Override
@@ -50,14 +48,5 @@ public class FlaskBash extends BaseChemistCard {
         addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         addToBot(new MakeTempCardInHandAction(new BrokenFlask()));
-    }
-
-    @Override
-    public void triggerOnGlowCheck() {
-        if (AbstractDungeon.player instanceof TheChemist && ((TheChemist)AbstractDungeon.player).stockpileCount() > 1) {
-            this.glowColor = GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            this.glowColor = BLUE_BORDER_GLOW_COLOR.cpy();
-        }
     }
 }

@@ -29,14 +29,4 @@ public abstract class BaseChemistCard extends CustomCard {
 
         return true;
     }
-
-    protected boolean canMix(TheChemist chemist) {
-        if (chemist.stockpileCount() < 2) {
-            AbstractDungeon.effectList.add(new ThoughtBubble(chemist.dialogX, chemist.dialogY, 3.0f,
-                    TheChemist.getNotEnoughReagentsText(), true));
-            return false;
-        }
-
-        return true;
-    }
 }
