@@ -8,7 +8,7 @@
     ]
   },
   "theChemist:DefensivePosturePower": {
-    "NAME": "DefensivePosture",
+    "NAME": "Defensive Posture",
     "DESCRIPTIONS": [
       "Gain #b",
       " #yBlock whenever you stockpile a #yReagent."

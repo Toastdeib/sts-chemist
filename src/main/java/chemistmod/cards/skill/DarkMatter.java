@@ -19,7 +19,7 @@ public class DarkMatter extends BaseChemistCard {
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
     private static final int BASE_COST = 2;
-    private static final int BASE_MAGIC = 2;
+    private static final int BASE_MAGIC = 1;
     private static final int UPGRADE_MAGIC = 1;
 
     public DarkMatter() {

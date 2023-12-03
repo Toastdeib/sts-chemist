@@ -1,6 +1,5 @@
 package chemistmod.cards.skill;
 
-import basemod.helpers.BaseModCardTags;
 import chemistmod.ChemistMod;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
@@ -22,7 +21,7 @@ public class ChemDefend extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.BASIC, CardTarget.SELF);
         this.block = this.baseBlock = BASE_BLOCK;
-        this.tags.add(BaseModCardTags.BASIC_DEFEND);
+        this.tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override

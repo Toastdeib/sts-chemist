@@ -83,15 +83,15 @@ public class TheChemist extends CustomPlayer {
         // Strikes
         deck.add(ChemStrike.CARD_ID);
         deck.add(ChemStrike.CARD_ID);
+        deck.add(ChemStrike.CARD_ID);
 
         // Defends
+        deck.add(ChemDefend.CARD_ID);
         deck.add(ChemDefend.CARD_ID);
         deck.add(ChemDefend.CARD_ID);
 
         // Chemist-specific cards
         deck.add(DragonFang.CARD_ID);
-        deck.add(DragonFang.CARD_ID);
-        deck.add(TurtleShell.CARD_ID);
         deck.add(TurtleShell.CARD_ID);
         deck.add(DarkMatter.CARD_ID);
         deck.add(Mix.CARD_ID);

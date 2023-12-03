@@ -15,6 +15,7 @@ public class IronDraught extends BaseChemistCard {
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
     private static final int BASE_COST = 1;
+    private static final int UPGRADE_COST = 0;
     private static final int STACK_AMOUNT = 1;
 
     public IronDraught() {
@@ -27,9 +28,7 @@ public class IronDraught extends BaseChemistCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.exhaust = false;
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            initializeDescription();
+            this.upgradeBaseCost(UPGRADE_COST);
         }
     }
 

@@ -128,8 +128,7 @@
   },
   "theChemist:IronDraught": {
     "NAME": "Iron Draught",
-    "DESCRIPTION": "The next damage you take is reduced by half. Exhaust.",
-    "UPGRADE_DESCRIPTION": "The next damage you take is reduced by half."
+    "DESCRIPTION": "The next damage you take is reduced by half. Exhaust."
   },
   "theChemist:MageMasher": {
     "NAME": "Mage Masher",

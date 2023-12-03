@@ -1,6 +1,5 @@
 package chemistmod.cards.attack;
 
-import basemod.helpers.BaseModCardTags;
 import chemistmod.ChemistMod;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
@@ -24,8 +23,7 @@ public class ChemStrike extends BaseChemistCard {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
                 CardType.ATTACK, TheChemist.Enums.CARD_GOLD, CardRarity.BASIC, CardTarget.ENEMY);
         this.damage = this.baseDamage = BASE_DAMAGE;
-        this.tags.add(BaseModCardTags.BASIC_STRIKE);
-        this.tags.add(CardTags.STRIKE);
+        this.tags.add(CardTags.STARTER_STRIKE);
     }
 
     @Override

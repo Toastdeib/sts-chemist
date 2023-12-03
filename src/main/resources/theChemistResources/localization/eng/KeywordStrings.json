@@ -39,7 +39,8 @@
   {
     "PROPER_NAME": "Reagent",
     "NAMES": [
-      "reagent"
+      "reagent",
+      "reagents"
     ],
     "DESCRIPTION": "An alchemical ingredient. Combine #b2 Reagents with #yMix to produce a variety of effects."
   },
