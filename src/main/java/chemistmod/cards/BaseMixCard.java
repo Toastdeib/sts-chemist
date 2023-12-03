@@ -8,12 +8,10 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class BaseMixCard extends BaseChemistCard {
     private static final Logger log = LogManager.getLogger(BaseMixCard.class.getName());
-    private String currentMix;
 
     public BaseMixCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         this.requiresStockpile = true;
-        this.currentMix = null;
     }
 
     @Override
@@ -23,18 +21,6 @@ public abstract class BaseMixCard extends BaseChemistCard {
         } else {
             this.glowColor = BLUE_BORDER_GLOW_COLOR.cpy();
         }
-    }
-
-    public void setCurrentMix(String mix) {
-        log.info("Setting currentMix to " + mix);
-        this.currentMix = mix;
-        this.keywords.add(this.currentMix);
-    }
-
-    public void clearCurrentMix() {
-        log.info("Clearing currentMix");
-        this.keywords.remove(this.currentMix);
-        this.currentMix = null;
     }
 
     protected boolean canMix(TheChemist chemist) {

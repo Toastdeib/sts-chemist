@@ -3,7 +3,6 @@ package chemistmod.characters;
 import basemod.abstracts.CustomPlayer;
 import chemistmod.ChemistMod;
 import chemistmod.actions.FlingAction;
-import chemistmod.cards.BaseMixCard;
 import chemistmod.cards.attack.ChemStrike;
 import chemistmod.cards.attack.DragonFang;
 import chemistmod.cards.skill.ChemDefend;
@@ -243,18 +242,6 @@ public class TheChemist extends CustomPlayer {
         power.amount = stockpileCount();
         power.updateDescription();
         power.flashWithoutSound();
-
-        for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
-            if (!(card instanceof BaseMixCard)) {
-                continue;
-            }
-
-            BaseMixCard mixCard = (BaseMixCard)card;
-            mixCard.clearCurrentMix();
-            if (stockpileCount() > 1) {
-                mixCard.setCurrentMix(""); // TODO
-            }
-        }
     }
 
     public static String getNotEnoughReagentsText() {
