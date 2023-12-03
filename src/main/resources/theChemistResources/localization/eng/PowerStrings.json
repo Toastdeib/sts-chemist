@@ -78,6 +78,14 @@
       " additional damage."
     ]
   },
+  "theChemist:PharmacologyPower": {
+    "NAME": "Pharmacology",
+    "DESCRIPTIONS": [
+      "Your next potion has #b50% increased potency.",
+      "Your next #b",
+      " potions have #b50% increased potency."
+    ]
+  },
   "theChemist:PhoenixFirePower": {
     "NAME": "Phoenix Fire",
     "DESCRIPTIONS": [

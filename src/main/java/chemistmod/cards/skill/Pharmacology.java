@@ -3,6 +3,8 @@ package chemistmod.cards.skill;
 import chemistmod.ChemistMod;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
+import chemistmod.powers.PharmacologyPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -13,6 +15,7 @@ public class Pharmacology extends BaseChemistCard {
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
     private static final int BASE_COST = 1;
+    private static final int STACK_AMOUNT = 1;
 
     public Pharmacology() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
@@ -32,6 +35,6 @@ public class Pharmacology extends BaseChemistCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // TODO - Apply Pharmacology buff
+        addToBot(new ApplyPowerAction(player, player, new PharmacologyPower(player, STACK_AMOUNT)));
     }
 }
