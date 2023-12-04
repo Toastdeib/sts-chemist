@@ -160,6 +160,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new Prowess());
         BaseMod.addCard(new Prudence());
         BaseMod.addCard(new Recover());
+        //BaseMod.addCard(new Reorganize()); // This also needs to be properly implemented, for now it's just scaffolded
         BaseMod.addCard(new Roar());
         BaseMod.addCard(new SageStaff());
         BaseMod.addCard(new Screen());

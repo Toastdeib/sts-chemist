@@ -1,38 +1,37 @@
 package chemistmod.cards.skill;
 
 import chemistmod.ChemistMod;
+import chemistmod.actions.ReorganizeAction;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
-import chemistmod.powers.FromNothingPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class FromNothing extends BaseChemistCard {
-    public static final String CARD_ID = ChemistMod.makeId("FromNothing");
+public class Reorganize extends BaseChemistCard {
+    public static final String CARD_ID = ChemistMod.makeId("Reorganize");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
 
-    private static final int BASE_COST = 1;
-    private static final int UPGRADE_COST = 0;
-    private static final int STACK_AMOUNT = 1;
+    private static final int BASE_COST = 0;
 
-    public FromNothing() {
+    public Reorganize() {
         super(CARD_ID, CARD_STRINGS.NAME, ChemistMod.getCardImagePath(CARD_ID), BASE_COST, CARD_STRINGS.DESCRIPTION,
-                CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.RARE, CardTarget.SELF);
+                CardType.SKILL, TheChemist.Enums.CARD_GOLD, CardRarity.UNCOMMON, CardTarget.SELF);
+        this.exhaust = true;
     }
-
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
+            this.exhaust = false;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        addToBot(new ApplyPowerAction(player, player, new FromNothingPower(player, STACK_AMOUNT)));
+        addToBot(new ReorganizeAction());
     }
 }

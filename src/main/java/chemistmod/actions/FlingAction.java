@@ -28,8 +28,8 @@ public class FlingAction extends AbstractGameAction {
         }
 
         int damage = BASE_FLING_DAMAGE + (this.hasMarkedTarget ? BASE_BONUS_DAMAGE : 0);
-        AbstractDungeon.actionManager.addToTop(new DamageAction(this.target,
-                new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.THORNS), AttackEffect.BLUNT_LIGHT));
+        addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player,
+                damage, DamageInfo.DamageType.THORNS), AttackEffect.BLUNT_LIGHT));
         this.isDone = true;
     }
 

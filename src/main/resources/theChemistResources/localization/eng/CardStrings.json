@@ -189,6 +189,11 @@
     "NAME": "Recover",
     "DESCRIPTION": "Reduce your turn count on any Vulnerable, Frail, and Weakened debuffs by !M!. Gain !B! Block for each debuff this reduces."
   },
+  "theChemist:Reorganize": {
+    "NAME": "Reorganize",
+    "DESCRIPTION": "Put 1 card from your draw pile on top of your draw pile. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Put 1 card from your draw pile on top of your draw pile."
+  },
   "theChemist:Roar": {
     "NAME": "Roar",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. Add 1 Dragon Fang Reagent to your stockpile."
