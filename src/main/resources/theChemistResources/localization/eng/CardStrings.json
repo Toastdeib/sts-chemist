@@ -101,8 +101,8 @@
   },
   "theChemist:HastenedResearch": {
     "NAME": "Hastened Research",
-    "DESCRIPTION": "Remove all Reagents from your stockpile. Draw 1 card and gain [R] for every Reagent removed this way. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Fling all Reagents in your stockpile. Draw 1 card and gain [R] for every Reagent flung this way. Exhaust."
+    "DESCRIPTION": "Remove all Reagents from your stockpile. Draw 1 card and gain [R] for each Reagent removed this way. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Fling all Reagents in your stockpile. Draw 1 card and gain [R] for each Reagent flung this way. Exhaust."
   },
   "theChemist:HeroCocktail": {
     "NAME": "Hero Cocktail",
@@ -169,9 +169,13 @@
     "DESCRIPTION": "Return up to !M! card from your exhaust pile to your hand. Add 1 Phoenix Down Reagent to your stockpile. Exhaust.",
     "UPGRADE_DESCRIPTION": "Return up to !M! cards from your exhaust pile to your hand. Add 1 Phoenix Down Reagent to your stockpile. Exhaust."
   },
+  "theChemist:PowerDrink": {
+    "NAME": "Power Drink",
+    "DESCRIPTION": "Gain !M! Vigor at the start of each turn."
+  },
   "theChemist:Prowess": {
     "NAME": "Prowess",
-    "DESCRIPTION": "Increases the potency of Mix effects by 50%."
+    "DESCRIPTION": "Increase the potency of Mix effects by 50%."
   },
   "theChemist:Prudence": {
     "NAME": "Prudence",

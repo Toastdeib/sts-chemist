@@ -93,6 +93,13 @@
       "% of your max HP instead and remove this buff."
     ]
   },
+  "theChemist:PowerDrinkPower": {
+    "NAME": "Power Drink",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " Vigor at the start of each turn."
+    ]
+  },
   "theChemist:ProwessPower": {
     "NAME": "Prowess",
     "DESCRIPTIONS": [
