@@ -164,6 +164,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new Roar());
         BaseMod.addCard(new SageStaff());
         BaseMod.addCard(new Screen());
+        BaseMod.addCard(new SealedBox());
         BaseMod.addCard(new SleightOfHand());
         BaseMod.addCard(new StudiousResearch());
         BaseMod.addCard(new TaintedBlade());

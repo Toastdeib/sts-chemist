@@ -206,6 +206,10 @@
     "NAME": "Screen",
     "DESCRIPTION": "Gain !B! Block. Fling your topmost Reagent."
   },
+  "theChemist:SealedBox": {
+    "NAME": "Sealed Box",
+    "DESCRIPTION": "Unplayable. When this card is drawn, add !M! random Reagents to your stockpile and exhaust it."
+  },
   "theChemist:SleightOfHand": {
     "NAME": "Sleight of Hand",
     "DESCRIPTION": "Deal !D! damage. Fling your topmost Reagent, then return it to the bottom of your stockpile."
