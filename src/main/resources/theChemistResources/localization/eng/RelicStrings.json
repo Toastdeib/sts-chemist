@@ -6,8 +6,8 @@
       "Start each combat with a #yDragon #yFang in your stockpile."
     ]
   },
-  "theChemist:TaintedFlask": {
-    "NAME": "Tainted Flask",
+  "theChemist:ReinforcedFlask": {
+    "NAME": "Reinforced Flask",
     "FLAVOR": "A stronger dose never hurt anyone.",
     "DESCRIPTIONS": [
       "Enemies with #yImbalance take #b75% more damage rather than #b50%."

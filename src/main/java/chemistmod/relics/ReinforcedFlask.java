@@ -4,10 +4,10 @@ import basemod.abstracts.CustomRelic;
 import chemistmod.ChemistMod;
 import com.badlogic.gdx.graphics.Texture;
 
-public class TaintedFlask extends CustomRelic {
-    public static final String RELIC_ID = ChemistMod.makeId("TaintedFlask");
+public class ReinforcedFlask extends CustomRelic {
+    public static final String RELIC_ID = ChemistMod.makeId("ReinforcedFlask");
 
-    public TaintedFlask() {
+    public ReinforcedFlask() {
         super(RELIC_ID, new Texture(ChemistMod.getRelicImagePath(RELIC_ID)), RelicTier.UNCOMMON, LandingSound.CLINK);
     }
 

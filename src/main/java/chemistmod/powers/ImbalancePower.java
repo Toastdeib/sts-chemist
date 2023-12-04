@@ -1,7 +1,7 @@
 package chemistmod.powers;
 
 import chemistmod.ChemistMod;
-import chemistmod.relics.TaintedFlask;
+import chemistmod.relics.ReinforcedFlask;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -40,7 +40,7 @@ public class ImbalancePower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        String percentage = AbstractDungeon.player.hasRelic(TaintedFlask.RELIC_ID) ?
+        String percentage = AbstractDungeon.player.hasRelic(ReinforcedFlask.RELIC_ID) ?
                 UPGRADE_EFFECTIVENESS_STRING : BASE_EFFECTIVENESS_STRING;
         if (this.amount == 1) {
             this.description = POWER_STRINGS.DESCRIPTIONS[0] + percentage + POWER_STRINGS.DESCRIPTIONS[1] +
@@ -61,6 +61,6 @@ public class ImbalancePower extends AbstractPower {
     }
 
     public static float getModifier() {
-        return AbstractDungeon.player.hasRelic(TaintedFlask.RELIC_ID) ? UPGRADE_EFFECTIVENESS : BASE_EFFECTIVENESS;
+        return AbstractDungeon.player.hasRelic(ReinforcedFlask.RELIC_ID) ? UPGRADE_EFFECTIVENESS : BASE_EFFECTIVENESS;
     }
 }

@@ -10,7 +10,7 @@ import chemistmod.characters.TheChemist;
 import chemistmod.events.PotionSellerEvent;
 import chemistmod.powers.StockpilePower;
 import chemistmod.relics.DragonsGift;
-import chemistmod.relics.TaintedFlask;
+import chemistmod.relics.ReinforcedFlask;
 import chemistmod.util.Keyword;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -180,7 +180,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
     @Override
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new DragonsGift(), TheChemist.Enums.CARD_GOLD);
-        BaseMod.addRelicToCustomPool(new TaintedFlask(), TheChemist.Enums.CARD_GOLD);
+        BaseMod.addRelicToCustomPool(new ReinforcedFlask(), TheChemist.Enums.CARD_GOLD);
     }
 
     @Override
