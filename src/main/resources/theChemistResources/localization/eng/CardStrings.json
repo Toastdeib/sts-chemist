@@ -95,6 +95,10 @@
     "DESCRIPTION": "Mix active Reagents. Deal !D! damage. Add a Broken Flask to your hand. Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. Mix active Reagents. Deal !D! damage. Add a Broken Flask to your hand. Exhaust."
   },
+  "theChemist:FromNothing": {
+    "NAME": "From Nothing",
+    "DESCRIPTION": "The next time you add a Reagent to your stockpile this turn, add it twice."
+  },
   "theChemist:GoliathTonic": {
     "NAME": "Goliath Tonic",
     "DESCRIPTION": "Gain !M! maximum HP this combat."

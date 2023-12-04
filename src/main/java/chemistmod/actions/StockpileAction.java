@@ -2,9 +2,11 @@ package chemistmod.actions;
 
 import chemistmod.characters.TheChemist;
 import chemistmod.powers.DefensivePosturePower;
+import chemistmod.powers.FromNothingPower;
 import chemistmod.reagents.ReagentEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -21,7 +23,13 @@ public class StockpileAction extends AbstractGameAction {
         TheChemist chemist = (TheChemist)AbstractDungeon.player;
         AbstractPower defensivePosture = chemist.getPower(DefensivePosturePower.POWER_ID);
         if (defensivePosture != null) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(chemist, chemist, defensivePosture.amount));
+            addToBot(new GainBlockAction(chemist, chemist, defensivePosture.amount));
+        }
+
+        AbstractPower fromNothing = chemist.getPower(FromNothingPower.POWER_ID);
+        if (fromNothing != null) {
+            chemist.stockpileReagent(this.reagent);
+            addToBot(new ReducePowerAction(chemist, chemist, FromNothingPower.POWER_ID, 1));
         }
 
         chemist.stockpileReagent(this.reagent);

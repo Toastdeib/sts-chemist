@@ -3,8 +3,8 @@
     "NAME": "Bottomless Sack",
     "DESCRIPTIONS": [
       "At the start of your turn, add #b",
-      " random Reagent to your stockpile.",
-      " random Reagents to your stockpile."
+      " random #yReagent to your stockpile.",
+      " random #yReagents to your stockpile."
     ]
   },
   "theChemist:DefensivePosturePower": {
@@ -20,6 +20,14 @@
       "Whenever you #yMix, draw #b",
       " card.",
       " cards."
+    ]
+  },
+  "theChemist:FromNothingPower": {
+    "NAME": "From Nothing",
+    "DESCRIPTIONS": [
+      "The next #yReagent you add to your stockpile this turn is added twice.",
+      "The next #b",
+      " #yReagents you add to your stockpile this turn are added twice."
     ]
   },
   "theChemist:FluidityPower": {
@@ -121,7 +129,7 @@
       " NL 8. ",
       " NL 9. ",
       " NL 10. ",
-      " NL Mixing now will produce the ",
+      " NL #yMixing now will produce the ",
       " effect.",
       " NL Your stockpile is empty.",
       "This character doesn't support the stockpile."
