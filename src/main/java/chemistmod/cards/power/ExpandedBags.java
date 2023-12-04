@@ -3,6 +3,7 @@ package chemistmod.cards.power;
 import chemistmod.ChemistMod;
 import chemistmod.cards.BaseChemistCard;
 import chemistmod.characters.TheChemist;
+import chemistmod.powers.StockpilePower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -34,6 +35,8 @@ public class ExpandedBags extends BaseChemistCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
         // This cast should be safe; we check in the base class
-        ((TheChemist)player).stockpileCapacity += this.magicNumber;
+        TheChemist chemist = (TheChemist)player;
+        chemist.stockpileCapacity += this.magicNumber;
+        chemist.getPower(StockpilePower.POWER_ID).updateDescription();
     }
 }

@@ -109,7 +109,8 @@
   "theChemist:StockpilePower": {
     "NAME": "Stockpile",
     "DESCRIPTIONS": [
-      "Current #yReagents:",
+      "Stockpile capacity: #b",
+      " NL Current #yReagents:",
       " NL 1. ",
       " NL 2. ",
       " NL 3. ",
@@ -122,7 +123,8 @@
       " NL 10. ",
       " NL Mixing now will produce the ",
       " effect.",
-      "Your stockpile is empty."
+      " NL Your stockpile is empty.",
+      "This character doesn't support the stockpile."
     ]
   },
   "theChemist:VolatilityPower": {

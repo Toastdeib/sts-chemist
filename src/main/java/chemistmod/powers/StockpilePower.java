@@ -37,22 +37,30 @@ public class StockpilePower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        if (this.player == null || this.amount == 0) {
-            this.description = POWER_STRINGS.DESCRIPTIONS[13];
+        if (this.player == null) {
+            this.description = POWER_STRINGS.DESCRIPTIONS[15];
             return;
         }
 
         StringBuilder sb = new StringBuilder();
         sb.append(POWER_STRINGS.DESCRIPTIONS[0]);
+        sb.append(this.player.stockpileCapacity);
+
+        if (this.amount == 0) {
+            sb.append(POWER_STRINGS.DESCRIPTIONS[14]);
+            this.description = sb.toString();
+            return;
+        }
+
         for (int i = 0; i < this.amount; i++) {
-            sb.append(POWER_STRINGS.DESCRIPTIONS[i + 1]);
+            sb.append(POWER_STRINGS.DESCRIPTIONS[i + 2]);
             sb.append(getPrettyName(this.player.getReagent(i).toString()));
         }
 
         if (this.amount >= 2) {
-            sb.append(POWER_STRINGS.DESCRIPTIONS[11]);
-            sb.append(getPrettyName(MixUtils.mix(this.player.getReagent(0), this.player.getReagent(1)).toString()));
             sb.append(POWER_STRINGS.DESCRIPTIONS[12]);
+            sb.append(getPrettyName(MixUtils.mix(this.player.getReagent(0), this.player.getReagent(1)).toString()));
+            sb.append(POWER_STRINGS.DESCRIPTIONS[13]);
         }
 
         this.description = sb.toString();
