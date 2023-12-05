@@ -255,4 +255,8 @@ public class TheChemist extends CustomPlayer {
     public static String getCantDoText() {
         return CHARACTER_STRINGS.TEXT[5];
     }
+
+    public static String getTooHealthyText() {
+        return CHARACTER_STRINGS.TEXT[6];
+    }
 }

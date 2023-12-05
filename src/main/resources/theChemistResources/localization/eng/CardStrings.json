@@ -43,6 +43,10 @@
     "NAME": "Dagger",
     "DESCRIPTION": "Deal !D! damage."
   },
+  "theChemist:DancingDagger": {
+    "NAME": "Dancing Dagger",
+    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack or block, apply !M! Weak and !M! Vulnerable. Otherwise, deal double damage."
+  },
   "theChemist:DarkMatter": {
     "NAME": "Dark Matter",
     "DESCRIPTION": "Apply !M! Weak and !M! Vulnerable to ALL enemies. Add 1 Dark Matter Reagent to your stockpile."
@@ -154,6 +158,10 @@
   "theChemist:MorningStar": {
     "NAME": "Morning Star",
     "DESCRIPTION": "Deal !D! damage."
+  },
+  "theChemist:Nightshade": {
+    "NAME": "Nightshade",
+    "DESCRIPTION": "If the enemy is at or below 20% HP, set their HP to 0."
   },
   "theChemist:Overstock": {
     "NAME": "Overstock",

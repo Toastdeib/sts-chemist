@@ -126,6 +126,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new ChickenKnife());
         BaseMod.addCard(new ChitinousBash());
         BaseMod.addCard(new Dagger());
+        BaseMod.addCard(new DancingDagger());
         BaseMod.addCard(new DarkMatter());
         BaseMod.addCard(new DefensivePosture());
         BaseMod.addCard(new Disposal());
@@ -152,6 +153,7 @@ public class ChemistMod implements PostInitializeSubscriber, EditCardsSubscriber
         BaseMod.addCard(new MainGauche());
         BaseMod.addCard(new Mix());
         BaseMod.addCard(new MorningStar());
+        BaseMod.addCard(new Nightshade());
         BaseMod.addCard(new Overstock());
         BaseMod.addCard(new Parry());
         //BaseMod.addCard(new Pharmacology()); // This needs to be properly implemented or maybe just fully revamped
